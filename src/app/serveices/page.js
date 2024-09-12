@@ -43,13 +43,15 @@ const page = () => {
       <HeroSections />
 
       {cardData.map((item, index) => (
-        <OurServices
-          id={index}
-          imageUrl={item.imageUrl}
-          heading={item.heading}
-          text={item.text}
-          subText={item.subText}
-        />
+        <React.Fragment key={index}>
+          <OurServices
+            id={index}
+            imageUrl={item.imageUrl}
+            heading={item.heading}
+            text={item.text}
+            subText={item.subText}
+          />
+        </React.Fragment>
       ))}
     </div>
   );
