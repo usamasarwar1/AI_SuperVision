@@ -10,14 +10,23 @@ import { FaTwitter } from "react-icons/fa";
 import { LuLinkedin } from "react-icons/lu";
 import { PiInstagramLogoBold } from "react-icons/pi";
 import { Button, ButtonGroup } from "@nextui-org/button";
+import BusinessCard from "./BusinessCard";
 const Footer = () => {
   const footerIcons =
     "h-8 w-8 rounded-md  bg-[rgba(15,16,18,0.8)] flex items-center justify-center text-white ";
   const commonClasses =
     " cursor-pointer flex font-medium tracking-[.02em] text-[1rem] text-[#fff] translate-500 mb-[18px] public-sans";
   return (
-    <footer className=" w-full ">
-     
+    <>
+   <div className = "">
+      <BusinessCard
+        headingText="Ready to Transform Your Business?"
+        text="Let our experts guide you through your next big move. Whether you're looking to enhance efficiency, scale operations, or drive innovation, we're here to help."
+        onClick={console.log("Button is Clicked")}
+      />
+          </div>
+          
+    <footer className=" w-full ">    
 
       <div className="container mx-auto w-[90%] lg:w-[80%] grid grid-cols-12 gap-6 sm:gap-8 md:gap-10 lg:gap-16">
        
@@ -153,6 +162,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

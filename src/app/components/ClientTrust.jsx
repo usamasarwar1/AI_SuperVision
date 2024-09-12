@@ -58,7 +58,7 @@ const ClientTrust = () => {
 
       <div className="public-sans relative ">
           <div className="flex w-full  h-inherit  " style={{minHeight:'inherit'}}>
-            <div className="container mx-auto pt-[170px] pb-[150px] flex items-center justify-center flex-col">
+            <div className="container mx-auto pt-[170px] flex items-center justify-center flex-col">
               <div className="relative w-full">
                 <img src="/images/client-trust.png" alt="logo" className="w-full" />
                 <div className="absolute h-inherit  inset-0 bg-gradient-to-b from-transparent to-black opacity-75"></div>

@@ -23,13 +23,22 @@
 }
 
 .bg-gradient-with-image-hero-section {
-  background-image: url("/images/herobg.png")
+   background-image: url("/images/herobg.png")
   /* linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%) */
+}
+.bg-gradient-with-image-hero-services {
+  background-image: url("/images/hero-serversbg.png")
+ /* linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%) */
 }
 .bg-gradient-with-image-client-section {
   background-image: url("/images/client-trust.png")
   /* linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%) */
 }
+.bg-gradient-with-image-hero-section {
+  background-image: url("/images/herobg.png")
+ /* linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%) */
+}
+
 
 .public-sans{
   font-family: "Public Sans", sans-serif;

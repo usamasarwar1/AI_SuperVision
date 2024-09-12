@@ -85,7 +85,7 @@ export default function Header() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className={headerClass} href="#">
+          <Link className={headerClass} href="/serveices">
             Services
           </Link>
         </NavbarItem>

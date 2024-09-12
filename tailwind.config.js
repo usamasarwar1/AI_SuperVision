@@ -31,8 +31,9 @@ module.exports = {
       },
           backgroundImage: {
         "header-gradient": "linear-gradient(90deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.10) 100%)",
-        "hero-gradient": "linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%)"
-      },
+        "hero-gradient": "linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%)",
+        "server-gradient": "linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%)"
+          },
       backgrounds: {
         'gradient-to-r': 'linear-gradient(to right, var(--tw-gradient-stops))',
         'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',   
