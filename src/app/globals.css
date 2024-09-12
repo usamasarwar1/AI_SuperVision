@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts import public saans */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Custom background with gradient and image */
+.bg-gradient-with-image {
+  background-image: url("https://demo-egenslab.b-cdn.net/html/softconic/preview/assets/img/footer/footer-bg.png"),
+    linear-gradient(to right, #1e1c22, #1e1c22);
+}
+
+.bg-gradient-with-image-approciations {
+  background-image: url("https://demo-egenslab.b-cdn.net/html/softconic/preview/assets/img/home-6/home6-testimonial-bg.png"),
+    linear-gradient(#1e1c22, #1e1c22);
+}
+
+.bg-gradient-with-image-choose-us {
+  background-image: url("https://demo-egenslab.b-cdn.net/html/softconic/preview/assets/img/home-6/choose-bg-1.png"),
+    linear-gradient(#1e1c22, #1e1c22);
+}
+
+.bg-gradient-with-image-hero-section {
+  background-image: url("/images/herobg.png")
+  /* linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%) */
+}
+.bg-gradient-with-image-client-section {
+  background-image: url("/images/client-trust.png")
+  /* linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%) */
+}
+
+.public-sans{
+  font-family: "Public Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+/* Poppons font */
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+/* Poppons font end */
+
+.hover\:border-animation:hover::after {
+  transform: scaleX(1);
+}
+
+.drop {
+  position: relative;
+  display: inline-block;
+}
+
+.drop::after {
+  content: "";
+  top: 38px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  background: linear-gradient(90deg, #fff, #06d889, #fff);
+  width: 100%;
+  max-width: 150%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-in;
+  z-index: 1;
+}
+
+.custom-after::after {
+  content: url("https://demo-egenslab.b-cdn.net/html/softconic/preview/assets/img/home-6/banner-text-vec.png");
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -31%);
+}
+@media (max-width: 768px) {
+  .custom-after::after {
+    display: none;
+  }
+}
+.image-after::after {
+  content: "";
+  height: 150%;
+  width: 280px;
+  background-color: rgba(6, 216, 137, 0.2);
+  position: absolute;
+  left: 70%;
+  top: -120px;
+  transition: 0.5s;
+  transform-origin: top;
+  z-index: 1;
+  transform: translateX(-150%) rotate(-20deg);
+}
+
+.header-btn-after {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+}
+
+.header-btn-after::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 200%;
+  width: 150%;
+  left: 15%;
+  top: 0%;
+  right: 20%;
+  z-index: 1;
+  border-radius: 2px;
+  transform: skewX(45deg) scale(0, 1);
+  transition: all 0.5s ease-out 0s;
+}
+
+.header-btn-after:hover::before {
+  top: 0%;
+  background-color: #06d889;
+  height: 100%;
+  transform: skewX(45deg) scale(1, 1);
+  z-index: -2;
+}
+
+.button-after {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+}
+
+.button-after::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 200%;
+  width: 150%;
+  left: 15%;
+  top: 0%;
+  right: 20%;
+  z-index: 1;
+  border-radius: 2px;
+  transform: skewX(45deg) scale(0, 1);
+  transition: all 0.5s ease-out 0s;
+}
+.button-after:hover {
+  color: white;
+  z-index: 2;
+}
+.button-after:hover::before {
+  top: 0%;
+  background-color: black;
+  height: 100%;
+
+  transform: skewX(45deg) scale(1, 1);
+  z-index: -2;
+}
+
+.custom-header {
+  height: calc(100vh - 0rem) !important;
+  /* background-color: #06D889;
+  transform-origin: 40%, 50%;
+  transform: rotate(45deg);
+  transition: width 2s;
+  transition-delay: 1s;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in; */
+}
+
+/* 
+.custom-header {
+  background-color: #06D889;
+  width: 100px;
+  height: 100px;
+  transform: translateX(0px);
+  transition: transform 3s ease-in;
+  transition-delay: 1s;
+  background-color: #064389;
+} */
+
+/* .line::after{
+    content: "";
+    height: 1px;
+    width: 20px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #06d889;
+}
+
+
+.transition-max-height {
+  transition: all 0.5s ease-in-out;
+}
+
+.max-h-0 {
+  max-height: 0;
+}
+
+.max-h-screen {
+  max-height: 100vh; 
+} */
+
+.slick-dots li {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  border: 1px solid #06d889;
+  background: transparent;
+  position: relative;
+}
+.slick-dots li button {
+  position: absolute;
+  bottom: -4px;
+  right: -7px;
+}
+
+.slick-dots li button:before {
+  color: #06d889 !important;
+  border-radius: 50%;
+  height: 10px !important;
+  width: 13px !important;
+  font-size: 8px !important;
+  position: relative;
+  bottom: 20px;
+}
