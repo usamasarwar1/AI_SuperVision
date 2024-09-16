@@ -10,6 +10,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      lato: ['Lato', 'sans-serif'],
       keyframes: {
         slideDown: {
           '0%': { transform: 'translateY(-8%)' },
@@ -32,7 +33,9 @@ module.exports = {
           backgroundImage: {
         "header-gradient": "linear-gradient(90deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.10) 100%)",
         "hero-gradient": "linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%)",
-        "server-gradient": "linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%)"
+        "server-gradient": "linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%)",
+        "input-gradient": " linear-gradient(270deg, #131619 0%, #FFF 50%, #131619 100%)",
+        "aboutVlues": " linear-gradient(90deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.10) 100%)"
           },
       backgrounds: {
         'gradient-to-r': 'linear-gradient(to right, var(--tw-gradient-stops))',

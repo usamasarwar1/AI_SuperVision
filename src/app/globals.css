@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 /* Fonts import public saans */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -30,6 +31,22 @@
   background-image: url("/images/hero-serversbg.png")
  /* linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%) */
 }
+.bg-image-hero-contacts {
+  background-image: url("/images/hero-contact.png")
+ /* linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%) */
+}
+.bg-image-hero-about {
+  background-image: url("/images/hero-about.png")
+ /* linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%) */
+}
+.bg-image-hero-benefits {
+  background-image: url("/images/hero-benefits.png")
+ /* linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%) */
+}
+.bg-image-hero-consultation {
+  background-image: url("/images/hero-consultation.png")
+ /* linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%) */
+}
 .bg-gradient-with-image-client-section {
   background-image: url("/images/client-trust.png")
   /* linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%) */
@@ -39,11 +56,24 @@
  /* linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%) */
 }
 
-
+@layer utilities {
+  .placeholder-style::placeholder {
+     padding: 5px 12px;
+     margin: 5px;
+     color: #06d889;
+  }
+}
 .public-sans{
   font-family: "Public Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+.public-sans-regular{
+  font-family: "Public Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
 }
 /* Poppons font */
 .poppins-thin {
@@ -284,4 +314,45 @@
   font-size: 8px !important;
   position: relative;
   bottom: 20px;
+}
+
+
+
+.border-break {
+  position: relative;
+  border: none;
+}
+
+.border-break::before,
+.border-break::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #323232;
+}
+
+.border-break::before {
+  top: 0;
+  width: calc(50% - 20px); 
+}
+
+.border-break::after {
+  bottom: 0;
+  width: calc(80% - 10px); 
+  right: 0;
+}
+
+.selectedDate{
+display: flex;
+padding: 11px 17px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 10px;
+flex: 1 0 0;
+align-self: stretch;
+border-radius: 6px !important;
+background: #000 ;
 }

@@ -18,10 +18,10 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} bg-[#050505] pt-[80px] min-h-[100vh] `}>
         <Providers>
           <Layout>
-         {children}
+            {children}
           </Layout>
         </Providers>
-        </body>
+      </body>
     </html>
   );
 }

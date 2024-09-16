@@ -39,9 +39,9 @@ export default function Header() {
         setIsMenuOpen(false);
       }
     };
-  
+
     document.addEventListener("mousedown", handleClick);
-  
+
     return () => {
       document.removeEventListener("mousedown", handleClick);
     };
@@ -51,8 +51,9 @@ export default function Header() {
     setIsOpen((current) => !current);
   };
 
-  const headerClass = "py-8 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]";
-  
+  const headerClass =
+    "py-8 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]";
+
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
@@ -90,12 +91,12 @@ export default function Header() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className={headerClass} href="#">
+          <Link className={headerClass} href="/benefits">
             Benefits
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className={headerClass} href="#">
+          <Link className={headerClass} href="/consultation">
             Book a consultation
           </Link>
         </NavbarItem>
@@ -106,12 +107,13 @@ export default function Header() {
         {/* Language Selector */}
         <Dropdown>
           <DropdownTrigger>
-            <Button light auto>
+            <Button light auto className="text-[10px] px-0 sm:text-[1rem] sm:py-2.5 sm:px-6">
               <Image
                 src="/images/flag.png"
                 alt="UK Flag"
                 width={20}
                 height={20}
+                className="hidden md:block md:w-full md:h-full"
               />
               English <RiArrowDropDownLine />
             </Button>
@@ -121,44 +123,53 @@ export default function Header() {
             <DropdownItem key="spanish">Spanish</DropdownItem>
           </DropdownMenu>
         </Dropdown>
-        
+
         {/* Contact Button */}
-        <Button
-          as={Link}
-          href="#"
-          className="relative rounded-full border-2 border-[#fff] bg-white text-[#000] transition duration-500 text-[1rem] font-semibold py-2.5 px-6 hover:text-[#fff] hover:bg-[#000] hover:border-[#000]"
-        >
-          Contact Us
-        </Button>
+        <Link href="/contacts">
+          <Button className="relative rounded-full border-2 border-[#fff] bg-white text-[#000] transition duration-500 text-[10px] sm:text-[1rem] font-semibold  px-1 sm:py-2.5 sm:px-6 hover:text-[#fff] hover:bg-[#000] hover:border-[#000]">
+            Contact Us
+          </Button>
+        </Link>
       </NavbarContent>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <NavbarMenu ref={menuRef} className="top-0 left-0 z-[9999] h-auto translate-x-0 overflow-auto bg-[#0a1019] w-[280px]">
+        <NavbarMenu
+          ref={menuRef}
+          className="top-0 left-0 z-[9999] h-auto translate-x-0 overflow-auto bg-[#0a1019] w-[280px]"
+        >
           <NavbarItem>
-            <Link className={headerClass} href="#">
+            <Link className={headerClass} href="/">
               Home
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link className={headerClass} href="#">
+            <Link className={headerClass} href="/about">
               About Us
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link className={headerClass} href="#">
+            <Link className={headerClass} href="/serveices">
               Services
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link className={headerClass} href="#">
+            <Link className={headerClass} href="/benefits">
               Benefits
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link className={headerClass} href="/consultation">
+            Book a consultation
             </Link>
           </NavbarItem>
         </NavbarMenu>
       )}
 
-      <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="lg:hidden flex" />
+      <NavbarMenuToggle
+        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        className="lg:hidden flex"
+      />
     </Navbar>
   );
 }
