@@ -19,7 +19,7 @@ const OurServices = ({ id, imageUrl, heading, text, subText }) => {
           alt={`Image for card ${id}`}
           width={500}
           height={300}
-          className="w-full h-auto rounded-t-none rounded-b-lg"
+          className="w-full h-auto rounded-t-none rounded-b-lg bg-black"
         />
       </div>
 
