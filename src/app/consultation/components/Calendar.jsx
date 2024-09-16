@@ -40,7 +40,7 @@ export default function Calendar() {
           </div>
           <p className="text-[#B8B9BA] text-sm sm:text-base mb-4">
             Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
+            industry. Lorem Ipsum has been the industry&apos;'s standard dummy text
             ever since the 1500s.
           </p>
           <Button className="text-base text-white font-semibold tracking-wider rounded-full bg-black px-6 py-3 border-2 border-white hover:bg-white hover:text-black transition-colors">

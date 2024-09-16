@@ -11,7 +11,7 @@ const ServiceItem = ({ index, title, description, icon, active, onClick }) => {
         active ? "border-l-4 border-white" : "border-l-4 border-[#181818]"
       }`}
     >
-      <Image className="text-3xl mt-2" src={icon} width={24} height={24} />
+      <Image className="text-3xl mt-2" alt="hero-icon" src={icon} width={24} height={24} />
       <div>
         <h3 className="text-xl sm:text-2xl font-bold poppins-medium">{title}</h3>
         <p className="text-[#989898] poppins-regular text-sm sm:text-base">

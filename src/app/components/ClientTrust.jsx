@@ -45,7 +45,7 @@ const ClientTrust = () => {
 
         <div className="relative mt-12 md:mt-24">
           <div className="relative w-full">
-            <img src="/images/client-trust.png" alt="client trust" className="w-full object-cover" />
+            <Image src="/images/client-trust.png" width={500} height={500} alt="client trust" className="w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75"></div>
           </div>
 
