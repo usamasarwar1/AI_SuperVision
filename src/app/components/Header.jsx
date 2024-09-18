@@ -67,7 +67,6 @@ export default function Header() {
             src="images/logo.svg"
             width={200}
             height={200}
-            className=" w-full h-full "
             alt="Logo"
           />
         </NavbarBrand>
@@ -133,7 +132,7 @@ export default function Header() {
                {/* Contact Button */}
         <Link href="/contacts">
          
-          <Button className="relative rounded-full border-2 border-[#fff] bg-white text-[#000]  text-[10px] sm:text-[1rem] font-semibold  px-1 sm:py-2.5 sm:px-6  h-6 md:h-10">
+          <Button className="relative rounded-full border-2 border-[#fff] bg-white text-[#000]  text-[10px] sm:text-[1rem] font-semibold  px-1  h-8 md:h-10">
             Contact Us
           </Button>
         </Link>
