@@ -18,7 +18,7 @@ const HeroSection = () => {
           </h2>
 
           {/* Description Text */}
-          <p className="font-normal text-[16px] sm:text-[16px] leading-7 sm:leading-9 text-[#e4e4e4] mb-6 sm:mb-[55px] max-w-[700px]">
+          <p className="font-normal text-[14px] sm:text-[16px] leading-7 sm:leading-9 text-[#e4e4e4] mb-6 sm:mb-[55px] max-w-[700px]">
             Transform your business with our comprehensive suite of AI solutions
             designed
             <br />

@@ -13,8 +13,8 @@ export default function Calendar() {
   const [selectDate, setSelectDate] = useState(currentDate);
 
   return (
-    <div className="container mx-auto p-4 sm:p-6 lg:p-8 mt-[36.37px]">
-      <div className="bg-[#0B0B0B] border border-[#262626] rounded-[16px] w-full flex flex-col lg:flex-row gap-6 lg:gap-10">
+    <div className="container mx-auto p-4 sm:p-0 lg:p-8 mt-[36.37px]">
+      <div className="bg-[#0B0B0B]  rounded-[16px] w-full flex flex-col lg:flex-row gap-6 lg:gap-10">
         {/* Left Section */}
         <div className="lg:w-[40%] p-4 sm:p-6">
           <h2 className="poppins-medium text-[#DEDEDE] text-2xl sm:text-3xl lg:text-4xl font-bold mb-5">
@@ -56,7 +56,7 @@ export default function Calendar() {
               <div className="w-full lg:w-3/5">
                 <div className="flex justify-between items-center mb-4">
                   <button
-                    className="bg-[#131619] p-2 sm:p-3 rounded-[6px] hover:bg-[#1a1f23] transition-colors"
+                    className="bg-[#131619] p-2 sm:p-3 rounded-[6px]  transition-colors"
                     onClick={() => setToday(today.month(today.month() - 1))}
                   >
                     <GrFormPrevious className="text-[#E3E5F540] w-6 h-6 sm:w-8 sm:h-8" />
@@ -68,7 +68,7 @@ export default function Calendar() {
                     <span className="lato-normal">{months[today.month()]}, {today.year()}</span>
                   </h2>
                   <button
-                    className="bg-[#131619] p-2 sm:p-3 rounded-[6px] hover:bg-[#1a1f23] transition-colors"
+                    className="bg-[#131619] p-2 sm:p-3 rounded-[6px]  transition-colors"
                     onClick={() => setToday(today.month(today.month() + 1))}
                   >
                     <GrFormNext className="text-[#E3E5F540] w-6 h-6 sm:w-8 sm:h-8" />
@@ -92,10 +92,10 @@ export default function Calendar() {
                         <div
                           key={index}
                           className={cn(
-                            "p-1 sm:p-2 text-center h-10 sm:h-12 grid place-content-center text-xs sm:text-sm",
+                            "p-1 sm:p-2 text-center h-10 sm:h-12 grid place-content-center text-xs  md:text-sm",
                             selectDate.toDate().toDateString() ===
                               date.toDate().toDateString()
-                              ? "selectedDate"
+                              ? "flex flex-col justify-center items-center p-[11px_17px] gap-2.5 flex-1 self-stretch border border-[#6185F2] border-solid rounded-md bg-black"
                               : ""
                           )}
                         >
@@ -108,7 +108,7 @@ export default function Calendar() {
                               today === date.toDate().toDateString()
                                 ? "border-2 border-[#6185F2] bg-[#131619]"
                                 : "",
-                              "hover:bg-[#1a1f23]"
+                              ""
                             )}
                             onClick={() => setSelectDate(date)}
                             disabled={!currentMonth}
@@ -131,7 +131,7 @@ export default function Calendar() {
                   {["11:00 am", "12:00 am", "1:00 am", "02:00 am"].map((time, i) => (
                     <button
                       key={i}
-                      className="lato-normal border border-[#6185F2] py-3 px-6 rounded-full bg-[#0D0D0D] hover:bg-[#131619] transition-colors"
+                      className={`lato-normal border ${i===0 ? "border-[#6185F2]": "border-[#f4f4ff1f]" } py-3 px-6 rounded-full bg-[#0D0D0D] hover:bg-[#131619] transition-colors`}
                     >
                       <span className="text-[#DEDEDE] text-base sm:text-lg">
                         {time}

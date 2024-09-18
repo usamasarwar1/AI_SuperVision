@@ -17,16 +17,16 @@ const Contact = () => {
 
   return (
     <div className="container mx-auto px-4 p-6 md:p-0">
-      <div className="flex flex-col lg:flex-row gap-8 p-10">
+      <div className="flex flex-col lg:flex-row gap-8 md:p-10">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="w-full lg:w-2/3 space-y-6"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[30px]">
             {/* Full Name */}
             <div>
               <label
-                className="text-[#B8B9BA] font-normal text-[16px] leading-[1.5] mb-3"
+                className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="name"
               >
                 Full Name
@@ -38,7 +38,7 @@ const Contact = () => {
                 {...register("name", { required: "Full Name is required" })}
                 classNames={{
                   inputWrapper:
-                    "mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] h-[60px] border-[#ffffff1a] text-[#989898]",
+                    "mt-[2px] md:mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] h-[60px] border-[#ffffff1a] text-[#989898]",
                 }}
               />
               {errors.name && (
@@ -51,7 +51,7 @@ const Contact = () => {
             {/* Email Address */}
             <div>
               <label
-                className="text-[#B8B9BA] font-normal text-[16px] leading-[1.5] mb-3"
+                className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="email"
               >
                 Email Address
@@ -69,7 +69,7 @@ const Contact = () => {
                 })}
                 classNames={{
                   inputWrapper:
-                    "mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] h-[60px] border-[#ffffff1a] text-[#989898]",
+                    "mt-[2px] md:mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] h-[60px] border-[#ffffff1a] text-[#989898]",
                 }}
               />
               {errors.email && (
@@ -82,7 +82,7 @@ const Contact = () => {
             {/* Phone Number */}
             <div>
               <label
-                className="text-[#B8B9BA] font-normal text-[16px] leading-[1.5] mb-3"
+                className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="phone"
               >
                 Phone Number
@@ -100,7 +100,7 @@ const Contact = () => {
                 })}
                 classNames={{
                   inputWrapper:
-                    "mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] h-[60px] border-[#ffffff1a] text-[#989898]",
+                    "mt-[2px] md:mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] h-[60px] border-[#ffffff1a] text-[#989898]",
                 }}
               />
               {errors.phone && (
@@ -113,7 +113,7 @@ const Contact = () => {
             {/* Country */}
             <div>
               <label
-                className="text-[#B8B9BA] font-normal text-[16px] leading-[1.5] mb-3"
+                className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="country"
               >
                 Country
@@ -125,7 +125,7 @@ const Contact = () => {
                 {...register("country", { required: "Country is required" })}
                 classNames={{
                   inputWrapper:
-                    "mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] h-[60px] border-[#ffffff1a] text-[#989898]",
+                    "mt-[2px] md:mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] h-[60px] border-[#ffffff1a] text-[#989898]",
                 }}
               />
               {errors.country && (
@@ -137,50 +137,54 @@ const Contact = () => {
 
             {/* Project Scope */}
             <div>
-  <label
-    className="text-[#B8B9BA] font-normal text-[16px] leading-[1.5] mb-3"
-    htmlFor="project"
-  >
-    Select Project Scope
-  </label>
-  <div className="relative">
-    <select
-      id="project"
-      className="mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] text-[#989898] border-[#ffffff1a] w-full appearance-none pr-10"
-      {...register("project", {
-        required: "Please select a project scope",
-      })}
-    >
-      <option value="">Select Project Scope</option>
-      <option value="Small">Small</option>
-      <option value="Medium">Medium</option>
-      <option value="Large">Large</option>
-    </select>
-    {/* Custom dropdown arrow */}
-    <div className="pointer-events-none absolute inset-y-0 right-4 top-1 flex items-center">
-      <svg
-        className="w-4 h-4 text-[#989898]"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-      </svg>
-    </div>
-  </div>
-  {errors.project && (
-    <p className="text-red-500 text-xs mt-1">
-      {errors.project.message}
-    </p>
-  )}
-</div>
-
+              <label
+                className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5]  md:mb-3"
+                htmlFor="project"
+              >
+                Select Project Scope
+              </label>
+              <div className="relative">
+                <select
+                  id="project"
+                  className="mt-[2px] md:mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] text-[#989898] border-[#ffffff1a] w-full appearance-none pr-10"
+                  {...register("project", {
+                    required: "Please select a project scope",
+                  })}
+                >
+                  <option value="">Select Project Scope</option>
+                  <option value="Small">Small</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Large">Large</option>
+                </select>
+                {/* Custom dropdown arrow */}
+                <div className="pointer-events-none absolute inset-y-0 right-4 top-1 flex items-center">
+                  <svg
+                    className="w-4 h-4 text-[#989898]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </div>
+              </div>
+              {errors.project && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.project.message}
+                </p>
+              )}
+            </div>
 
             {/* Company Name */}
             <div>
               <label
-                className="text-[#B8B9BA] font-normal text-[16px] leading-[1.5] mb-3"
+                className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="company"
               >
                 Company Name
@@ -194,7 +198,7 @@ const Contact = () => {
                 })}
                 classNames={{
                   inputWrapper:
-                    "mt-2 bg-[#1b1f23cc] rounded-[75px] px-[24px] py-[19px] h-[60px] border-[#ffffff1a] text-[#989898]",
+                    "mt-[2px] md:mt-2 bg-[#1b1f23cc] rounded-[75px] px-[24px] py-[19px] h-[60px] border-[#ffffff1a] text-[#989898]",
                 }}
               />
               {errors.company && (
@@ -208,7 +212,7 @@ const Contact = () => {
           {/* Project Goals */}
           <div className="text-area">
             <label
-              className="text-[#B8B9BA] font-normal text-[16px] leading-[1.5]"
+              className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5]"
               htmlFor="comments"
             >
               Briefly describe your project goals and requirements
@@ -225,7 +229,7 @@ const Contact = () => {
               })}
               classNames={{
                 inputWrapper:
-                  "mt-2 bg-[#1b1f23cc] px-[24px] py-[19px] text-[13px] min-h-[100px] border-[1px] border-[#ffffff1a] text-[#989898] font-normal",
+                  "mt-[2px] md:mt-2 bg-[#1b1f23cc] px-[24px] py-[19px] text-[13px] min-h-[100px] border-[1px] border-[#ffffff1a] text-[#989898] font-normal",
               }}
             />
             {errors.comments && (
@@ -245,7 +249,7 @@ const Contact = () => {
                   required: "You must agree to the terms",
                 })}
               />
-              <span className="poppins-regular text-[#DEDEDE] leading-7">
+              <span className="poppins-regular text-[#DEDEDE] text-[12px] md:text-[16px] md:leading-7">
                 {" "}
                 I agree to the terms and conditions{" "}
               </span>
@@ -272,7 +276,7 @@ const Contact = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="public-sans border border-[#FFF] text-white rounded-full px-6 py-3 hover:bg-white hover:text-black transition-colors"
+            className="public-sans border border-[#FFF] text-white rounded-full p-[6px_12px] md:px-6 md:py-3 hover:bg-white hover:text-black transition-colors"
           >
             Submit
           </button>
@@ -280,10 +284,10 @@ const Contact = () => {
 
         {/* Right Sidebar */}
         <div className="w-full lg:w-1/3">
-          <h1 className="poppins-medium text-[#DEDEDE] leading-[20px]">
+          <h1 className="poppins-medium text-sm md:text-[16px] text-[#DEDEDE] leading-[20px]">
             Reach Out to Us
           </h1>
-          <p className="public-sans text-[#B8B9BA] leading-[27px]">
+          <p className="public-sans text-[#B8B9BA] leading-4 md:leading-[27px] text-[12px] md:text-[16px] mt-1 md:mt-0">
             Contact us today to learn how we can support your business.
           </p>
           <form
@@ -293,7 +297,7 @@ const Contact = () => {
             {/* Phone */}
             <div className="relative w-full">
               <label
-                className="public-sans leading-6 text-[#B8B9BA]"
+                className="public-sans leading-6 text-[#B8B9BA] text-[12px] md:text-[16px]"
                 htmlFor="sidebar-phone"
               >
                 Phone
@@ -320,7 +324,7 @@ const Contact = () => {
             {/* Email Address */}
             <div className="relative w-full">
               <label
-                className="public-sans leading-6 text-[#B8B9BA]"
+                className="public-sans leading-6 text-[#B8B9BA] text-[12px] md:text-[16px]"
                 htmlFor="sidebar-email"
               >
                 Email Address
@@ -351,8 +355,10 @@ const Contact = () => {
             </div>
           </form>
           <div className="space-y-2 mt-4">
-            <p className="public-sans-regular text-[#B8B9BA]">Address</p>
-            <h2 className="poppins-medium text-xl leading-[130%] text-[#DEDEDE]">
+            <p className="public-sans-regular text-[#B8B9BA] text-[12px] md:text-[16px]">
+              Address
+            </p>
+            <h2 className="poppins-medium text-[15px] md:text-xl leading-[130%] text-[#DEDEDE]">
               123 Innovation Avenue, Suite 500, Tech City, TX 75001
             </h2>
           </div>

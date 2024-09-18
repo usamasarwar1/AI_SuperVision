@@ -158,7 +158,7 @@ const Footer = () => {
               <button
                 as={Link}
                 href="#"
-                className="public-sans font-semibold relative rounded-full border-2 border-[#6185F2] bg-[#6185F2] p-[9px_15px] md:py-[13px] md:px-[26px] w-full md:w-fit text-[#000] text-[1rem]"
+                className="public-sans font-semibold relative rounded-full border-2 border-[#6185F2] bg-[#6185F2] p-[9px_15px] md:py-[13px] md:px-[26px] w-full lg:w-fit text-[#000] text-[1rem]"
               >
                 Subscribe <span>Now</span>
               </button>
@@ -167,7 +167,7 @@ const Footer = () => {
         </div>
         <div className="w-full public-sans">
           <div className="container mx-auto px-4 py-6 md:px-6 lg:px-8">
-            <div className="grid grid-cols-2  md:grid-cols-4 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+            <div className="grid grid-cols-2  md:grid-cols-4 lg:grid-cols-4 gap-1 sm:gap-8 md:gap-10 lg:gap-12">
               <div className="border-t-1 border-[#131619] flex items-center text-white py-4 px-2">
                 <span className="mr-3">
                   <Image
