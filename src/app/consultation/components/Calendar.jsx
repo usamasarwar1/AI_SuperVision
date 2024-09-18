@@ -13,11 +13,11 @@ export default function Calendar() {
   const [selectDate, setSelectDate] = useState(currentDate);
 
   return (
-    <div className="container mx-auto p-4 sm:p-6 lg:p-8">
+    <div className="container mx-auto p-4 sm:p-6 lg:p-8 mt-[36.37px]">
       <div className="bg-[#0B0B0B] border border-[#262626] rounded-[16px] w-full flex flex-col lg:flex-row gap-6 lg:gap-10">
         {/* Left Section */}
-        <div className="lg:w-1/3 p-4 sm:p-6">
-          <h2 className="text-[#DEDEDE] text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">
+        <div className="lg:w-[40%] p-4 sm:p-6">
+          <h2 className="poppins-medium text-[#DEDEDE] text-2xl sm:text-3xl lg:text-4xl font-bold mb-5">
             30 Minute Initial Consultation
           </h2>
           <div className="flex items-center gap-2 mb-3">
@@ -36,22 +36,22 @@ export default function Calendar() {
                 fill="#DEDEDE"
               />
             </svg>
-            <span className="text-[#DEDEDE] text-base">30 min</span>
+            <span className="poppins-medium text-[#DEDEDE] text-base">30 min</span>
           </div>
-          <p className="text-[#B8B9BA] text-sm sm:text-base mb-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry&apos;'s standard dummy text
-            ever since the 1500s.
+          <p className="poppins-regular text-[#B8B9BA] text-sm sm:text-base ">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is
           </p>
-          <Button className="text-base text-white font-semibold tracking-wider rounded-full bg-black px-6 py-3 border-2 border-white hover:bg-white hover:text-black transition-colors">
+          <button className="public-sans mt-[49px] text-base text-white font-semibold tracking-wider rounded-full bg-black px-6 py-3 border-2 border-white hover:bg-white hover:text-black transition-colors">
             Get a Free Consultation
-          </Button>
+          </button>
         </div>
 
         {/* Right Section */}
         <div className="lg:w-2/3 p-4 sm:p-6">
+        <h1 className="poppins-medium text-[#DEDEDE] text-xl lg:text-2xl lg:mb-[21.21px]">Select a Date & Time</h1>
+
           <div className="border border-[#262626] rounded-[10px] p-4 sm:p-6">
-            <div className="flex flex-col lg:flex-row gap-6">
+            <div className="flex flex-col lg:flex-row gap-[35.16px]">
               {/* Calendar */}
               <div className="w-full lg:w-3/5">
                 <div className="flex justify-between items-center mb-4">
@@ -65,7 +65,7 @@ export default function Calendar() {
                     className="text-[#DEDEDE] text-lg sm:text-xl cursor-pointer"
                     onClick={() => setToday(currentDate)}
                   >
-                    {months[today.month()]}, {today.year()}
+                    <span className="lato-normal">{months[today.month()]}, {today.year()}</span>
                   </h2>
                   <button
                     className="bg-[#131619] p-2 sm:p-3 rounded-[6px] hover:bg-[#1a1f23] transition-colors"
@@ -80,7 +80,7 @@ export default function Calendar() {
                       key={index}
                       className="text-[#DEDEDE] text-xs sm:text-sm"
                     >
-                      {day}
+                     <div className="late-day"> {day}</div>
                     </div>
                   ))}
                 </div>
@@ -113,7 +113,7 @@ export default function Calendar() {
                             onClick={() => setSelectDate(date)}
                             disabled={!currentMonth}
                           >
-                            {date.date()}
+                           <span className="late-date"> {date.date()}</span>
                           </button>
                         </div>
                       );
@@ -125,13 +125,13 @@ export default function Calendar() {
               {/* Time Selection */}
               <div className="w-full lg:w-2/5">
                 <h3 className="text-[#DEDEDE] text-lg mb-4">
-                  {selectDate.format("MMMM D, YYYY")}
+                  <span className="text-[#DEDEDE] poppins-regular">{selectDate.format("MMMM D, YYYY")}</span>
                 </h3>
-                <div className="flex flex-col gap-3">
-                  {["11:00 AM", "2:00 PM", "4:00 PM"].map((time, i) => (
+                <div className="flex flex-col gap-[16.75px]">
+                  {["11:00 am", "12:00 am", "1:00 am", "02:00 am"].map((time, i) => (
                     <button
                       key={i}
-                      className="border border-[#6185F2] py-3 px-6 rounded-full bg-[#0D0D0D] hover:bg-[#131619] transition-colors"
+                      className="lato-normal border border-[#6185F2] py-3 px-6 rounded-full bg-[#0D0D0D] hover:bg-[#131619] transition-colors"
                     >
                       <span className="text-[#DEDEDE] text-base sm:text-lg">
                         {time}

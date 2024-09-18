@@ -31,42 +31,42 @@ const HeroSection = () => {
 
   return (
     <div>
-      <div className="public-sans min-h-[810px] relative bg-hero-gradient bg-cover bg-no-repeat bg-center bg-gradient-with-image-hero-section">
+      <div className=" min-h-[810px] relative bg-hero-gradient bg-cover bg-no-repeat bg-center bg-gradient-with-image-hero-section">
         <div
           className="flex w-full h-full absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75"
           style={{ minHeight: "inherit" }}
         >
-          <div className="container mx-auto pt-32 pb-24 flex flex-col items-center justify-center text-center">
+          <div className="container mx-auto  flex flex-col items-center justify-center text-center gap-6">
             <Image src="/images/herosection.svg" alt="logo" width={50} height={50} />
-            <h2 className="text-3xl sm:text-5xl font-bold mb-8 leading-tight text-white">
+            <h2 className="public-sans text-[#DEDEDE] text-3xl sm:text-5xl font-bold leading-9 md:leading-[83.2px] text-center">
               Innovative Solutions for
-              <br />
+              <br className="hidden md:inline-block"/>
               Your Business Growth
             </h2>
-            <p className="font-normal text-sm sm:text-base leading-relaxed text-[#e4e4e4] mb-14">
+            <p className="public-sans font-normal text-sm sm:text-base leading-relaxed text-[#fff] text-[18px]">
               Empowering your business with cutting-edge technology and strategic expertise.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-              <Button className="text-sm sm:text-base rounded-full bg-[#fff] px-6 py-2 sm:px-8 sm:py-3 text-center z-[1]">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:mt-6">
+              <button className="public-sans text-sm sm:text-base rounded-full font-semibold  bg-[#fff] px-[26px] py-[13px] text-center z-[1] cursor-default">
                 Discover Our Solutions
-              </Button>
-              <Button className="text-sm sm:text-base text-[#fff] font-semibold tracking-wide rounded-full bg-[#000] px-6 py-2 sm:px-8 sm:py-3 border-2 border-[#fff] z-[1]">
+              </button>
+              <button className="public-sans text-sm sm:text-base text-[#fff] font-semibold  rounded-full bg-[#000] px-[26px] py-[13px] border-2 border-[#fff] z-[1] cursor-default">
                 Get a Free Consultation
-              </Button>
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <section className="bg-black p-6 md:p-0 py-8 sm:py-16">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+      <section className="bg-[#050505] p-6 md:p-0 py-8 sm:py-16">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[50px] items-center">
           {/* Left Image Card */}
-          <div className="relative h-[50vh] md:h-full bg-no-repeat bg-cover rounded-xl bg-[url('/images/ourServices.png')] bg-black">
-            <div className="bg-transparent relative p-4 flex justify-center items-center">
-              <Button
+          <div className="relative h-[50vh] md:h-full bg-no-repeat bg-cover rounded-xl bg-[url('/images/ourServices.png')] bg-[#050505]">
+            <div className="bg-transparent relative p-0 sm:p-4 flex justify-center items-center">
+              <button
                 auto
                 shadow
                 size="lg"
-                className="bg-[#050505] border border-[#fff] text-white font-bold w-full rounded-lg p-4 text-xl poppins-medium flex items-center justify-between"
+                className="bg-[#050505] border  border-[#fff] text-white font-bold w-full rounded-lg p-9 text-xl poppins-medium flex items-center justify-between"
                 iconRight={<span className="ml-2">→</span>}
               >
                 Our Core Services
@@ -92,7 +92,7 @@ const HeroSection = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </Button>
+              </button>
             </div>
           </div>
 

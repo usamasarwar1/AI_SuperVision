@@ -13,7 +13,7 @@ const page = () => {
         descripation=" Discover the advantages of partnering with AI Supervision for your AI-powered"
         descripationBreakText="business solutions."
       />
-      <div className="container mx-auto px-4 md:px-8 mt-6">
+      <div className="container mx-auto px-4 md:px-8 mt-[83.86px]">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
           <div className="col-span-12 md:col-span-7">
             <Image
@@ -31,7 +31,7 @@ const page = () => {
                 <h2 className="text-[#DEDEDE] poppins-medium text-[14px] lg:text-[16px] leading-[130%]">
                   Optimize Your Operations
                 </h2>
-                <p className="text-[12px] md:text-[14px] font-normal leading-[24px] text-[#DEDEDE] opacity-70 mt-3">
+                <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-3">
                   With AI Supervision, your business gains a competitive edge by
                   leveraging cutting-edge AI technology. Our solutions are
                   designed to enhance productivity, improve decision-making, and
@@ -46,19 +46,19 @@ const page = () => {
             <Image
               src="/images/efficiency.png"
               alt="efficiency"
-              width={520}
-              height={250}
-              className="w-full max-h-[250px] rounded-[14px] object-cover"
+              width={700}
+              height={255}
+              className="w-full h-[250px] rounded-[14px] object-cover"
             />
-            <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px] h-auto lg:max-h-[198.67px] lg:mt-6 xl:mt-3">
+            <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px] h-auto lg:max-h-[198.67px]">
               <div className="flex flex-col justify-center text-left">
                 <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[40px] leading-[130%]">
                   Increased Efficiency
                 </h1>
-                <h2 className="text-[#B8B9BA] poppins-medium text-[14px] lg:text-[16px] leading-[130%]">
+                <h2 className="text-[#DEDEDE] poppins-medium text-[14px] lg:text-[16px] leading-[130%]">
                   Optimize Your Operations
                 </h2>
-                <p className="text-[12px] md:text-[14px] font-normal leading-[24px] text-[#B8B9BA] opacity-70 mt-3">
+                <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-3">
                   Our AI solutions streamline processes, reduce operational
                   costs, and eliminate inefficiencies. By automating routine
                   tasks and providing actionable insights, we help you achieve
@@ -69,7 +69,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 mt-5">
+        <div className="grid grid-cols-1 lg:mt-[66.33px] gap-[10px]">
           <Image
             src="/images/dataDriven.png"
             alt="data-driven"
@@ -77,7 +77,7 @@ const page = () => {
             height={501}
             className="w-full max-h-[501px] rounded-[14px] object-cover"
           />
-          <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px]">
+          <div className="bg-[#131619] rounded-[16px] p-4 md:p-[20.35px_30px_30.57px_78px]">
             <div className="flex flex-col justify-center text-left">
               <h1 className="text-[#DEDEDE] poppins-medium text-[24px] md:text-[40px] leading-[130%]">
                 Data-Driven Insights
@@ -85,17 +85,16 @@ const page = () => {
               <h2 className="text-[#B8B9BA] poppins-medium text-[14px] md:text-[16px] leading-[130%]">
                 Make Informed Decisions
               </h2>
-              <p className="text-[12px] md:text-[14px] font-normal leading-[24px] text-[#B8B9BA] opacity-70 mt-3">
-                Our AI solutions streamline processes, reduce operational costs,
-                and eliminate inefficiencies. By automating routine tasks and
-                providing actionable insights, we help you achieve more with
-                less.
+              <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[24px] text-[#B8B9BA] opacity-70 mt-1 max-w-[90%]">
+                Harness the power of data with AI Supervision. Our solutions
+                provide deep insights into your business operations, enabling
+                you to make data-driven decisions that lead to better outcomes.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mt-5">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-[10.24px] mt-[89.94px]">
           <div className="col-span-12 md:col-span-8">
             <Image
               src="/images/scalableSolutions.png"
@@ -107,14 +106,14 @@ const page = () => {
           </div>
 
           <div className="col-span-12 md:col-span-4">
-            <div className="bg-[#131619] h-full rounded-[16px] p-4 md:p-[30px] flex flex-col justify-center text-left">
+            <div className="bg-[#131619] h-full rounded-[16px] p-4 md:p-[30.28px] flex flex-col justify-center text-left">
               <h1 className="text-[#DEDEDE] poppins-medium text-[24px] md:text-[40px] leading-[130%]">
                 Scalable Solutions
               </h1>
               <h2 className="text-[#B8B9BA] poppins-medium text-[14px] md:text-[16px] leading-[130%]">
                 Grow with Confidence
               </h2>
-              <p className="text-[12px] md:text-[14px] font-normal leading-[24px] text-[#B8B9BA] opacity-70 mt-3">
+              <p className="poppins-light  text-[12px] md:text-[14px] font-normal leading-[24px] text-[#B8B9BA] opacity-70 mt-3">
                 As your business grows, so do your AI needs. Our scalable
                 solutions are designed to grow with you, ensuring that you can
                 continue to benefit from AI as your operations expand.

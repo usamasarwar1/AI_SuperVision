@@ -2,9 +2,14 @@ import React from "react";
 
 const HeroSections = ({bg_image, headingText, descripation, headingBreakText, descripationBreakText}) => {
   return (
-    <div className={`public-sans min-h-[600px] sm:min-h-[810px] relative bg-hero-gradient bg-cover bg-no-repeat bg-center ${bg_image}`}>
+    <div className={`public-sans mb-[59.12px] min-h-[600px] sm:min-h-[810px] relative bg-server-gradient bg-cover bg-no-repeat bg-center ${bg_image}`}
+         
+    // style={{ 'image-with-gradient': 'linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%), url("/images/hero-serversbg.png")',  }}
+    >
+     {/* <div style={{ background: 'linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%)' }}></div> */}
+
       <div
-        className="flex w-full h-full absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75"
+        className="flex w-full h-full absolute inset-0  bg-gradient-to-b from-transparent to-black opacity-75"
         style={{ minHeight: "inherit" }}
       >
         <div className="container mx-auto pt-[100px] sm:pt-[170px] pb-[100px] sm:pb-[150px] flex items-center justify-center flex-col text-center px-4 sm:px-0">

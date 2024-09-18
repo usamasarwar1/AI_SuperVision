@@ -1,6 +1,8 @@
 import React from "react";
 import HeroSections from "../components/HeroSections";
 import AboutUs from "./components/AboutUs";
+import ValuesCard from "./components/ValuesCard"
+import ChoosUs from "./components/ChoosUs";
 
 const page = () => {
   const cardData = [
@@ -16,19 +18,8 @@ const page = () => {
       heading: "Who We Are",
       text: "AI Supervision is dedicated to transforming how businesses operate by providing advanced AI-driven solutions. Our vision is to empower organizations with cutting-edge technology that enhances decision-making, optimizes operations, and unlocks new opportunities for growth",
     },
-    {
-      id: 3,
-      imageUrl: "/images/aboutVlues.png",
-      heading: "Cloud Solutions",
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    },
-    {
-      id: 4,
-      imageUrl: "/images/choosUs.png",
-      heading: "Why Choose Us?",
-      text: "We understand the complexities of modern business and the need for innovative solutions. AI Supervision combines deep technical expertise with a client-focused approach, ensuring that our AI solutions are not just advanced but also practical and effective.",
-    },
-  ];
+   
+      ];
 
   return (
     <div className="bg-[#050505] mb-[50px] lg:mb-[140.79px]">
@@ -41,7 +32,8 @@ const page = () => {
         }
       />
 
-      {cardData.map((item, index) => (
+   <div className="mt-[67px]">
+    {cardData.map((item, index) => (
         <React.Fragment key={index}>
           <AboutUs
             id={index}
@@ -52,6 +44,9 @@ const page = () => {
           />
         </React.Fragment>
       ))}
+       <ValuesCard />
+       <ChoosUs />
+   </div>
     </div>
   );
 };

@@ -32,15 +32,18 @@ module.exports = {
       },
           backgroundImage: {
         "header-gradient": "linear-gradient(90deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.10) 100%)",
-        "hero-gradient": "linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%)",
-        "server-gradient": "linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%)",
-        "input-gradient": " linear-gradient(270deg, #131619 0%, #FFF 50%, #131619 100%)",
+         'server-gradient': 'linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%), url("/images/hero-serversbg.png")',
+         'contact-gradient': 'linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%), url("/images/hero-contact.png")',
+         'header-gap-gradient': "linear-gradient(to bottom, #181B22 0%, #FFF 50%, #181B23 100%)",
+        // "server-gradient": "linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%)",
+          "input-gradient": "linear-gradient(270deg, #131619 0%, #FFF 50%, #131619 100%)",
+          "trust-svg": "url(/images/icons/trust.svg)",
+          "gap-gradient": "linear-gradient(180deg, #181B22 0%, #FFF 50%, #181B23 100%)",
         "aboutVlues": " linear-gradient(90deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.10) 100%)"
           },
       backgrounds: {
         'gradient-to-r': 'linear-gradient(to right, var(--tw-gradient-stops))',
-        'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',   
-  
+        'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',     
         'gradient-to-t': 'linear-gradient(to top, var(--tw-gradient-stops))',
         'gradient-to-b': 'linear-gradient(to bottom, var(--tw-gradient-stops))',
         'gradient-to-tr': 'linear-gradient(to top right, var(--tw-gradient-stops))',
@@ -72,6 +75,9 @@ module.exports = {
       },
       backdropFilter: {
         'custom': 'blur(20px)',
+      },
+      borderRadius: {
+        'custom-bottom': '0px 0px 16px 16px',
       },
       
     },

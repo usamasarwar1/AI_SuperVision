@@ -1,5 +1,5 @@
 "use client";
-import { RiArrowDropDownLine } from "react-icons/ri";
+import { MdArrowDropDown } from "react-icons/md";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import {
@@ -52,29 +52,29 @@ export default function Header() {
   };
 
   const headerClass =
-    "py-8 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]";
+    "py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]";
 
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
       maxWidth={"full"}
-      className="fixed top-0 left-0 h-20 px-0 pt-0 pb-0 box-border bg-header-gradient z-[99] bg-[#131619] text-white public-sans"
+      className="fixed top-0 left-0 h-20 px-0 pt-0 pb-0 box-border bg-header-gradient backdrop-blur-[20px] z-[99]  text-white public-sans"
     >
       {/* Navbar Left */}
-      <NavbarContent>
+      <NavbarContent className="">
         <NavbarBrand>
           <Image
             src="images/logo.svg"
             width={200}
             height={200}
-            className="text-[#06D889] "
+            className=" w-full h-full "
             alt="Logo"
           />
         </NavbarBrand>
       </NavbarContent>
 
       {/* Navbar Center */}
-      <NavbarContent className="hidden lg:flex gap-8" justify="center">
+      <NavbarContent className="hidden lg:flex lg:gap-8" justify="center">
         <NavbarItem>
           <Link className={headerClass} href="/">
             Home
@@ -103,19 +103,25 @@ export default function Header() {
       </NavbarContent>
 
       {/* Navbar Right */}
-      <NavbarContent justify="end">
+      <NavbarContent justify="end" className="flex gap-0 md:gap-6">
         {/* Language Selector */}
         <Dropdown>
           <DropdownTrigger>
-            <Button light auto className="text-[10px] px-0 sm:text-[1rem] sm:py-2.5 sm:px-6">
+            <Button
+              light
+              auto
+              className="text-[#fff] leading-6 text-[10px] px-0 py-0 sm:text-[1rem] sm:py-2.5  h-5 md:h-10 bg-transparent flex gap-1 md:gap-[13.89px]"
+            >
               <Image
                 src="/images/flag.png"
                 alt="UK Flag"
                 width={20}
                 height={20}
-                className="hidden md:block md:w-full md:h-full"
+                className="hidden md:block md:w-full rounded-full"
               />
-              English <RiArrowDropDownLine />
+              <span className="public-sans text-[9px] sm:text-[16px]">English</span>
+              {/* Adjust the size of the dropdown icon */}
+              <MdArrowDropDown className="w-6 h-6 sm:w-20 sm:h-20 text-white" />
             </Button>
           </DropdownTrigger>
           <DropdownMenu aria-label="Language Selector">
@@ -123,10 +129,11 @@ export default function Header() {
             <DropdownItem key="spanish">Spanish</DropdownItem>
           </DropdownMenu>
         </Dropdown>
-
-        {/* Contact Button */}
+        <div className="hidden md:inline-block h-full w-[2px] bg-gap-gradient"></div>
+               {/* Contact Button */}
         <Link href="/contacts">
-          <Button className="relative rounded-full border-2 border-[#fff] bg-white text-[#000] transition duration-500 text-[10px] sm:text-[1rem] font-semibold  px-1 sm:py-2.5 sm:px-6 hover:text-[#fff] hover:bg-[#000] hover:border-[#000]">
+         
+          <Button className="relative rounded-full border-2 border-[#fff] bg-white text-[#000]  text-[10px] sm:text-[1rem] font-semibold  px-1 sm:py-2.5 sm:px-6  h-6 md:h-10">
             Contact Us
           </Button>
         </Link>
@@ -136,7 +143,7 @@ export default function Header() {
       {isMenuOpen && (
         <NavbarMenu
           ref={menuRef}
-          className="top-0 left-0 z-[9999] h-auto translate-x-0 overflow-auto bg-[#0a1019] w-[280px]"
+          className="top-0 left-0 z-[9999] h-auto translate-x-0 overflow-auto bg-[#0a1019] w-[280px] flex gap-[2px] "
         >
           <NavbarItem>
             <Link className={headerClass} href="/">
@@ -160,7 +167,7 @@ export default function Header() {
           </NavbarItem>
           <NavbarItem>
             <Link className={headerClass} href="/consultation">
-            Book a consultation
+              Book a consultation
             </Link>
           </NavbarItem>
         </NavbarMenu>

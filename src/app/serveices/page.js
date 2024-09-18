@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSections from "../components/HeroSections";
+import HeroSection from "./components/HeroSection";
 import OurServices from "./components/OurServices";
 
 const page = () => {
@@ -40,14 +40,7 @@ const page = () => {
 
   return (
     <div className="bg-[#050505] mb-[50px] lg:mb-[140.79px]">
-      <HeroSections
-        bg_image="bg-gradient-with-image-hero-services"
-        headingText=" Our AI-Powered Services"
-        headingBreakText=""
-        descripation="Transform your business with our comprehensive suite of AI
-              solutions designed"
-        descripationBreakText=" to meet your unique needs."
-      />
+      <HeroSection />
 
       {cardData.map((item, index) => (
         <React.Fragment key={index}>

@@ -29,7 +29,7 @@ const ValuesCard = () => {
   };
 
   return (
-    <section className="bg-black py-8 sm:py-12 md:py-16  md:mt-[100px]">
+    <section className="bg-black py-8 sm:py-12 md:py-16  md:mt-[145px] md:mb-[136px]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Image Section */}
