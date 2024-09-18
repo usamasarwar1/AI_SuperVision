@@ -14,7 +14,7 @@ const page = () => {
         descripationBreakText="business solutions."
       />
       <div className="container mx-auto px-4 md:px-8 mt-[83.86px]">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-5">
           <div className="col-span-12 md:col-span-7">
             <Image
               src="/images/competitive.png"
@@ -69,7 +69,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:mt-[66.33px] gap-[10px]">
+        <div className="grid grid-cols-1 lg:mt-[66.33px] gap-[10px] mt-3 md:mt-0">
           <Image
             src="/images/dataDriven.png"
             alt="data-driven"
@@ -94,7 +94,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-[10.24px] mt-[89.94px]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-[10.24px] mt-3  md:mt-[89.94px]">
           <div className="col-span-12 md:col-span-8">
             <Image
               src="/images/scalableSolutions.png"

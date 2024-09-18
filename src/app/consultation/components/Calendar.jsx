@@ -48,7 +48,7 @@ export default function Calendar() {
 
         {/* Right Section */}
         <div className="lg:w-2/3 p-4 sm:p-6">
-        <h1 className="poppins-medium text-[#DEDEDE] text-xl lg:text-2xl lg:mb-[21.21px]">Select a Date & Time</h1>
+        <h1 className="poppins-medium text-[#DEDEDE] text-xl lg:text-2xl mb-3 lg:mb-[21.21px]">Select a Date & Time</h1>
 
           <div className="border border-[#262626] rounded-[10px] p-4 sm:p-6">
             <div className="flex flex-col lg:flex-row gap-[35.16px]">
@@ -95,7 +95,7 @@ export default function Calendar() {
                             "p-1 sm:p-2 text-center h-10 sm:h-12 grid place-content-center text-xs sm:text-sm",
                             selectDate.toDate().toDateString() ===
                               date.toDate().toDateString()
-                              ? "flex p-[11px_17px] flex-col justify-center items-center gap-[10px] flex-[1_0_0] self-stretch rounded-[6px] bg-black"
+                              ? "selectedDate"
                               : ""
                           )}
                         >
