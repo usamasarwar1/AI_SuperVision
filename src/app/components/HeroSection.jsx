@@ -11,9 +11,17 @@ const ServiceItem = ({ index, title, description, icon, active, onClick }) => {
         active ? "border-l-4 border-white" : "border-l-4 border-[#181818]"
       }`}
     >
-      <Image className="text-3xl mt-2" alt="hero-icon" src={icon} width={24} height={24} />
+      <Image
+        className="text-3xl mt-2"
+        alt="hero-icon"
+        src={icon}
+        width={24}
+        height={24}
+      />
       <div>
-        <h3 className="text-xl sm:text-2xl font-bold poppins-medium">{title}</h3>
+        <h3 className="text-xl sm:text-2xl font-bold poppins-medium">
+          {title}
+        </h3>
         <p className="text-[#989898] poppins-regular text-sm sm:text-base">
           {description}
         </p>
@@ -37,14 +45,20 @@ const HeroSection = () => {
           style={{ minHeight: "inherit" }}
         >
           <div className="container mx-auto  flex flex-col items-center justify-center text-center gap-4 md:gap-6">
-            <Image src="/images/herosection.svg" alt="logo" width={50} height={50} />
+            <Image
+              src="/images/herosection.svg"
+              alt="logo"
+              width={50}
+              height={50}
+            />
             <h2 className="public-sans text-[#DEDEDE] text-3xl sm:text-5xl font-bold leading-9 md:leading-[83.2px] text-center">
               Innovative Solutions for
-              <br className="hidden md:inline-block"/>
+              <br className="hidden md:inline-block" />
               Your Business Growth
             </h2>
             <p className="public-sans font-normal text-sm sm:text-base leading-relaxed text-[#fff] text-[18px]">
-              Empowering your business with cutting-edge technology and strategic expertise.
+              Empowering your business with cutting-edge technology and
+              strategic expertise.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:mt-6">
               <button className="public-sans text-sm sm:text-base rounded-full font-semibold  bg-[#fff] px-[26px] py-[13px] text-center z-[1] cursor-default">

@@ -123,7 +123,7 @@ export default function Header() {
         <div className="bg-header-gap-gradient w-[2px] h-16 hidden md:inline-block"></div>
         {/* Contact Button */}
         <Link href="/contacts">
-          <Button className="relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6  sm:h-10">
+          <Button className="relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6  sm:h-10 cursor-default hover:bg-[#fff]">
             Contact Us
           </Button>
         </Link>

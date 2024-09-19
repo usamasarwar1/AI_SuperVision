@@ -31,7 +31,7 @@ const page = () => {
                 <h2 className="text-[#DEDEDE] poppins-medium text-[14px] lg:text-[16px] leading-[130%]">
                   Optimize Your Operations
                 </h2>
-                <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-3">
+                <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-1">
                   With AI Supervision, your business gains a competitive edge by
                   leveraging cutting-edge AI technology. Our solutions are
                   designed to enhance productivity, improve decision-making, and
@@ -58,7 +58,7 @@ const page = () => {
                 <h2 className="text-[#DEDEDE] poppins-medium text-[14px] lg:text-[16px] leading-[130%]">
                   Optimize Your Operations
                 </h2>
-                <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-3">
+                <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-1">
                   Our AI solutions streamline processes, reduce operational
                   costs, and eliminate inefficiencies. By automating routine
                   tasks and providing actionable insights, we help you achieve
@@ -113,7 +113,7 @@ const page = () => {
               <h2 className="text-[#B8B9BA] poppins-medium text-[14px] md:text-[16px] leading-[130%]">
                 Grow with Confidence
               </h2>
-              <p className="poppins-light  text-[12px] md:text-[14px] font-normal leading-[24px] text-[#B8B9BA] opacity-70 mt-3">
+              <p className="poppins-light  text-[12px] md:text-[14px] font-normal leading-[24px] text-[#B8B9BA] opacity-70 mt-1">
                 As your business grows, so do your AI needs. Our scalable
                 solutions are designed to grow with you, ensuring that you can
                 continue to benefit from AI as your operations expand.
