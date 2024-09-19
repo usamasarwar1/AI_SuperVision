@@ -65,7 +65,7 @@
 }
 .late-date {
   text-align: center;
-  font-family: Lato;
+  font-family:"lato", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -74,7 +74,7 @@
 .late-day {
   color: #dedede;
   text-align: center;
-  font-family: Lato;
+  font-family:"lato", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -84,8 +84,8 @@
   font-family: "lato", sans-serif;
   font-style: normal;
   font-weight: normal;
-  line-height: 118.75%;
-  color: #dedede;
+  /* line-height: 118.75%;
+  color: #dedede; */
 }
 .public-sans {
   font-family: "Public Sans", sans-serif;
@@ -365,21 +365,6 @@
   width: calc(80% - 10px);
   right: 0;
 }
-
-/* .selectedDate {
-  display: flex;
-  padding: 11px 17px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex: 1 0 0;
-  align-self: stretch;
-  border: 1px !important;
-  border-color: #6185f2 !important;
-  border-radius: 6px !important;
-  background: #000;
-} */
 
 .text-area {
   margin-top: 30px !important;

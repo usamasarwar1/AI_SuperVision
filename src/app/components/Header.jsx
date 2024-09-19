@@ -49,7 +49,10 @@ export default function Header() {
       {/* Navbar Left */}
       <NavbarContent>
         <NavbarBrand>
+         
+          <Link href="/">
           <Image src="images/logo.svg" width={200} height={200} alt="Logo" />
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 

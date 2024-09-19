@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const AboutUs = ({ id, imageUrl, heading, text }) => {
+const AboutUs = ({ id, videoUrl, heading, text }) => {
   
   return (
     <div className="container mx-auto p-6  md:p-0 mt-4">
@@ -16,15 +16,24 @@ const AboutUs = ({ id, imageUrl, heading, text }) => {
             <div
               className={`${
                 id % 2 === 0 ? "order-1" : "order-2"
-              } col-span-12 md:col-span-5 gap-12`}
+              } col-span-12 md:col-span-5 gap-12 lg:flex lg:justify-end `}
             >
-             <Image
-                src={imageUrl}
-                alt={`Image for card ${id}`}
-                width={496.37}
-                height={300}
-                className="lg:w-[496.37px] lg:h-[294.15px] h-full w-full rounded-lg"
-              />
+      <div className="lg:w-[496.37px] lg:h-[294.15px] h-full w-full rounded-lg overflow-hidden">    
+      <video
+        src={videoUrl}
+        width={496.37}
+        height={300}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="lg:w-[496.37px] lg:h-[294.15px]  h-full w-full rounded-lg object-cover flex justify-end"
+      />
+      <div className="text-white p-4">
+        <h2 className="text-lg font-bold">{heading}</h2>
+        <p className="text-sm">{text}</p>
+      </div>
+    </div>
             </div>
 
             <div

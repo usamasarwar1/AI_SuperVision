@@ -8,13 +8,13 @@ const page = () => {
   const cardData = [
     {
       id: 1,
-      imageUrl: "/images/exporties.png",
+      videoUrl: "/videos/exporties.mp4",
       heading: "Our Expertise",
       text: "With a team of AI experts, data scientists, and industry specialists, AI Supervision delivers tailored solutions that address the unique challenges faced by businesses today. We specialize in integrating AI into various aspects of business operations, ensuring our clients stay ahead in a competitive market.",
     },
     {
       id: 2,
-      imageUrl: "/images/whoAbout.png",
+      videoUrl: "/videos/whoAbout.mp4",
       heading: "Who We Are",
       text: "AI Supervision is dedicated to transforming how businesses operate by providing advanced AI-driven solutions. Our vision is to empower organizations with cutting-edge technology that enhances decision-making, optimizes operations, and unlocks new opportunities for growth",
     },
@@ -37,7 +37,7 @@ const page = () => {
         <React.Fragment key={index}>
           <AboutUs
             id={index}
-            imageUrl={item.imageUrl}
+            videoUrl={item.videoUrl}
             heading={item.heading}
             text={item.text}
             subText={item.subText}

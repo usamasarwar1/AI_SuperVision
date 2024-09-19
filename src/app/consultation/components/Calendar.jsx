@@ -11,18 +11,15 @@ export default function BookingWidget() {
   const currentDate = dayjs();
   const [today, setToday] = useState(currentDate);
   const [selectDate, setSelectDate] = useState(currentDate);
-  const [selectedTime, setSelectedTime] = useState(""); 
- 
+  const [selectedTime, setSelectedTime] = useState("");
 
   const handleSubmit = () => {
-   
     const bookingData = {
       date: selectDate.format("MMMM D, YYYY"),
       time: selectedTime,
     };
-    console.log("Booking confirmed: ", bookingData);    
+    console.log("Booking confirmed: ", bookingData);
   };
-
 
   return (
     <div className="container mx-auto p-4 sm:p-0 lg:p-8 md:mt-[36.37px]">
@@ -33,7 +30,13 @@ export default function BookingWidget() {
             30 Minute Initial Consultation
           </h2>
           <div className="flex items-center gap-2 lg:[6px] md:mb-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="21"
+              height="21"
+              viewBox="0 0 21 21"
+              fill="none"
+            >
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -46,11 +49,13 @@ export default function BookingWidget() {
             </span>
           </div>
           <p className="poppins-regular text-[#B8B9BA] text-sm sm:text-base">
-            Schedule your free 30-minute initial consultation. Select a convenient date and time.
+            Schedule your free 30-minute initial consultation. Select a
+            convenient date and time.
           </p>
-          <button 
+          <button
             onClick={handleSubmit}
-           className="public-sans mt-9 md:mt-[49px] text-base text-white font-semibold tracking-wider rounded-full bg-black px-6 py-3 border-2 border-white cursor-default">
+            className="public-sans mt-9 md:mt-[49px] text-base text-white font-semibold tracking-wider rounded-full bg-black px-6 py-3 border-2 border-white cursor-default"
+          >
             Get a Free Consultation
           </button>
         </div>
@@ -76,7 +81,7 @@ export default function BookingWidget() {
                     className="text-[#DEDEDE] text-lg sm:text-xl cursor-pointer"
                     onClick={() => setToday(currentDate)}
                   >
-                    <span className="lato-normal">
+                    <span className="lato-normal text-[#dedede] leading-[118.75%]">
                       {months[today.month()]}, {today.year()}
                     </span>
                   </h2>
@@ -89,48 +94,61 @@ export default function BookingWidget() {
                 </div>
                 <div className="grid grid-cols-7 gap-2 text-center mb-4">
                   {days.map((day, index) => (
-                    <div key={index} className="text-[#DEDEDE] text-xs sm:text-sm">
-                      {day}
+                    <div
+                      key={index}
+                      className="text-[#DEDEDE] text-xs sm:text-sm"
+                    >
+                      <span className="late-day"> {day}</span>
                     </div>
                   ))}
                 </div>
                 <div className="grid grid-cols-7 gap-2">
-                  {generateDate(today.month(), today.year()).map(({ date, currentMonth, today }, index) => (
-                    <div
-                      key={index}
-                      className={cn(
-                        "p-2 sm:p-3 text-center cursor-pointer text-xs sm:text-sm rounded-full font-semibold transition-colors",
-                       selectedTime && today ? "flex flex-col justify-center items-center p-[8px_13px]  md:p-[11px_17px] gap-2.5 flex-1 self-stretch border border-[#6185F2] border-solid rounded-md bg-black" : "",
-                        !currentMonth ? "text-gray-500" : "text-gray-300",
-                        selectDate.isSame(date, "day") ? "flex flex-col justify-center items-center p-[7px_13px] md:p-[11px_17px] gap-2.5 flex-1 self-stretch border border-[#6185F2] border-solid rounded-md bg-black" : ""
-                      )}
-                      onClick={() => setSelectDate(date)}
-                    >
-                      {date.date()}
-                    </div>
-                  ))}
+                  {generateDate(today.month(), today.year()).map(
+                    ({ date, currentMonth, today }, index) => (
+                      <div
+                        key={index}
+                        className={cn(
+                          "p-2 sm:p-3 text-center text-xs sm:text-sm rounded-full font-semibold transition-colors",
+                          selectedTime && today
+                            ? "flex flex-col justify-center items-center p-[8px_13px] md:p-[11px_17px] gap-2.5 flex-1 self-stretch border border-[#6185F2] border-solid rounded-md bg-black"
+                            : "",
+                          !currentMonth
+                            ? "text-[#e3e5f533]"
+                            : "text-[#e3e5f599] cursor-default",
+                          selectDate.isSame(date, "day")
+                            ? "flex flex-col justify-center items-center p-[7px_13px] md:p-[11px_17px] gap-2.5 flex-1 self-stretch border border-[#6185F2] border-solid rounded-md bg-black"
+                            : ""
+                        )}
+                        onClick={() => currentMonth && setSelectDate(date)}
+                      >
+                        <span className="late-date">{date.date()}</span>
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
 
               {/* Time Selection */}
               <div className="w-full lg:w-2/5">
-              <h3 className="text-[#DEDEDE] text-lg mb-4">
+                <h3 className="text-[#DEDEDE] text-lg mb-4">
                   <span className="text-[#DEDEDE] poppins-regular">
                     {selectDate.format("MMMM D, YYYY")}
                   </span>
                 </h3>
-              
+
                 <div className="flex flex-col gap-[16.75px]">
                   {["11:00 am", "12:00 am", "1:00 am", "02:00 am"].map(
                     (time, i) => (
                       <button
                         key={i}
                         onClick={() => setSelectedTime(time)}
-                        className={`lato-normal border ${
-                          selectedTime === time ? "border-[#6185F2]" : "border-[#f4f4ff1f]"
+                        className={` border ${
+                          selectedTime === time
+                            ? "border-[#6185F2]"
+                            : "border-[#f4f4ff1f]"
                         } py-3 px-6 rounded-full bg-[#0D0D0D] cursor-default  transition-colors`}
                       >
-                        <span className="text-[#DEDEDE] text-base sm:text-lg">
+                        <span className="lato-normal  leading-[118.75%] text-[#DEDEDE] text-base sm:text-lg">
                           {time}
                         </span>
                       </button>

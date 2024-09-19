@@ -39,7 +39,17 @@ const HeroSection = () => {
 
   return (
     <div>
-      <div className=" min-h-[600px] md:min-h-[810px] relative bg-hero-gradient bg-cover bg-no-repeat bg-center bg-gradient-with-image-hero-section">
+      <div className=" min-h-[600px] md:min-h-[810px] relative bg-hero-gradient bg-cover bg-no-repeat bg-center">
+      <video
+        src="/videos/herobg.mp4"
+        width={500}
+        height={500}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="h-full w-full rounded-lg object-cover bg-hero-gradient"
+      />
         <div
           className="flex w-full h-full absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75"
           style={{ minHeight: "inherit" }}
@@ -51,12 +61,13 @@ const HeroSection = () => {
               width={50}
               height={50}
             />
-            <h2 className="public-sans text-[#DEDEDE] text-3xl sm:text-5xl font-bold leading-9 md:leading-[83.2px] text-center">
+          
+            <h2 className="public-sans text-[#DEDEDE] text-3xl sm:text-[64px]  font-bold leading-9 md:leading-[83.2px] text-center">
               Innovative Solutions for
               <br className="hidden md:inline-block" />
               Your Business Growth
             </h2>
-            <p className="public-sans font-normal text-sm sm:text-base leading-relaxed text-[#fff] text-[18px]">
+            <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#fff] text-[18px]">
               Empowering your business with cutting-edge technology and
               strategic expertise.
             </p>
@@ -80,6 +91,7 @@ const HeroSection = () => {
                 auto
                 shadow
                 size="lg"
+                // 242425
                 className="bg-[#050505] border  border-[#fff] text-white font-bold w-full rounded-lg p-4 md:p-9 text-[16px] md:text-xl poppins-medium flex items-center justify-between"
                 iconRight={<span className="ml-2">→</span>}
               >

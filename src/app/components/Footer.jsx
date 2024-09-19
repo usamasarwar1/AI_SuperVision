@@ -34,22 +34,34 @@ const Footer = () => {
             </h2>
             <ul className="flex flex-col gap-4">
               <li className={commonClasses}>
-                <Link href={"/"}>Home</Link>
+                <Link href={"/"} className="public-sans-regular">
+                  Home
+                </Link>
               </li>
               <li className={commonClasses}>
-                <Link href={"/"}>About Us</Link>
+                <Link href={"/about"} className="public-sans-regular">
+                  About Us
+                </Link>
               </li>
               <li className={commonClasses}>
-                <Link href={"/"}>Services</Link>
+                <Link href={"/services"} className="public-sans-regular">
+                  Services
+                </Link>
               </li>
               <li className={commonClasses}>
-                <Link href={"/"}>Benefits</Link>
+                <Link href={"/benefits"} className="public-sans-regular">
+                  Benefits
+                </Link>
               </li>
               <li className={commonClasses}>
-                <Link href={"/"}>Blogs</Link>
+                <Link href={"/consultation"} className="public-sans-regular">
+                  Blogs
+                </Link>
               </li>
               <li className={commonClasses}>
-                <Link href={"/"}>Contact us</Link>
+                <Link href={"/contacts"} className="public-sans-regular">
+                  Contact us
+                </Link>
               </li>
             </ul>
           </div>
@@ -165,53 +177,81 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
         <div className="w-full public-sans">
           <div className="container mx-auto px-4 py-6 md:px-6 lg:px-8">
-            <div className="grid grid-cols-2  md:grid-cols-4 lg:grid-cols-4 gap-1 sm:gap-8 md:gap-10 lg:gap-12">
-              <div className="border-t-1 border-[#131619] flex items-center text-white py-4 px-2">
-                <span className="mr-3">
-                  <Image
-                    src="/images/YouTube.png"
-                    alt="YouTube logo"
-                    width={30}
-                    height={30}
-                  />
-                </span>
-                YouTube
-              </div>
-              <div className="border-t-1 border-[#131619] flex items-center text-white py-4 px-2">
-                <span className="mr-3">
-                  <Image
-                    src="/images/LinkedIn.png"
-                    alt="LinkedIn logo"
-                    width={30}
-                    height={30}
-                  />
-                </span>
-                LinkedIn
-              </div>
-              <div className="border-t-1 border-[#131619] flex items-center text-white py-4 px-2">
-                <span className="mr-3">
-                  <Image
-                    src="/images/Instagram.png"
-                    alt="Instagram logo"
-                    width={30}
-                    height={30}
-                  />
-                </span>
-                Instagram
-              </div>
-              <div className="border-t-1 border-[#131619] flex items-center text-white py-4 px-2">
-                <span className="mr-3">
-                  <Image
-                    src="/images/Facebook.png"
-                    alt="Facebook logo"
-                    width={30}
-                    height={30}
-                  />
-                </span>
-                Facebook
-              </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-1 sm:gap-8 md:gap-10 lg:gap-12">
+              <Link
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="border-t-1 border-[#131619] flex items-center text-white py-4 px-2 cursor-pointer">
+                  <span className="mr-3">
+                    <Image
+                      src="/images/YouTube.png"
+                      alt="YouTube logo"
+                      width={30}
+                      height={30}
+                    />
+                  </span>
+                  <span className="public-sans-regular">YouTube</span>
+                </div>
+              </Link>
+
+              <Link
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="border-t-1 border-[#131619] flex items-center text-white py-4 px-2 cursor-pointer">
+                  <span className="mr-3">
+                    <Image
+                      src="/images/LinkedIn.png"
+                      alt="LinkedIn logo"
+                      width={30}
+                      height={30}
+                    />
+                  </span>
+                  <span className="public-sans-regular">LinkedIn</span>
+                </div>
+              </Link>
+
+              <Link
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="border-t-1 border-[#131619] flex items-center text-white py-4 px-2 cursor-pointer">
+                  <span className="mr-3">
+                    <Image
+                      src="/images/Instagram.png"
+                      alt="Instagram logo"
+                      width={30}
+                      height={30}
+                    />
+                  </span>
+                  <span className="public-sans-regular">Instagram</span>
+                </div>
+              </Link>
+
+              <Link
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="border-t-1 border-[#131619] flex items-center text-white py-4 px-2 cursor-pointer">
+                  <span className="mr-3">
+                    <Image
+                      src="/images/Facebook.png"
+                      alt="Facebook logo"
+                      width={30}
+                      height={30}
+                    />
+                  </span>
+                  <span className="public-sans-regular">Facebook</span>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -219,17 +259,17 @@ const Footer = () => {
         <div className="w-full bg-[#131619] public-sans">
           <div className="container mx-auto py-[15px] ">
             <div className="flex flex-col md:flex-row justify-between items-center ">
-              <p className="text-[#989898] text-[14px]">
+              <p className="poppins-regular text-[#989898] text-[14px]">
                 © 2024 AI Supervision
               </p>
               <div className="flex justify-center md:justify-end gap-6 lg:mt-0 md:mt-0 sm:mt-4 mt-4">
-                <Link href="/" className={"text-[#989898]"}>
+                <Link href="/" className={"poppins-regular leading-5 text-[#989898]"}>
                   Terms
                 </Link>
-                <Link href="/" className={"text-[#989898]"}>
+                <Link href="/" className={"poppins-regular leading-5 text-[#989898]"}>
                   Privacy
                 </Link>
-                <Link href="/" className={"text-[#989898]"}>
+                <Link href="/" className={"poppins-regular leading-5 text-[#989898]"}>
                   Cookies
                 </Link>
               </div>

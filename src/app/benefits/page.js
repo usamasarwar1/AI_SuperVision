@@ -16,13 +16,16 @@ const page = () => {
       <div className="container mx-auto px-4 md:px-8 mt-[83.86px]">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-5">
           <div className="col-span-12 md:col-span-7">
-            <Image
-              src="/images/competitive.png"
-              alt="competitive"
-              width={700}
-              height={250}
-              className="w-full max-h-[250px] rounded-[14px] object-cover"
-            />
+           <video
+        src="/videos/competitive.mp4"
+        width={700}
+        height={250}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full max-h-[250px] rounded-[14px] object-cover"
+      />
             <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px] h-auto lg:max-h-[198.67px]">
               <div className="flex flex-col justify-center text-left">
                 <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[40px] leading-[130%]">
@@ -43,13 +46,16 @@ const page = () => {
           </div>
 
           <div className="col-span-12 md:col-span-5">
-            <Image
-              src="/images/efficiency.png"
-              alt="efficiency"
-              width={700}
-              height={255}
-              className="w-full h-[250px] rounded-[14px] object-cover"
-            />
+                          <video
+        src="/videos/efficiency.mp4"
+        width={700}
+        height={255}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-[250px] rounded-[14px] object-cover"
+      />
             <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px] h-auto lg:max-h-[198.67px]">
               <div className="flex flex-col justify-center text-left">
                 <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[40px] leading-[130%]">
@@ -70,13 +76,17 @@ const page = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:mt-[66.33px] gap-[10px] mt-3 md:mt-0">
-          <Image
-            src="/images/dataDriven.png"
-            alt="data-driven"
-            width={700}
-            height={501}
-            className="w-full max-h-[501px] rounded-[14px] object-cover"
-          />
+         
+      <video
+        src="/videos/dataDriven.mp4"
+        width={700}
+        height={501}
+        autoPlay
+        loop
+        muted
+        playsInline
+      className="w-full max-h-[501px] rounded-[14px] object-cover"
+      />
           <div className="bg-[#131619] rounded-[16px] p-4 md:p-[20.35px_30px_30.57px_78px]">
             <div className="flex flex-col justify-center text-left">
               <h1 className="text-[#DEDEDE] poppins-medium text-[24px] md:text-[40px] leading-[130%]">
@@ -96,13 +106,24 @@ const page = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[10.24px] mt-3  md:mt-[89.94px]">
           <div className="col-span-12 md:col-span-8">
-            <Image
+            {/* <Image
               src="/images/scalableSolutions.png"
               alt="scalable-solutions"
               width={500}
               height={500}
               className="object-cover w-full h-full rounded-[14px]"
-            />
+            /> */}
+               
+      <video
+        src="/videos/scalableSolutions.mp4"
+        width={500}
+        height={300}
+        autoPlay
+        loop
+        muted
+        playsInline
+    className="object-cover w-full h-[228.53px] rounded-[14px]"
+      />
           </div>
 
           <div className="col-span-12 md:col-span-4">
