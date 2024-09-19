@@ -366,7 +366,7 @@
   right: 0;
 }
 
-.selectedDate {
+/* .selectedDate {
   display: flex;
   padding: 11px 17px;
   flex-direction: column;
@@ -379,7 +379,7 @@
   border-color: #6185f2 !important;
   border-radius: 6px !important;
   background: #000;
-}
+} */
 
 .text-area {
   margin-top: 30px !important;
@@ -429,4 +429,58 @@
 .ReactFlagsSelect-module_flagsSelect__2pfa2 ul {
   position: absolute !important;
   top: 70px !important;
+}
+
+
+@media (max-width: 640px){
+  .ReactFlagsSelect-module_selectBtn__19wW7{
+    padding-left: 0px !important;
+   justify-content: start !important;
+   gap: 0px !important;
+  }
+  .ReactFlagsSelect-module_selectFlag__2q5gC svg {
+   display: none !important;
+  }
+  .ReactFlagsSelect-module_selectBtn__19wW7::after {
+    border-top: 5px solid #fff !important;
+    border-left: 5px solid transparent !important;
+    border-right: 5px solid transparent !important;
+    border-bottom: 0 !important;
+  }
+  .ReactFlagsSelect-module_selectBtn__19wW7 span {
+       font-size: 14px;
+       padding-left: 0%;
+   
+  }
+  .ReactFlagsSelect-module_selectValue__152eS{
+    padding: 0% !important;
+  }
+  /* Drowp down box */
+
+.ReactFlagsSelect-module_flagsSelect__2pfa2 ul {
+   top: 50px !important;
+}
+.ReactFlagsSelect-module_selectOptionValue__vS99- span {
+   font-weight: 500 !important;
+  font-size: 12px !important;
+}
+/* search box */
+.ReactFlagsSelect-module_filterBox__3m8EU input {
+ font-size: 14px !important;
+  height: 30px !important;
+  font-weight: 500 !important;
+}
+}
+
+@media (max-width: 480px) {
+  .ReactFlagsSelect-module_selectBtn__19wW7 span {
+        font-size: 10px !important;
+    }
+    .ReactFlagsSelect-module_selectOptionValue__vS99- span {
+      font-weight: 400 !important;
+     font-size: 12px !important;
+   }
+   .ReactFlagsSelect-module_flagsSelect__2pfa2 ul {
+      top: 48px !important;
+  }
 }

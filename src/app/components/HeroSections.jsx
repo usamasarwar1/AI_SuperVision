@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroSections = ({bg_image, headingText, descripation, headingBreakText, descripationBreakText}) => {
   return (
-    <div className={`public-sans mb-[59.12px] min-h-[600px] sm:min-h-[810px] relative bg-server-gradient bg-cover bg-no-repeat bg-center ${bg_image}`}
+    <div className={`public-sans mb-[59.12px] min-h-[600px] md:min-h-[810px] relative bg-server-gradient bg-cover bg-no-repeat bg-center ${bg_image}`}
          
     // style={{ 'image-with-gradient': 'linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%), url("/images/hero-serversbg.png")',  }}
     >
@@ -14,7 +14,7 @@ const HeroSections = ({bg_image, headingText, descripation, headingBreakText, de
       >
         <div className="container mx-auto pt-[100px] sm:pt-[170px] pb-[100px] sm:pb-[150px] flex items-center justify-center flex-col text-center px-4 sm:px-0">
           {/* Main Heading */}
-          <h2 className="text-[28px] sm:text-[38px] lg:text-[48px] xl:text-[64px] font-bold mb-6 sm:mb-8 leading-tight sm:leading-[1.3] text-white">
+          <h2 className="text-[28px] sm:text-[38px] lg:text-[48px] xl:text-[64px] font-bold sm:mb-2 md:mb-6  leading-tight sm:leading-[1.3] text-white">
            {headingText}
             <br />
             <span className="block">{headingBreakText}</span>

@@ -31,12 +31,12 @@ const HeroSection = () => {
 
   return (
     <div>
-      <div className=" min-h-[810px] relative bg-hero-gradient bg-cover bg-no-repeat bg-center bg-gradient-with-image-hero-section">
+      <div className=" min-h-[600px] md:min-h-[810px] relative bg-hero-gradient bg-cover bg-no-repeat bg-center bg-gradient-with-image-hero-section">
         <div
           className="flex w-full h-full absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75"
           style={{ minHeight: "inherit" }}
         >
-          <div className="container mx-auto  flex flex-col items-center justify-center text-center gap-6">
+          <div className="container mx-auto  flex flex-col items-center justify-center text-center gap-4 md:gap-6">
             <Image src="/images/herosection.svg" alt="logo" width={50} height={50} />
             <h2 className="public-sans text-[#DEDEDE] text-3xl sm:text-5xl font-bold leading-9 md:leading-[83.2px] text-center">
               Innovative Solutions for
@@ -62,11 +62,11 @@ const HeroSection = () => {
           {/* Left Image Card */}
           <div className="relative h-[50vh] md:h-full bg-no-repeat bg-cover rounded-xl bg-[url('/images/ourServices.png')] bg-[#050505]">
             <div className="bg-transparent relative p-0 sm:p-4 flex justify-center items-center">
-              <button
+              <Button
                 auto
                 shadow
                 size="lg"
-                className="bg-[#050505] border  border-[#fff] text-white font-bold w-full rounded-lg p-9 text-xl poppins-medium flex items-center justify-between"
+                className="bg-[#050505] border  border-[#fff] text-white font-bold w-full rounded-lg p-4 md:p-9 text-[16px] md:text-xl poppins-medium flex items-center justify-between"
                 iconRight={<span className="ml-2">→</span>}
               >
                 Our Core Services
@@ -92,7 +92,7 @@ const HeroSection = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </button>
+              </Button>
             </div>
           </div>
 

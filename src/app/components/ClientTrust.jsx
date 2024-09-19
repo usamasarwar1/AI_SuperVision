@@ -27,10 +27,10 @@ const ClientTrust = () => {
 
   return (
    <>
-   <div className="container mx-auto mt-[120px]">
+   <div className="container mx-auto mt-[120px] p-4 md:p-0">
     <div className="grid grid-cols-4 gap-[20px]">
       <div className="col-span-12 mb-[50px]">
-        <h2 className="text-[40px] text-center text-white poppins-medium ">Why Our Clients Trust Us</h2>
+        <h2 className="text-xl md:text-[40px] text-center text-white poppins-medium ">Why Our Clients Trust Us</h2>
       </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 place-content-center">
