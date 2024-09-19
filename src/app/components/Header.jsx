@@ -74,7 +74,7 @@ export default function Header() {
         <NavbarItem>
           <Link
             className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
-            href="/serveices"
+            href="/services"
           >
             Services
           </Link>
@@ -100,25 +100,6 @@ export default function Header() {
       {/* Navbar Right */}
       <NavbarContent justify="end" className="flex gap-2 md:gap-6">
         {/* Language Selector */}
-        <Dropdown>
-          {/* <DropdownTrigger>
-            <Button
-              light
-              auto
-              className="text-[#fff] leading-6 text-[10px] px-0 py-0 sm:text-[1rem] sm:py-2.5 h-5 md:h-10 bg-transparent flex gap-1 md:gap-[13.89px]"
-            >
-              <Image
-                src="/images/flag.png"
-                alt="Selected Flag"
-                width={20}
-                height={20}
-                className="hidden md:block md:w-full rounded-full"
-              />
-              <span className="public-sans text-[9px] sm:text-[16px]">English</span>
-              <MdArrowDropDown className="w-6 h-6 sm:w-20 sm:h-20 text-white" />
-            </Button>
-          </DropdownTrigger> */}
-        </Dropdown>
         <div className="relative z-50 mt-2 !border-none border-[0px]">
           <div className="border-none public-sans text-[16px] text-white">
             <ReactFlagsSelect
@@ -135,11 +116,11 @@ export default function Header() {
               alignOptionsToRight={false}
               fullWidth={true}
               disabled={false}
-              className="custom-flag-select" /* Apply the custom class */
+              className="custom-flag-select"
             />
           </div>
         </div>
-              <div className="bg-header-gap-gradient w-[2px] h-16 hidden md:inline-block"></div>
+        <div className="bg-header-gap-gradient w-[2px] h-16 hidden md:inline-block"></div>
         {/* Contact Button */}
         <Link href="/contacts">
           <Button className="relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6  sm:h-10">
