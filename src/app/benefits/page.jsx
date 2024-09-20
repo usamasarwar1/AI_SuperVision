@@ -28,7 +28,7 @@ const page = () => {
       />
             <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px] h-auto lg:max-h-[198.67px]">
               <div className="flex flex-col justify-center text-left">
-                <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[40px] leading-[130%]">
+                <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[30px] xl:text-[40px]  leading-[130%]">
                   Competitive Advantage
                 </h1>
                 <h2 className="text-[#DEDEDE] poppins-medium text-[14px] lg:text-[16px] leading-[130%]">
@@ -49,22 +49,22 @@ const page = () => {
                           <video
         src="/videos/efficiency.mp4"
         width={700}
-        height={255}
+        height={226}
         autoPlay
         loop
         muted
         playsInline
-        className="w-full h-[250px] rounded-[14px] object-cover"
+        className="w-full h-[250px] md:max-h-[226px] lg:max-h-[250px] rounded-[14px] object-cover"
       />
-            <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px] h-auto lg:max-h-[198.67px]">
+            <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px] h-auto lg:max-h-[198.67px] mb-0 md:mb-3 lg:mb-0 ">
               <div className="flex flex-col justify-center text-left">
-                <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[40px] leading-[130%]">
+                <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[30px] xl:text-[40px] leading-[130%]">
                   Increased Efficiency
                 </h1>
                 <h2 className="text-[#DEDEDE] poppins-medium text-[14px] lg:text-[16px] leading-[130%]">
                   Optimize Your Operations
                 </h2>
-                <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-1">
+                <p className="poppins-light text-[12px] md:text-[12px] lg:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-1">
                   Our AI solutions streamline processes, reduce operational
                   costs, and eliminate inefficiencies. By automating routine
                   tasks and providing actionable insights, we help you achieve

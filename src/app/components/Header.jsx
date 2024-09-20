@@ -2,6 +2,7 @@
 import { MdArrowDropDown } from "react-icons/md";
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Navbar,
   NavbarBrand,
@@ -10,7 +11,6 @@ import {
   NavbarMenu,
   NavbarContent,
   NavbarItem,
-  Link,
   Button,
   Dropdown,
   DropdownTrigger,
@@ -19,34 +19,19 @@ import {
 } from "@nextui-org/react";
 
 import { useLanguage } from "../context/LanguageContext";
-
-
+import en from "../../api/en.json";
+import ar from "../../api/ar.json";
 
 const translations = {
-  en: {
-    home: "Home",
-    about: "About Us",
-    services: "Services",
-    benefits: "Benefits",
-    consultation: "Book a consultation",
-    contact: "Contact Us",
-  },
-  ar: {
-    home: "الصفحة الرئيسية",
-    about: "معلومات عنا",
-    services: "خدماتنا",
-    benefits: "المزايا",
-    consultation: "احجز استشارة",
-    contact: "اتصل بنا",
-  },
+  en,
+  ar,
 };
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const {language, setLanguage} = useLanguage();
+  const { language, setLanguage } = useLanguage();
 
- 
-  // const [language, setLanguage] = useState("en"); 
+  // const [language, setLanguage] = useState("en");
   const menuRef = useRef(null);
 
   // Close the menu if clicking outside
@@ -55,9 +40,6 @@ export default function Header() {
       setIsMenuOpen(false);
     }
   };
-
-
- 
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -139,47 +121,64 @@ export default function Header() {
           <DropdownTrigger className="">
             <Button className="bg-transparent !px-0 md:px-4">
               <Image
-                src={language === "en" ? "/images/flag.png" : "/images/Flag_of_Saudi_Arabia.png"}
+                src={
+                  language === "en"
+                    ? "/images/flag.png"
+                    : "/images/Flag_of_Saudi_Arabia.png"
+                }
                 alt={language === "en" ? "UK Flag" : "Saudi Arabia Flag"}
                 width={24}
                 height={16}
-                className="mr-2 w-8 h-8 object-fit rounded-full hidden md:inline-block"
-               />
-             <span className="public-sans text-[10px] sm:text-[16px] md:leading-6 text-[#FFFFFF]">{language === "en" ? "English" : "العربية"}</span>
-              <MdArrowDropDown  className="text-[#FFFFFF] lg:w-8 lg:h-8"/>
-              
+                className="mr-2 w-6 h-6 md:w-8 md:h-8 object-fit rounded-full"
+              />
+              <span className="public-sans text-[16px] md:leading-6 text-[#FFFFFF]">
+                {language === "en" ? "English" : "العربية"}
+              </span>
+              <MdArrowDropDown className="text-[#FFFFFF] lg:w-8 lg:h-8" />
             </Button>
           </DropdownTrigger>
           <DropdownMenu
             aria-label="Language selection"
             onAction={(key) => handleLanguageChange(key)}
-            variant = "faded"
+            variant="faded"
             classNames="w-8 bg-red-500"
           >
             <DropdownItem key="en" className=" border-none">
-             <div className="flex justify-between public-sans text-[16px] md:leading-6 ">
-             <Image src="/images/flag.png" alt="UK Flag"  width={24}
-                height={16}  className="w-8 h-8 object-fit rounded-full hidden md:inline-block lg:w-8 lg:h-8" />
-              English
-             </div>
+              <div className="flex justify-between public-sans text-[16px] md:leading-6 ">
+                <Image
+                  src="/images/flag.png"
+                  alt="UK Flag"
+                  width={24}
+                  height={16}
+                  className="w-8 h-8 object-fit rounded-full hidden md:inline-block lg:w-8 lg:h-8"
+                />
+                English
+              </div>
             </DropdownItem>
             <DropdownItem key="ar" className="flex items-center gap-2">
-             <div className="flex justify-between  public-sans text-[16px] md:leading-6">
-             <Image src="/images/Flag_of_Saudi_Arabia.png" alt="Saudi Arabia Flag"  width={24}
-                height={16} className="w-8 h-8 object-fit rounded-full hidden md:inline-block lg:w-8 lg:h-8" />
-                العربية   
-             </div>
+              <div className="flex justify-between  public-sans text-[16px] md:leading-6">
+                <Image
+                  src="/images/Flag_of_Saudi_Arabia.png"
+                  alt="Saudi Arabia Flag"
+                  width={24}
+                  height={16}
+                  className="w-8 h-8 object-fit rounded-full hidden md:inline-block lg:w-8 lg:h-8"
+                />
+                العربية
+              </div>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
 
         <div className="bg-header-gap-gradient w-[2px] h-16 hidden md:inline-block"></div>
-        
+
         {/* Contact Button */}
-        <Link href="/contacts">
-          <Button className="public-sans leading-6 relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6 md:p-[13px_26px]  sm:h-10 transition-all duration-1000 ease-out hover:text-[#06D889] hover:bg-[#fff]"> 
-            {translations[language].contact}
-          </Button>
+        <Link href="/contacts" className="hidden lg:inline-block">
+          <Link href="/contacts">
+            <Button className="public-sans leading-6 relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6 md:p-[13px_26px]  sm:h-10 transition-all duration-1000 ease-out hover:text-[#06D889] hover:bg-[#fff]">
+              {translations[language].contact}
+            </Button>
+          </Link>
         </Link>
       </NavbarContent>
 
@@ -187,7 +186,7 @@ export default function Header() {
       {isMenuOpen && (
         <NavbarMenu
           ref={menuRef}
-          className="top-0 left-0 z-[9999] h-auto translate-x-0 overflow-auto bg-[#0a1019] w-[280px] flex gap-[2px]"
+          className="top-0 left-0 z-[9999] h-auto translate-x-0 overflow-auto bg-[#0a1019] w-[280px] flex gap-4"
         >
           <NavbarItem>
             <Link
@@ -229,6 +228,13 @@ export default function Header() {
               {translations[language].consultation}
             </Link>
           </NavbarItem>
+          <NavbarItem>
+            <Link href="/contacts">
+              <Button className="public-sans leading-6 relative rounded-full border-2 border-[#fff] bg-white text-[#000]  text-[1rem] font-semibold px-1 h-6 p-[13px_26px]  sm:h-10 transition-all duration-1000 ease-out hover:text-[#06D889] hover:bg-[#fff]">
+                {translations[language].contact}
+              </Button>
+            </Link>
+          </NavbarItem>
         </NavbarMenu>
       )}
 
@@ -237,6 +243,5 @@ export default function Header() {
         className="lg:hidden flex"
       />
     </Navbar>
-   
   );
 }

@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useEffect, createContext, useContext, useMemo } from "react";
-import en from "../../../public/en.json"
-import ar from "../../api/ar.json"
 
 const LanguageContext = createContext();
 

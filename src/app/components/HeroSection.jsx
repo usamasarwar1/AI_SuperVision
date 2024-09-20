@@ -4,6 +4,8 @@ import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
+import en from "../../api/en.json";
+import ar from "../../api/ar.json";
 
 const ServiceItem = ({ index, title, description, icon, active, onClick }) => {
  
@@ -38,6 +40,10 @@ const HeroSection = () => {
   const [activeService, setActiveService] = useState(0);
   const { language} = useLanguage();
 
+  const translations = {
+    en,
+    ar
+  }
   const handleClick = (index) => {
     setActiveService(index);
   };
@@ -69,25 +75,28 @@ const HeroSection = () => {
             />
           
             <h2 className="public-sans text-[#DEDEDE] text-3xl sm:text-[50px] md:text-[64px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">
-            {language === "en" ? " Innovative Solutions for" : "حلول مبتكرة لنمو عملك"}
-             
+            {/* {language === "en" ? " Innovative Solutions for" : "حلول مبتكرة لنمو عملك"} */}
+             {translations[language].home_heading}
               <br className="hidden md:inline-block" />
-              {language === "en" ? "Your Business Growth" : "نمو عملك"}
+              {/* {language === "en" ? "Your Business Growth" : "نمو عملك"} */}
+              {translations[language].home_heading2}
               
             </h2>
             <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#fff] text-[18px]">
-            {language === "en" ? " Empowering your business with cutting-edge technology and strategic expertise." :
-             "تمكين عملك مع التكنولوجيا المتطورة الخبرة الاستراتيجية."}
+            {/* {language === "en" ? " Empowering your business with cutting-edge technology and strategic expertise." :
+             "تمكين عملك مع التكنولوجيا المتطورة الخبرة الاستراتيجية."} */}
+             {translations[language].home_txt}
              
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:mt-6">
               <button className="public-sans text-sm sm:text-base rounded-full font-semibold  bg-[#fff] px-[26px] py-[13px] text-center z-[1] cursor-default">
-              {language === "en" ? "Discover Our Solutions" : "اكتشف حلولنا"}
-                
+              {/* {language === "en" ? "Discover Our Solutions" : "اكتشف حلولنا"} */}
+                {translations[language].Discover_btn}
               </button>
              <Link href={"/consultation"}>
              <button className="public-sans text-sm sm:text-base text-[#fff] font-semibold  rounded-full bg-[#000] px-[26px] py-[13px] border-2 border-[#fff] z-[1] cursor-default">
-                Get a Free Consultation
+                {/* Get a Free Consultation */}
+                {translations[language].free_consultation_btn}
               </button>
              </Link>
             </div>
@@ -141,7 +150,7 @@ const HeroSection = () => {
             <ServiceItem
               index={0}
               title="Digital Transformation Consulting"
-              description = {language === "en" ? "Transform your business operations with our comprehensive digital solutions, tailored to meet your unique needs."  : "قم بتحويل عمليات عملك من خلال حلولنا الرقمية الشاملة، المصممة خصيصًا لتلبية احتياجاتك الفريدة."}
+              description = {language === "en" ? "Transform your business operations with our comprehensive digital solutions, tailored to meet your unique needs."  : "قم بتحويل عمليات ولنا الرقمية الشاملة، المصممة خصيصًا لتلبية احتياجاتك الفريدة.  عمليات عملك من خلال حلولنا الرقمية الشاملة، المصممة خصيصًا لتلبية احتياجاتك الفري"}
               // description=""
               icon="/images/icons/dtc.svg"
               active={activeService === 0}

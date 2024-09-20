@@ -5,6 +5,7 @@ import { generateDate, months } from "./generateDate";
 import cn from "./cn";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { Button } from "@nextui-org/react";
+import Link from "next/link";
 
 export default function BookingWidget() {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
@@ -52,12 +53,14 @@ export default function BookingWidget() {
             Schedule your free 30-minute initial consultation. Select a
             convenient date and time.
           </p>
-          <button
-            onClick={handleSubmit}
-            className="public-sans mt-9 md:mt-[49px] text-base text-white font-semibold tracking-wider rounded-full bg-black px-6 py-3 border-2 border-white cursor-default"
-          >
-            Get a Free Consultation
-          </button>
+          <Link href={"/consultation"}>
+            <button
+              onClick={handleSubmit}
+              className="public-sans mt-9 md:mt-[49px] text-base text-white font-semibold tracking-wider rounded-full bg-black px-6 py-3 border-2 border-white cursor-default"
+            >
+              Get a Free Consultation
+            </button>
+          </Link>
         </div>
 
         {/* Right Section */}
@@ -72,7 +75,7 @@ export default function BookingWidget() {
               <div className="w-full lg:w-3/5">
                 <div className="flex justify-between items-center mb-4">
                   <button
-                    className="bg-[#131619] p-2 sm:p-3 rounded-[6px]  transition-colors"
+                    className="bg-[#131619] p-2 md:p-3 lg:p-[6px] xl:p-3 rounded-[6px]  transition-colors"
                     onClick={() => setToday(today.month(today.month() - 1))}
                   >
                     <GrFormPrevious className="text-[#E3E5F540] w-6 h-6 sm:w-8 sm:h-8" />
@@ -86,7 +89,7 @@ export default function BookingWidget() {
                     </span>
                   </h2>
                   <button
-                    className="bg-[#131619] p-2 sm:p-3 rounded-[6px]  transition-colors"
+                    className="bg-[#131619] p-2 md:p-3 lg:p-[6px] xl:p-3 rounded-[6px]  transition-colors"
                     onClick={() => setToday(today.month(today.month() + 1))}
                   >
                     <GrFormNext className="text-[#E3E5F540] w-6 h-6 sm:w-8 sm:h-8" />
