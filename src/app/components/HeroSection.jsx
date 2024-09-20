@@ -65,6 +65,7 @@ const HeroSection = () => {
               alt="logo"
               width={300}
               height={300}
+              className="h-20 w-20 md:h-30 md:w-30 lg:h-64 lg:w-64"
             />
           
             <h2 className="public-sans text-[#DEDEDE] text-3xl sm:text-[50px] md:text-[64px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">
