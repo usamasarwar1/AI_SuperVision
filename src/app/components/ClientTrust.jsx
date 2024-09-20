@@ -66,7 +66,7 @@ const ClientTrust = () => {
                     className="group-hover:flex items-center justify-center hidden transition-opacity duration-1000"
                   />
                 </div>
-                <p className=" text-[#989898] text-[14px] poppins-regular text-center group-hover:font-bold">
+                <p className=" text-[#989898] text-[14px] poppins-regular text-center group-hover:font-bold group-hover:text-xl"> 
                   {item.description}
                 </p>
               </div>

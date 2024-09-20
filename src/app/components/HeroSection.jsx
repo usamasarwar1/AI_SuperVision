@@ -56,18 +56,18 @@ const HeroSection = () => {
         className="min-h-[600px] md:min-h-[810px] w-full rounded-lg object-cover bg-hero-gradient blur-[3px]"
       />
         <div
-          className="flex w-full h-full absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75"
+          className="flex w-full h-full absolute inset-0 bg-gradient-to-b from-transparent to-black "
           style={{ minHeight: "inherit" }}
         >
           <div className="container mx-auto  flex flex-col items-center justify-center text-center gap-4 md:gap-6">
             <Image
               src="/images/herosection.svg"
               alt="logo"
-              width={50}
-              height={50}
+              width={300}
+              height={300}
             />
           
-            <h2 className="public-sans text-[#DEDEDE] text-3xl sm:text-[50px] md:text-[64px]  font-bold leading-10 md:leading-[83.2px] text-center">
+            <h2 className="public-sans text-[#DEDEDE] text-3xl sm:text-[50px] md:text-[64px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">
             {language === "en" ? " Innovative Solutions for" : "حلول مبتكرة لنمو عملك"}
              
               <br className="hidden md:inline-block" />
@@ -135,7 +135,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Services List */}
-         <Link href={"/services"}>
+         <Link href={"/services"} className="cursor-default">
          <div className="text-white space-y-8">
             <ServiceItem
               index={0}
