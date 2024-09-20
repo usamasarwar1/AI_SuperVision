@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
 import { Providers } from "./providers";
 import Layout from "./components/Layout";
+import LanguageProvider from "./context/LanguageContext";
 
 const inter = Saira({ subsets: ["latin"] });
 
@@ -17,10 +18,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body suppressHydrationWarning={true} className={`${inter.className} bg-[#050505]  min-h-[100vh] `}>
         <Providers>
+        <LanguageProvider>
           <Layout>
             {children}
           </Layout>
+        </LanguageProvider>
         </Providers>
+       
       </body>
     </html>
   );

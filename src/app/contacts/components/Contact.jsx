@@ -291,7 +291,7 @@ const Contact = () => {
             Contact us today to learn how we can support your business.
           </p>
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            
             className="flex flex-col md:flex-row md:gap-12 md:w-full gap-4 lg:flex-col lg:gap-4 mt-[30px]"
           >
             {/* Phone */}
@@ -306,7 +306,7 @@ const Contact = () => {
                 id="sidebar-phone"
                 type="tel"
                 placeholder="+1 (555) 123-4567"
-                {...register("sidebarPhone", { required: "Phone is required" })}
+              
                 classNames={{
                   inputWrapper:
                     "placeholder-style bg-transparent border-none px-[24px] py-[19px] h-[60px] text-[#989898] placeholder:text-[#989898] focus:outline-none",
@@ -314,11 +314,7 @@ const Contact = () => {
                 }}
               />
               <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-input-gradient"></div>
-              {errors.sidebarPhone && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.sidebarPhone.message}
-                </p>
-              )}
+              
             </div>
 
             {/* Email Address */}
@@ -333,13 +329,7 @@ const Contact = () => {
                 id="sidebar-email"
                 type="email"
                 placeholder="contact@aisupervision.com"
-                {...register("sidebarEmail", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-                    message: "Invalid email address",
-                  },
-                })}
+                
                 classNames={{
                   inputWrapper:
                     "placeholder-style bg-transparent border-none px-[24px] py-[19px] h-[60px] text-[#989898] placeholder:text-[#989898] focus:outline-none",
@@ -347,11 +337,7 @@ const Contact = () => {
                 }}
               />
               <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-input-gradient"></div>
-              {errors.sidebarEmail && (
-                <p className="text-red-500 text-xs mt-1">
-                  {errors.sidebarEmail.message}
-                </p>
-              )}
+             
             </div>
           </form>
           <div className="space-y-2 mt-4">

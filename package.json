@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@gsap/react": "^2.1.1",
     "@nextui-org/react": "^2.4.1",
     "@svgr/webpack": "^8.1.0",

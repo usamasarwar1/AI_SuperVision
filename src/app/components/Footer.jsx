@@ -10,7 +10,10 @@ import { FaTwitter } from "react-icons/fa";
 import { LuLinkedin } from "react-icons/lu";
 import { PiInstagramLogoBold } from "react-icons/pi";
 import { Button, ButtonGroup } from "@nextui-org/button";
+
+
 import BusinessCard from "./BusinessCard";
+import EmailInput from "./EmailInput";
 const Footer = () => {
   const footerIcons =
     "h-8 w-8 rounded-md  bg-[rgba(15,16,18,0.8)] flex items-center justify-center text-white ";
@@ -158,7 +161,7 @@ const Footer = () => {
               trends, tips, and special offers.
             </p>
 
-            <div className="w-full flex flex-col">
+            {/* <div className="w-full flex flex-col">
               <Input
                 type="email"
                 placeholder="Email here..."
@@ -174,7 +177,8 @@ const Footer = () => {
               >
                 Subscribe <span>Now</span>
               </button>
-            </div>
+            </div> */}
+            <EmailInput />
           </div>
         </div>
 

@@ -39,7 +39,8 @@ module.exports = {
           "input-gradient": "linear-gradient(270deg, #131619 0%, #FFF 50%, #131619 100%)",
           "trust-svg": "url(/images/icons/trust.svg)",
           "gap-gradient": "linear-gradient(180deg, #181B22 0%, #FFF 50%, #181B23 100%)",
-        "aboutVlues": " linear-gradient(90deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.10) 100%)"
+          "scalability-gradient": "linear-gradient(100.42deg, rgba(29, 80, 237, 0.261) 16.09%, rgba(135, 181, 244, 0.603) 105.27%)",
+          "aboutVlues": " linear-gradient(90deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.10) 100%)"
           },
       backgrounds: {
         'gradient-to-r': 'linear-gradient(to right, var(--tw-gradient-stops))',

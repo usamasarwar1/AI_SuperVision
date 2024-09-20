@@ -2,8 +2,12 @@
 import React, { useState } from "react";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
+import Link from "next/link";
+import { useLanguage } from "../context/LanguageContext";
 
 const ServiceItem = ({ index, title, description, icon, active, onClick }) => {
+ 
+ 
   return (
     <div
       onClick={() => onClick(index)}
@@ -32,6 +36,7 @@ const ServiceItem = ({ index, title, description, icon, active, onClick }) => {
 
 const HeroSection = () => {
   const [activeService, setActiveService] = useState(0);
+  const { language} = useLanguage();
 
   const handleClick = (index) => {
     setActiveService(index);
@@ -48,7 +53,7 @@ const HeroSection = () => {
         loop
         muted
         playsInline
-        className="h-full w-full rounded-lg object-cover bg-hero-gradient"
+        className="min-h-[600px] md:min-h-[810px] w-full rounded-lg object-cover bg-hero-gradient blur-[3px]"
       />
         <div
           className="flex w-full h-full absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75"
@@ -62,27 +67,33 @@ const HeroSection = () => {
               height={50}
             />
           
-            <h2 className="public-sans text-[#DEDEDE] text-3xl sm:text-[64px]  font-bold leading-9 md:leading-[83.2px] text-center">
-              Innovative Solutions for
+            <h2 className="public-sans text-[#DEDEDE] text-3xl sm:text-[50px] md:text-[64px]  font-bold leading-10 md:leading-[83.2px] text-center">
+            {language === "en" ? " Innovative Solutions for" : "حلول مبتكرة لنمو عملك"}
+             
               <br className="hidden md:inline-block" />
-              Your Business Growth
+              {language === "en" ? "Your Business Growth" : "نمو عملك"}
+              
             </h2>
             <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#fff] text-[18px]">
-              Empowering your business with cutting-edge technology and
-              strategic expertise.
+            {language === "en" ? " Empowering your business with cutting-edge technology and strategic expertise." :
+             "تمكين عملك مع التكنولوجيا المتطورة الخبرة الاستراتيجية."}
+             
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:mt-6">
               <button className="public-sans text-sm sm:text-base rounded-full font-semibold  bg-[#fff] px-[26px] py-[13px] text-center z-[1] cursor-default">
-                Discover Our Solutions
+              {language === "en" ? "Discover Our Solutions" : "اكتشف حلولنا"}
+                
               </button>
-              <button className="public-sans text-sm sm:text-base text-[#fff] font-semibold  rounded-full bg-[#000] px-[26px] py-[13px] border-2 border-[#fff] z-[1] cursor-default">
+             <Link href={"/consultation"}>
+             <button className="public-sans text-sm sm:text-base text-[#fff] font-semibold  rounded-full bg-[#000] px-[26px] py-[13px] border-2 border-[#fff] z-[1] cursor-default">
                 Get a Free Consultation
               </button>
+             </Link>
             </div>
           </div>
         </div>
       </div>
-      <section className="bg-[#050505] p-6 md:p-0 py-8 sm:py-16">
+      <section className="bg-[#050505] p-6 md:p-0 py-8 sm:py-16 mt-2">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[50px] items-center">
           {/* Left Image Card */}
           <div className="relative h-[50vh] md:h-full bg-no-repeat bg-cover rounded-xl bg-[url('/images/ourServices.png')] bg-[#050505]">
@@ -95,6 +106,7 @@ const HeroSection = () => {
                 className="bg-[#050505] border  border-[#fff] text-white font-bold w-full rounded-lg p-4 md:p-9 text-[16px] md:text-xl poppins-medium flex items-center justify-between"
                 iconRight={<span className="ml-2">→</span>}
               >
+                
                 Our Core Services
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

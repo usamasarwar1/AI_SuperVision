@@ -14,12 +14,34 @@ import {
   Button,
   Dropdown,
   DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
 } from "@nextui-org/react";
-import ReactFlagsSelect from "react-flags-select";
+
+import { useLanguage } from "../context/LanguageContext";
+
+const translations = {
+  en: {
+    home: "Home",
+    about: "About Us",
+    services: "Services",
+    benefits: "Benefits",
+    consultation: "Book a consultation",
+    contact: "Contact Us",
+  },
+  ar: {
+    home: "الصفحة الرئيسية",
+    about: "معلومات عنا",
+    services: "خدماتنا",
+    benefits: "المزايا",
+    consultation: "احجز استشارة",
+    contact: "اتصل بنا",
+  },
+};
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selected, setSelected] = useState("GB"); // Default to 'GB' for the UK flag
+  const { language, setLanguage } = useLanguage(); 
   const menuRef = useRef(null);
 
   // Close the menu if clicking outside
@@ -36,22 +58,23 @@ export default function Header() {
     };
   }, []);
 
-  const handleSelectFlag = (code) => {
-    setSelected(code);
+  // Handle language selection
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+    localStorage.setItem("language", lang);
   };
 
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
       maxWidth={"full"}
-      className="fixed top-0 left-0 h-20 px-0 pt-0 pb-0 box-border bg-header-gradient backdrop-blur-[20px] z-[99] text-white public-sans"
+      className="fixed top-0 left-0 h-20 px-0 pt-0 pb-0 box-border bg-header-gradient backdrop-blur-[20px] z-[99] text-white public-sans rounded-t-lg"
     >
       {/* Navbar Left */}
       <NavbarContent>
         <NavbarBrand>
-         
           <Link href="/">
-          <Image src="images/logo.svg" width={200} height={200} alt="Logo" />
+            <Image src="images/logo.svg" width={200} height={200} alt="Logo" />
           </Link>
         </NavbarBrand>
       </NavbarContent>
@@ -63,7 +86,7 @@ export default function Header() {
             className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
             href="/"
           >
-            Home
+            {translations[language]?.home} {/* Correct access to translations */}
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -71,7 +94,7 @@ export default function Header() {
             className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
             href="/about"
           >
-            About Us
+            {translations[language]?.about}
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -79,7 +102,7 @@ export default function Header() {
             className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
             href="/services"
           >
-            Services
+            {translations[language]?.services}
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -87,7 +110,7 @@ export default function Header() {
             className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
             href="/benefits"
           >
-            Benefits
+            {translations[language]?.benefits}
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -95,39 +118,73 @@ export default function Header() {
             className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
             href="/consultation"
           >
-            Book a consultation
+            {translations[language]?.consultation}
           </Link>
         </NavbarItem>
       </NavbarContent>
 
       {/* Navbar Right */}
       <NavbarContent justify="end" className="flex gap-2 md:gap-6">
-        {/* Language Selector */}
-        <div className="relative z-50 mt-2 !border-none border-[0px]">
-          <div className="border-none public-sans text-[16px] text-white">
-            <ReactFlagsSelect
-              selected={selected}
-              onSelect={handleSelectFlag}
-              showSelectedLabel={true}
-              showSecondarySelectedLabel={false}
-              selectedSize={14}
-              showOptionLabel={true}
-              optionsSize={14}
-              placeholder="Select Language"
-              searchable={true}
-              searchPlaceholder="Search"
-              alignOptionsToRight={false}
-              fullWidth={true}
-              disabled={false}
-              className="custom-flag-select"
-            />
-          </div>
-        </div>
+        {/* Language Selector with NextUI Dropdown */}
+        <Dropdown>
+          <DropdownTrigger className="">
+            <Button className="bg-transparent !px-0 md:px-4">
+              <Image
+                src={
+                  language === "en"
+                    ? "/images/flag.png"
+                    : "/images/Flag_of_Saudi_Arabia.png"
+                }
+                alt={language === "en" ? "UK Flag" : "Saudi Arabia Flag"}
+                width={24}
+                height={16}
+                className="mr-2 w-8 h-8 object-fit rounded-full hidden md:inline-block"
+              />
+              <span className="public-sans text-[10px] sm:text-[16px] md:leading-6 text-[#FFFFFF]">
+                {language === "en" ? "English" : "العربية"}
+              </span>
+              <MdArrowDropDown className="text-[#FFFFFF] lg:w-8 lg:h-8" />
+            </Button>
+          </DropdownTrigger>
+          <DropdownMenu
+            aria-label="Language selection"
+            onAction={(key) => handleLanguageChange(key)}
+            variant="faded"
+            classNames="w-8 bg-red-500"
+          >
+            <DropdownItem key="en" className=" border-none">
+              <div className="flex justify-between public-sans text-[16px] md:leading-6 ">
+                <Image
+                  src="/images/flag.png"
+                  alt="UK Flag"
+                  width={24}
+                  height={16}
+                  className="w-8 h-8 object-fit rounded-full hidden md:inline-block lg:w-8 lg:h-8"
+                />
+                English
+              </div>
+            </DropdownItem>
+            <DropdownItem key="ar" className="flex items-center gap-2">
+              <div className="flex justify-between  public-sans text-[16px] md:leading-6">
+                <Image
+                  src="/images/Flag_of_Saudi_Arabia.png"
+                  alt="Saudi Arabia Flag"
+                  width={24}
+                  height={16}
+                  className="w-8 h-8 object-fit rounded-full hidden md:inline-block lg:w-8 lg:h-8"
+                />
+                العربية
+              </div>
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+
         <div className="bg-header-gap-gradient w-[2px] h-16 hidden md:inline-block"></div>
+
         {/* Contact Button */}
         <Link href="/contacts">
-          <Button className="relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6  sm:h-10 cursor-default hover:bg-[#fff]">
-            Contact Us
+          <Button className="public-sans leading-6 relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6 md:p-[13px_26px]  sm:h-10 transition-all duration-1000 ease-out hover:text-[#06D889] hover:bg-[#fff]">
+            {translations[language]?.contact}
           </Button>
         </Link>
       </NavbarContent>
@@ -143,48 +200,12 @@ export default function Header() {
               className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
               href="/"
             >
-              Home
+              {translations[language]?.home}
             </Link>
           </NavbarItem>
-          <NavbarItem>
-            <Link
-              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
-              href="/about"
-            >
-              About Us
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link
-              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
-              href="/services"
-            >
-              Services
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link
-              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
-              href="/benefits"
-            >
-              Benefits
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link
-              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
-              href="/consultation"
-            >
-              Book a consultation
-            </Link>
-          </NavbarItem>
+          {/* Add other NavbarItems as per your mobile layout */}
         </NavbarMenu>
       )}
-
-      <NavbarMenuToggle
-        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        className="lg:hidden flex"
-      />
     </Navbar>
   );
 }

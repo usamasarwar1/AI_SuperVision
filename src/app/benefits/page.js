@@ -106,14 +106,7 @@ const page = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[10.24px] mt-3  md:mt-[89.94px]">
           <div className="col-span-12 md:col-span-8">
-            {/* <Image
-              src="/images/scalableSolutions.png"
-              alt="scalable-solutions"
-              width={500}
-              height={500}
-              className="object-cover w-full h-full rounded-[14px]"
-            /> */}
-               
+                          
       <video
         src="/videos/scalableSolutions.mp4"
         width={500}
