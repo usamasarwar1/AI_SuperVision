@@ -135,11 +135,13 @@ const HeroSection = () => {
           </div>
 
           {/* Right Services List */}
-          <div className="text-white space-y-8">
+         <Link href={"/services"}>
+         <div className="text-white space-y-8">
             <ServiceItem
               index={0}
               title="Digital Transformation Consulting"
-              description="Transform your business operations with our comprehensive digital solutions, tailored to meet your unique needs."
+              description = {language === "en" ? "Transform your business operations with our comprehensive digital solutions, tailored to meet your unique needs."  : "قم بتحويل عمليات عملك من خلال حلولنا الرقمية الشاملة، المصممة خصيصًا لتلبية احتياجاتك الفريدة."}
+              // description=""
               icon="/images/icons/dtc.svg"
               active={activeService === 0}
               onClick={handleClick}
@@ -169,6 +171,7 @@ const HeroSection = () => {
               onClick={handleClick}
             />
           </div>
+         </Link>
         </div>
       </section>
     </div>
