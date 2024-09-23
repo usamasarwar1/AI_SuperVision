@@ -6,6 +6,9 @@ import cn from "./cn";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
+import { useLanguage } from "@/app/context/LanguageContext";
+import en from "../../../api/consultation/en.json";
+import ar from "../../../api/consultation/ar.json";
 
 export default function BookingWidget() {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
@@ -13,6 +16,12 @@ export default function BookingWidget() {
   const [today, setToday] = useState(currentDate);
   const [selectDate, setSelectDate] = useState(currentDate);
   const [selectedTime, setSelectedTime] = useState("");
+
+  const { language } = useLanguage();
+  const translations = {
+    en,
+    ar,
+  };
 
   const handleSubmit = () => {
     const bookingData = {
@@ -28,7 +37,7 @@ export default function BookingWidget() {
         {/* Left Section */}
         <div className="lg:w-[40%] p-4 sm:p-6">
           <h2 className="poppins-medium text-[#DEDEDE] text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 md:mb-5">
-            30 Minute Initial Consultation
+            {translations[language].minute}
           </h2>
           <div className="flex items-center gap-2 lg:[6px] md:mb-3">
             <svg
@@ -50,15 +59,14 @@ export default function BookingWidget() {
             </span>
           </div>
           <p className="poppins-regular text-[#B8B9BA] text-sm sm:text-base">
-            Schedule your free 30-minute initial consultation. Select a
-            convenient date and time.
+            {translations[language].minute_txt}
           </p>
           <Link href={"/consultation"}>
             <button
               onClick={handleSubmit}
               className="public-sans mt-9 md:mt-[49px] text-base text-white font-semibold tracking-wider rounded-full bg-black px-6 py-3 border-2 border-white cursor-default"
             >
-              Get a Free Consultation
+              {translations[language].free_consultation_btn}
             </button>
           </Link>
         </div>
@@ -66,7 +74,7 @@ export default function BookingWidget() {
         {/* Right Section */}
         <div className="lg:w-2/3 p-4 sm:p-6">
           <h1 className="poppins-medium text-[#DEDEDE] text-xl lg:text-2xl mb-3 lg:mb-[21.21px]">
-            Select a Date & Time
+            {translations[language].minute_txt}
           </h1>
 
           <div className="border border-[#262626] rounded-[10px] p-4 sm:p-6">

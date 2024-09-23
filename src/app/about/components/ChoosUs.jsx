@@ -1,17 +1,22 @@
 import React from 'react'
-import Image from "next/image";
 
-const ChoosUs = () => {
+
+
+
+const ChoosUs = ({choose_us, choos_us_txt}) => {
+ 
+  
   return (
     <div className='container mx-auto p-6  md:p-0 md:mt-[150px]'>
 <div className="flex flex-col md:flex-row  items-center lg:gap-[17.75em] xl:gap-[23.75em] bg-[#050505] p-4 md:p-6">
   {/* Text Section */}
   <div className="md:w-1/3 text-center md:text-left">
     <h1 className="poppins-medium text-[#DEDEDE] text-2xl md:text-4xl font-semibold leading-tight">
-      Why Choose Us?
+     {choose_us}
+      
     </h1>
     <p className="poppins-regular text-[#989898] text-sm md:text-base leading-relaxed mt-2">
-      We understand the complexities of modern business and the need for innovative solutions. AI Supervision combines deep technical expertise with a client-focused approach, ensuring that our AI solutions are not just advanced but also practical and effective.
+     {choos_us_txt}
     </p>
   </div>
 

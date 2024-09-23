@@ -3,6 +3,7 @@ import { MdArrowDropDown } from "react-icons/md";
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
 import {
   Navbar,
   NavbarBrand,
@@ -30,6 +31,7 @@ const translations = {
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, setLanguage } = useLanguage();
+  const router = useRouter()
 
   // const [language, setLanguage] = useState("en");
   const menuRef = useRef(null);
@@ -129,9 +131,9 @@ export default function Header() {
                 alt={language === "en" ? "UK Flag" : "Saudi Arabia Flag"}
                 width={24}
                 height={16}
-                className="mr-2 w-6 h-6 md:w-8 md:h-8 object-fit rounded-full"
+                className="mr-[3px] md:mr-2 w-5 h-5 md:w-8 md:h-8 object-fit rounded-full"
               />
-              <span className="public-sans text-[16px] md:leading-6 text-[#FFFFFF]">
+              <span className="public-sans text-[12px] md:text-[16px] md:leading-6 text-[#FFFFFF]">
                 {language === "en" ? "English" : "العربية"}
               </span>
               <MdArrowDropDown className="text-[#FFFFFF] lg:w-8 lg:h-8" />
@@ -150,21 +152,23 @@ export default function Header() {
                   alt="UK Flag"
                   width={24}
                   height={16}
-                  className="w-8 h-8 object-fit rounded-full hidden md:inline-block lg:w-8 lg:h-8"
+                  className="w-5 h-5 md:w-8 md:h-8 object-fit rounded-full "
                 />
-                English
+                <span className="public-sans text-[12px] md:text-[16px] md:leading-6">  English</span>
+              
               </div>
             </DropdownItem>
-            <DropdownItem key="ar" className="flex items-center gap-2">
+            <DropdownItem key="ar" className="flex items-center gap-0 sm:gap-2">
               <div className="flex justify-between  public-sans text-[16px] md:leading-6">
                 <Image
                   src="/images/Flag_of_Saudi_Arabia.png"
                   alt="Saudi Arabia Flag"
                   width={24}
                   height={16}
-                  className="w-8 h-8 object-fit rounded-full hidden md:inline-block lg:w-8 lg:h-8"
+                  className="w-5 h-5 md:w-8 md:h-8 object-fit rounded-full "
                 />
-                العربية
+                <span className="public-sans text-[12px] md:text-[16px] md:leading-6">العربية</span>
+               
               </div>
             </DropdownItem>
           </DropdownMenu>
@@ -173,13 +177,11 @@ export default function Header() {
         <div className="bg-header-gap-gradient w-[2px] h-16 hidden md:inline-block"></div>
 
         {/* Contact Button */}
-        <Link href="/contacts" className="hidden lg:inline-block">
-          <Link href="/contacts">
-            <Button className="public-sans leading-6 relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6 md:p-[13px_26px]  sm:h-10 transition-all duration-1000 ease-out hover:text-[#06D889] hover:bg-[#fff]">
+        <div  className="hidden lg:inline-block">         
+            <Button onClick={() => router.push('/contacts')} className="public-sans leading-6 relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6 md:p-[13px_26px]  sm:h-10 transition-all duration-1000 ease-out hover:text-[#06D889] hover:bg-[#fff]">
               {translations[language].contact}
             </Button>
-          </Link>
-        </Link>
+              </div>
       </NavbarContent>
 
       {/* Mobile Menu */}
@@ -229,11 +231,11 @@ export default function Header() {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link href="/contacts">
-              <Button className="public-sans leading-6 relative rounded-full border-2 border-[#fff] bg-white text-[#000]  text-[1rem] font-semibold px-1 h-6 p-[13px_26px]  sm:h-10 transition-all duration-1000 ease-out hover:text-[#06D889] hover:bg-[#fff]">
-                {translations[language].contact}
-              </Button>
-            </Link>
+            <div  className="hidden lg:inline-block">         
+            <Button onClick={() => router.push('/contacts')} className="public-sans leading-6 relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6 md:p-[13px_26px]  sm:h-10 transition-all duration-1000 ease-out hover:text-[#06D889] hover:bg-[#fff]">
+              {translations[language].contact}
+            </Button>
+              </div>
           </NavbarItem>
         </NavbarMenu>
       )}

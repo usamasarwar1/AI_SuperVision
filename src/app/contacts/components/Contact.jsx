@@ -3,8 +3,16 @@ import React from "react";
 import { Input, Textarea } from "@nextui-org/react";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
+import { useLanguage } from "../../context/LanguageContext.js";
+import en from "../../../api/contact/en.json";
+import ar from "../../../api/contact/ar.json";
 
 const Contact = () => {
+  const { language } = useLanguage();
+  const translations = {
+    en,
+    ar,
+  };
   const {
     register,
     handleSubmit,
@@ -24,18 +32,21 @@ const Contact = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[30px]">
             {/* Full Name */}
+
             <div>
               <label
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="name"
               >
-                Full Name
+                {translations[language].full_name_label}
               </label>
               <Input
                 id="name"
                 type="text"
-                placeholder="Full Name"
-                {...register("name", { required: "Full Name is required" })}
+                placeholder={translations[language].full_name_placeholder}
+                {...register("name", {
+                  required: translations[language].full_name_error,
+                })}
                 classNames={{
                   inputWrapper:
                     "mt-[2px] md:mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] h-[60px] border-[#ffffff1a] text-[#989898]",
@@ -54,17 +65,17 @@ const Contact = () => {
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="email"
               >
-                Email Address
+                {translations[language].email_label}
               </label>
               <Input
                 id="email"
                 type="email"
-                placeholder="Email Address"
+                placeholder={translations[language].email_placeholder}
                 {...register("email", {
-                  required: "Email is required",
+                  required: translations[language].email_error,
                   pattern: {
                     value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-                    message: "Invalid email address",
+                    message: translations[language].invalid_email_error,
                   },
                 })}
                 classNames={{
@@ -85,17 +96,17 @@ const Contact = () => {
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="phone"
               >
-                Phone Number
+                {translations[language].phone_label}
               </label>
               <Input
                 id="phone"
                 type="tel"
-                placeholder="Phone Number"
+                placeholder={translations[language].phone_placeholder}
                 {...register("phone", {
-                  required: "Phone Number is required",
+                  required: translations[language].phone_error,
                   pattern: {
                     value: /^[0-9]{10}$/,
-                    message: "Enter a valid 10-digit phone number",
+                    message: translations[language].invalid_phone_error,
                   },
                 })}
                 classNames={{
@@ -116,13 +127,15 @@ const Contact = () => {
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="country"
               >
-                Country
+                {translations[language].country_label}
               </label>
               <Input
                 id="country"
                 type="text"
-                placeholder="Country"
-                {...register("country", { required: "Country is required" })}
+                placeholder={translations[language].country_placeholder}
+                {...register("country", {
+                  required: translations[language].country_error,
+                })}
                 classNames={{
                   inputWrapper:
                     "mt-[2px] md:mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] h-[60px] border-[#ffffff1a] text-[#989898]",
@@ -138,25 +151,32 @@ const Contact = () => {
             {/* Project Scope */}
             <div>
               <label
-                className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5]  md:mb-3"
+                className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] md:mb-3"
                 htmlFor="project"
               >
-                Select Project Scope
+                {translations[language].project_scope_label}
               </label>
               <div className="relative">
                 <select
                   id="project"
                   className="mt-[2px] md:mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] text-[#989898] border-[#ffffff1a] w-full appearance-none pr-10"
                   {...register("project", {
-                    required: "Please select a project scope",
+                    required: translations[language].project_scope_error,
                   })}
                 >
-                  <option value="">Select Project Scope</option>
-                  <option value="Small">Small</option>
-                  <option value="Medium">Medium</option>
-                  <option value="Large">Large</option>
+                  <option value="">
+                    {translations[language].project_scope_placeholder}
+                  </option>
+                  <option value="Small">
+                    {translations[language].project_scope_small}
+                  </option>
+                  <option value="Medium">
+                    {translations[language].project_scope_medium}
+                  </option>
+                  <option value="Large">
+                    {translations[language].project_scope_large}
+                  </option>
                 </select>
-                {/* Custom dropdown arrow */}
                 <div className="pointer-events-none absolute inset-y-0 right-4 top-1 flex items-center">
                   <svg
                     className="w-4 h-4 text-[#989898]"
@@ -187,14 +207,14 @@ const Contact = () => {
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="company"
               >
-                Company Name
+                {translations[language].company_name_label}
               </label>
               <Input
                 id="company"
                 type="text"
-                placeholder="Company Name"
+                placeholder={translations[language].company_name_placeholder}
                 {...register("company", {
-                  required: "Company Name is required",
+                  required: translations[language].company_error,
                 })}
                 classNames={{
                   inputWrapper:
@@ -215,21 +235,23 @@ const Contact = () => {
               className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5]"
               htmlFor="comments"
             >
-              Briefly describe your project goals and requirements
+              {translations[language].project_description_label}
             </label>
             <Textarea
               id="comments"
-              placeholder="Add comments..."
+              placeholder={
+                translations[language].project_description_placeholder
+              }
               {...register("comments", {
-                required: "Project description is required",
+                required: translations[language].description_error,
                 minLength: {
                   value: 20,
-                  message: "Description should be at least 20 characters long",
+                  message: translations[language].description_error,
                 },
               })}
               classNames={{
                 inputWrapper:
-                  "mt-[2px] md:mt-2 bg-[#1b1f23cc] px-[24px] py-[19px] text-[13px] min-h-[100px] border-[1px] border-[#ffffff1a] text-[#989898] font-normal",
+                  "mt-[2px] md:mt-2 bg-[#1b1f23cc] px-[24px] py-[19px] text-[13px] min-h-[100px] border-[1px] border-[#ffffff1a] rounded-[15px]",
               }}
             />
             {errors.comments && (
@@ -251,7 +273,8 @@ const Contact = () => {
               />
               <span className="poppins-regular text-[#DEDEDE] text-[12px] md:text-[16px] md:leading-7">
                 {" "}
-                I agree to the terms and conditions{" "}
+                {/* I agree to the terms and conditions */}
+                {translations[language].terms_and_conditions_label}
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -278,77 +301,14 @@ const Contact = () => {
             type="submit"
             className="public-sans border border-[#FFF] text-white rounded-full p-[6px_12px] md:px-6 md:py-3 hover:bg-white hover:text-black transition-colors"
           >
-            Submit
+            {translations[language].submit_button}
           </button>
         </form>
 
         {/* Right Sidebar */}
         <div className="w-full lg:w-1/3">
-          <h1 className="poppins-medium text-sm md:text-[16px] text-[#DEDEDE] leading-[20px]">
-            Reach Out to Us
-          </h1>
-          <p className="public-sans text-[#B8B9BA] leading-4 md:leading-[27px] text-[12px] md:text-[16px] mt-1 md:mt-0">
-            Contact us today to learn how we can support your business.
-          </p>
-          <form
-            
-            className="flex flex-col md:flex-row md:gap-12 md:w-full gap-4 lg:flex-col lg:gap-4 mt-[30px]"
-          >
-            {/* Phone */}
-            <div className="relative w-full">
-              <label
-                className="public-sans leading-6 text-[#B8B9BA] text-[12px] md:text-[16px]"
-                htmlFor="sidebar-phone"
-              >
-                Phone
-              </label>
-              <Input
-                id="sidebar-phone"
-                type="tel"
-                placeholder="+1 (555) 123-4567"
-              
-                classNames={{
-                  inputWrapper:
-                    "placeholder-style bg-transparent border-none px-[24px] py-[19px] h-[60px] text-[#989898] placeholder:text-[#989898] focus:outline-none",
-                  input: "placeholder-style",
-                }}
-              />
-              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-input-gradient"></div>
-              
-            </div>
-
-            {/* Email Address */}
-            <div className="relative w-full">
-              <label
-                className="public-sans leading-6 text-[#B8B9BA] text-[12px] md:text-[16px]"
-                htmlFor="sidebar-email"
-              >
-                Email Address
-              </label>
-              <Input
-                id="sidebar-email"
-                type="email"
-                placeholder="contact@aisupervision.com"
-                
-                classNames={{
-                  inputWrapper:
-                    "placeholder-style bg-transparent border-none px-[24px] py-[19px] h-[60px] text-[#989898] placeholder:text-[#989898] focus:outline-none",
-                  input: "placeholder-style",
-                }}
-              />
-              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-input-gradient"></div>
-             
-            </div>
-          </form>
-          <div className="space-y-2 mt-4">
-            <p className="public-sans-regular text-[#B8B9BA] text-[12px] md:text-[16px]">
-              Address
-            </p>
-            <h2 className="poppins-medium text-[15px] md:text-xl leading-[130%] text-[#DEDEDE]">
-              123 Innovation Avenue, Suite 500, Tech City, TX 75001
-            </h2>
-          </div>
-          <div className="relative w-full pt-[60%] mt-[57px]">
+          
+          <div className="relative w-full pt-[60%] ">
             <Image
               src="/images/map.png"
               alt="map"

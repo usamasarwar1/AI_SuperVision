@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 
-const BusinessCard = ({ headingText, text, buttonText, onClick }) => {
+const BusinessCard = ({ headingText, text, button, onClick }) => {
   return (
     <div className="p-6 lg:p-0">
       <div className="bg-[#131619] md:mb-[123.8px] rounded-[16px]  h-auto sm:max-h-[212px] p-4 md:p-[50px] container mx-auto  grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-0  items-center md:flex-row">
@@ -15,11 +15,7 @@ const BusinessCard = ({ headingText, text, buttonText, onClick }) => {
           </p>
         </div>
         <div className="col-span-12 sm:col-span-4 lg:col-span-3 mt-4 md:mt-0 flex justify-center md:justify-end">
-       <Link href={"/consultation"}>       
-        <button className="public-sans   text-sm md:text-[12px] lg:text-base text-white font-semibold bg-black rounded-full px-[26px] py-[13px] border-2 border-white cursor-default">
-            Get a Free Consultation
-       </button>
-       </Link>
+      {button}
         </div>
       </div>
     </div>

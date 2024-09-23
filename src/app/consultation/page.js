@@ -1,18 +1,28 @@
+"use client"
 import React from 'react'
 import HeroSections from '../components/HeroSections'
 import Calendar from './components/Calendar'
+import { useLanguage } from '../context/LanguageContext';
+import en from "../../api/consultation/en.json"
+import ar from "../../api/consultation/ar.json"
+
 
 
 const page = () => {
+  const { language } = useLanguage();
+  const translations = {
+    en,
+    ar,
+  };
  
   return (
     <div className="bg-[#050505] mb-[50px] lg:mb-[140.79px]">
      <HeroSections
         bg_image="bg-image-hero-consultation"
-        headingText="Schedule Your FREE Consultation."
+        headingText=  {translations[language].hero_heading}
         headingBreakText=""
-        descripation="Fill out the following information and set up a time to talk. Once you are done setting up a time, "
-        descripationBreakText="please check your email for your confirmation."
+        descripation={translations[language].hero_txt}
+        descripationBreakText={translations[language].hero_break_txt}
       />
        <Calendar />
     </div>

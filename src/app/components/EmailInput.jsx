@@ -2,9 +2,18 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { useLanguage } from "../context/LanguageContext";
+import en from "../../api/en.json";
+import ar from "../../api/ar.json";
 
 const EmailInput = () => {
+
   const [successMessage, setSuccessMessage] = useState("");
+  const { language } = useLanguage();
+  const translations = {
+    en,
+    ar,
+  };
   const {
     register,
     handleSubmit,
@@ -67,7 +76,7 @@ const EmailInput = () => {
           type="submit"
           className="public-sans font-semibold relative rounded-full border-2 border-[#6185F2] bg-[#6185F2] p-[9px_15px] md:py-[13px] md:px-[26px] w-full lg:w-fit text-[#000] text-[1rem]"
         >
-          Subscribe <span>Now</span>
+         {translations[language].subscribe}  <span>{translations[language].now}</span>
         </button>
       </div>
     </form>

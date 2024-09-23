@@ -1,11 +1,21 @@
 "use client";
 import React, { useState } from "react";
 import { Button } from "@nextui-org/react";
+import { useLanguage } from '@/app/context/LanguageContext'
+import en from "../../../api/about/en.json"
+import ar from "../../../api/about/ar.json"
 
+
+ 
 const ValuesCard = () => {
   const [activeService, setActiveService] = useState(0);
   const handleClick = (index) => {
     setActiveService(index);
+  };
+  const {language} = useLanguage();
+  const translations = {
+    en,
+    ar,
   };
 
   const ServiceItem = ({ index, title, description, active, onClick }) => {
@@ -51,7 +61,8 @@ const ValuesCard = () => {
                 size="lg"
                 className="bg-transparent text-white font-bold w-full rounded-[12px] py-3 sm:py-4 md:py-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl poppins-medium flex justify-between items-center"
               >
-                Our Values
+                {/* Our Values */}
+                {translations[language].our_values}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -83,24 +94,24 @@ const ValuesCard = () => {
           <div className="col-span-1 lg:col-span-6 text-white space-y-4 sm:space-y-6 md:space-y-8">
             {[
               {
-                title: "Innovation",
-                description:
-                  "We constantly push the boundaries of what's possible with AI, developing solutions that set new industry standards.",
+                title: `${translations[language].innovation_heading}`,
+                description: `${translations[language].Innovation_txt}`
+                  // "We constantly push the boundaries of what's possible with AI, developing solutions that set new industry standards.",
               },
               {
-                title: "Excellence",
-                description:
-                  "Our commitment to excellence ensures that every project we undertake is completed to the highest standard, with a focus on delivering real results.",
+                title: `${translations[language].excellence}`,
+                description:`${translations[language].excellence_txt}`,
+                  // "Our commitment to excellence ensures that every project we undertake is completed to the highest standard, with a focus on delivering real results.",
               },
               {
-                title: "Integrity",
-                description:
-                  "We believe in building trust through transparency, honesty, and ethical practices in everything we do.",
+                title: `${translations[language].integrity}`,
+                description: `${translations[language].integrity_txt}`,
+                  // "We believe in building trust through transparency, honesty, and ethical practices in everything we do.",
               },
               {
-                title: "Client-Centric",
-                description:
-                  "Our clients' needs are at the heart of our business. We tailor our solutions to meet specific goals, ensuring maximum impact and satisfaction.",
+                title: `${translations[language].client}`,
+                description:`${translations[language].client_txt}`,
+                  // "Our clients' needs are at the heart of our business. We tailor our solutions to meet specific goals, ensuring maximum impact and satisfaction.",
               },
             ].map((service, index) => (
               <ServiceItem

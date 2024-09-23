@@ -4,25 +4,32 @@ import Image from "next/image";
 import { Button, Text, H2 } from "@nextui-org/react";
 import Link from "next/link";
 import { FaArrowTrendUp } from "react-icons/fa6";
+import { useLanguage } from "../context/LanguageContext";
+import en from "../../api/en.json";
+import ar from "../../api/ar.json";
 
 const ClientTrust = () => {
+  const { language } = useLanguage();
+  const translation = {
+    en,
+    ar,
+  };
   const data = [
     {
-      name: "expertise",
-      description: "Over 20 years of industry experience.",
+      name: `${translation[language].expertise}`,
+      description: `${translation[language].expertise_txt}`,
     },
     {
-      name: "Reliability",
-      description:
-        "Proven track record of delivering on time and within budget.",
+      name: `${translation[language].reliability}`,
+      description: `${translation[language].reliability_txt}`,
     },
     {
-      name: "Innovation",
-      description: "We stay ahead of the curve with the latest technologies.",
+      name: `${translation[language].innovation}`,
+      description: `${translation[language].innovation_txt}`,
     },
     {
-      name: "Customer-Centric",
-      description: "Tailored solutions with a focus on client satisfaction.",
+      name: `${translation[language].customer}`,
+      description: `${translation[language].customer_txt}`,
     },
   ];
 
@@ -32,7 +39,7 @@ const ClientTrust = () => {
         <div className="grid grid-cols-4 gap-[20px]">
           <div className="col-span-12 mb-[50px]">
             <h2 className="text-xl md:text-[40px] text-center text-white poppins-medium ">
-              Why Our Clients Trust Us
+              {translation[language].client_trust}
             </h2>
           </div>
         </div>
@@ -66,7 +73,7 @@ const ClientTrust = () => {
                     className="group-hover:flex items-center justify-center hidden transition-opacity duration-1000"
                   />
                 </div>
-                <p className=" text-[#989898] text-[14px] poppins-regular text-center group-hover:font-bold group-hover:text-xl"> 
+                <p className=" text-[#989898] text-[14px] poppins-regular text-center group-hover:font-bold group-hover:text-xl">
                   {item.description}
                 </p>
               </div>
@@ -95,11 +102,12 @@ const ClientTrust = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-[74px] relative mt-8">
                 <div className="text-center lg:text-left">
                   <h2 className="poppins-medium text-white font-medium mb-4 md:mb-6 !leading-[1.2] text-2xl md:text-3xl lg:text-4xl">
-                    Benefits of <br className="hidden md:block" /> Working with
-                    Us
+                    {translation[language].h_benifit_h}{" "}
+                    <br className="hidden md:block" />{" "}
+                    {translation[language].h_benfit_break_h}
                   </h2>
                   <button className="public-sans text-sm md:text-base text-white font-semibold bg-black rounded-full px-[20px] py-[12px] border-2 border-white">
-                    Get a Free Consultation
+                    {translation[language].free_consultation_btn}
                   </button>
                 </div>
 
@@ -119,11 +127,10 @@ const ClientTrust = () => {
                         className="w-[80px] md:w-[100px] lg:w-[120px]"
                       />
                       <h3 className="text-[18px] md:text-[20px] lg:text-[24px] font-bold poppins-medium text-[#DEDEDE]">
-                        Increased Efficiency
+                        {translation[language].h_efficiency}
                       </h3>
                       <p className="text-[#989898] poppins-regular text-[12px] md:text-[14px] text-center">
-                        Streamline your operations and reduce costs with our
-                        innovative solutions.
+                        {translation[language].h_efficiecny_txt}
                       </p>
                     </div>
                     <div className="col-span-1 flex items-center content-center flex-col z-[2]">
@@ -133,11 +140,10 @@ const ClientTrust = () => {
                         className="w-[80px] md:w-[100px] lg:w-[120px]"
                       />
                       <h3 className="text-[18px] md:text-[20px] lg:text-[24px] font-bold poppins-medium text-[#DEDEDE]">
-                        Scalability
+                        {translation[language].h_scalability}
                       </h3>
                       <p className="text-[#989898] poppins-regular text-[12px] md:text-[14px] text-center">
-                        Our services grow with your business, ensuring long-term
-                        success.
+                        {translation[language].h_scalability_txt}
                       </p>
                     </div>
                     <div className="col-span-1 flex items-center content-center flex-col z-[2]">
@@ -147,11 +153,10 @@ const ClientTrust = () => {
                         className="w-[80px] md:w-[100px] lg:w-[120px]"
                       />
                       <h3 className="text-[18px] md:text-[20px] lg:text-[24px] font-bold poppins-medium text-[#DEDEDE]">
-                        Expert Support
+                        {translation[language].h_expert}
                       </h3>
                       <p className="text-[#989898] poppins-regular text-[12px] md:text-[14px] text-center">
-                        We provide ongoing support to ensure your business
-                        continues to thrive.
+                        {translation[language].expert_txt}
                       </p>
                     </div>
                   </div>

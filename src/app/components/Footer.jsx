@@ -1,4 +1,4 @@
-// pages/index.js or any other component
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -10,11 +10,26 @@ import { FaTwitter } from "react-icons/fa";
 import { LuLinkedin } from "react-icons/lu";
 import { PiInstagramLogoBold } from "react-icons/pi";
 import { Button, ButtonGroup } from "@nextui-org/button";
-
+import { useLanguage } from "../context/LanguageContext";
+import en from "../../api/en.json";
+import ar from "../../api/ar.json";
 
 import BusinessCard from "./BusinessCard";
 import EmailInput from "./EmailInput";
 const Footer = () => {
+  const { language } = useLanguage();
+  const translations = {
+    en,
+    ar,
+  };
+  const simulateCall = phoneNumber => window.open(`tel:${phoneNumber}`, '_self');
+  const callHandler = () => {
+       simulateCall("+1 (555) 123-4567");
+  };
+  const simulateEmail = emailAddress => window.open(`mailto:${emailAddress}`, '_self');
+const emailHandler = () => {
+  simulateEmail("info@yourbusinessname.com")
+}
   const footerIcons =
     "h-8 w-8 rounded-md  bg-[rgba(15,16,18,0.8)] flex items-center justify-center text-white ";
   const commonClasses =
@@ -23,9 +38,15 @@ const Footer = () => {
     <>
       <div className="">
         <BusinessCard
-          headingText="Ready to Transform Your Business?"
-          text="Let our experts guide you through your next big move. Whether you're looking to enhance efficiency, scale operations, or drive innovation, we're here to help."
-          // onClick={console.log("Button is Clicked")}
+          headingText={`${translations[language].business}`}
+          text={`${translations[language].business_txt}`}
+          button={
+            <Link href={"/consultation"}>
+              <button className="public-sans  text-sm md:text-[12px] lg:text-base text-white font-semibold bg-black rounded-full px-[26px] py-[13px] border-2 border-white cursor-default">
+                {translations[language].free_consultation_btn}
+              </button>
+            </Link>
+          }
         />
       </div>
 
@@ -33,37 +54,39 @@ const Footer = () => {
         <div className="container mx-auto w-[90%] lg:w-[80%] grid grid-cols-12 gap-6 sm:gap-8 md:gap-10 lg:gap-16">
           <div className="col-span-12 sm:col-span-6 lg:col-span-3">
             <h2 className=" text-[12px] mb-8 text-[#FFF] public-sans">
-              Quick Links
+             
+              {translations[language].quick}
             </h2>
             <ul className="flex flex-col gap-4">
               <li className={commonClasses}>
                 <Link href={"/"} className="public-sans-regular">
-                  Home
+                {translations[language].home}
                 </Link>
               </li>
               <li className={commonClasses}>
                 <Link href={"/about"} className="public-sans-regular">
-                  About Us
+                {translations[language].about}
                 </Link>
               </li>
               <li className={commonClasses}>
                 <Link href={"/services"} className="public-sans-regular">
-                  Services
+                {translations[language].services}
                 </Link>
               </li>
               <li className={commonClasses}>
                 <Link href={"/benefits"} className="public-sans-regular">
-                  Benefits
+                {translations[language].benefits}
                 </Link>
               </li>
               <li className={commonClasses}>
                 <Link href={"/consultation"} className="public-sans-regular">
-                  Blogs
+                {translations[language].blogs}
+                
                 </Link>
               </li>
               <li className={commonClasses}>
                 <Link href={"/contacts"} className="public-sans-regular">
-                  Contact us
+                {translations[language].contact}
                 </Link>
               </li>
             </ul>
@@ -71,10 +94,11 @@ const Footer = () => {
 
           <div className="col-span-12 sm:col-span-6 lg:col-span-4">
             <h2 className=" text-[12px] mb-8 text-[#FFF] public-sans">
-              Contact Information
+            {translations[language].contact_info}
+             
             </h2>
             <ul className="flex flex-col gap-4">
-              <li className={commonClasses}>
+              <li className={commonClasses} onClick={emailHandler}>
                 <span className="mr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +123,11 @@ const Footer = () => {
                 </span>
                 info@yourbusinessname.com
               </li>
-              <li className={commonClasses}>
+              <li 
+              onClick={callHandler}
+              className={commonClasses}
+              
+              >
                 <span className="mr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +173,8 @@ const Footer = () => {
                     />
                   </svg>
                 </span>
-                123 Innovation Drive, Suite 500, Tech City, TX 75001
+                {translations[language].address}
+               
               </li>
             </ul>
           </div>
@@ -153,12 +182,13 @@ const Footer = () => {
           <div className="col-span-12 sm:col-span-6 lg:col-span-4 poppins-regular">
             <div className="font-medium tracking-[.03em] text-2xl flex gap-2 mb-4 items-center">
               <h2 className="poppins-regular text-[#DEDEDE] text-lg lg:text-2xl">
-                Stay Updated with Our Latest News
+              {translations[language].updated_heading}
+                
               </h2>
             </div>
             <p className="poppins-regular text-[#989898] text-[14px] mb-6">
-              Subscribe to our newsletter and never miss an update on industry
-              trends, tips, and special offers.
+            {translations[language].updated_txt}
+             
             </p>
 
             {/* <div className="w-full flex flex-col">
@@ -199,7 +229,7 @@ const Footer = () => {
                       height={30}
                     />
                   </span>
-                  <span className="public-sans-regular">YouTube</span>
+                  <span className="public-sans-regular">{translations[language].youtub}</span>
                 </div>
               </Link>
 
@@ -217,7 +247,7 @@ const Footer = () => {
                       height={30}
                     />
                   </span>
-                  <span className="public-sans-regular">LinkedIn</span>
+                  <span className="public-sans-regular"> {translations[language].linkedIn}</span>
                 </div>
               </Link>
 
@@ -235,7 +265,7 @@ const Footer = () => {
                       height={30}
                     />
                   </span>
-                  <span className="public-sans-regular">Instagram</span>
+                  <span className="public-sans-regular"> {translations[language].instagram}</span>
                 </div>
               </Link>
 
@@ -253,7 +283,7 @@ const Footer = () => {
                       height={30}
                     />
                   </span>
-                  <span className="public-sans-regular">Facebook</span>
+                  <span className="public-sans-regular"> {translations[language].facebook}</span>
                 </div>
               </Link>
             </div>
@@ -267,14 +297,26 @@ const Footer = () => {
                 © 2024 AI Supervision
               </p>
               <div className="flex justify-center md:justify-end gap-6 lg:mt-0 md:mt-0 sm:mt-4 mt-4">
-                <Link href="/" className={"poppins-regular leading-5 text-[#989898]"}>
-                  Terms
+                <Link
+                  href="/"
+                  className={"poppins-regular leading-5 text-[#989898]"}
+                >
+                   {translations[language].terms}
+                  
                 </Link>
-                <Link href="/" className={"poppins-regular leading-5 text-[#989898]"}>
-                  Privacy
+                <Link
+                  href="/"
+                  className={"poppins-regular leading-5 text-[#989898]"}
+                >
+                   {translations[language].privacy}
+                 
                 </Link>
-                <Link href="/" className={"poppins-regular leading-5 text-[#989898]"}>
-                  Cookies
+                <Link
+                  href="/"
+                  className={"poppins-regular leading-5 text-[#989898]"}
+                >
+                   {translations[language].cookies}
+                 
                 </Link>
               </div>
             </div>
