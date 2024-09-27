@@ -10,6 +10,7 @@ const SubmitModal = ({ showModal, setShowModal, selectDate, selectedTime }) => {
   const [submissionMessage, setSubmissionMessage] = useState("");
   const [isModalOpen, setModalOpen] = useState(false);
   const [commentValue, setCommentValue] = useState("");
+  
 
   const {
     register,
@@ -27,13 +28,15 @@ const SubmitModal = ({ showModal, setShowModal, selectDate, selectedTime }) => {
   };
 
   const onSubmit = async (data) => {
+
     const bookingData = {
       date: selectDate.format("MMMM D, YYYY"),
-      time: selectedTime,
+      time: selectDate.format('HH:mm:ss'),
       email: data.email,
       message: commentValue,
     };
 
+    console.log("Booking", bookingData)
     try {
       const response = await axios.post("https://api.web3forms.com/submit", {
         access_key: "03f1fdc2-279e-4b86-ac2d-931d598422da",

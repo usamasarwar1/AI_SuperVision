@@ -8,6 +8,7 @@ import en from "../../../api/en.json";
 import ar from "../../../api/ar.json";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
+import GetButton from "./GetButton";
 
 const ServiceItem = ({ index, title, description, icon, active, onClick }) => {
   return (
@@ -91,11 +92,9 @@ const HeroSection = () => {
               <button className="public-sans text-sm sm:text-base rounded-full font-semibold  bg-[#fff] px-[26px] py-[13px] text-center z-[1] cursor-default">
                 {translations[language].Discover_btn}
               </button>
-              <Link href={"/consultation"}>
-                <button className="public-sans text-sm sm:text-base text-[#fff] font-semibold  rounded-full bg-[#000] px-[26px] py-[13px] border-2 border-[#fff] z-[1] cursor-default">
-                 
-                  {translations[language].free_consultation_btn}
-                </button>
+              
+              <Link href={"/consultation"}>               
+                <GetButton />
               </Link>
             </div>
           </div>

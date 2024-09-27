@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import BusinessCard from "./BusinessCard";
 import EmailInput from "./EmailInput";
 import ButtonAction from "./ButtonAction";
+import GetButton from "./GetButton";
 
 
 const Footer = () => {
@@ -33,10 +34,8 @@ const Footer = () => {
           headingText={t("business")}
           text={t("business_txt")}
           button={
-            <Link href={"/consultation"}>
-              <button className="public-sans  text-sm md:text-[12px] lg:text-base text-white font-semibold bg-black rounded-full px-[26px] py-[13px] border-2 border-white cursor-default">
-                {t("free_consultation_btn")}
-              </button>
+            <Link href={"/consultation"}>            
+              <GetButton />
             </Link>
           }
         />

@@ -15,7 +15,7 @@ const BusinessCard = ({ headingText, text, button, onClick }) => {
           </p>
         </div>
         <div className="col-span-12 sm:col-span-4 lg:col-span-3 mt-4 md:mt-0 flex justify-center md:justify-end">
-      {button}
+          {button}
         </div>
       </div>
     </div>

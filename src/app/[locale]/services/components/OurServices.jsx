@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@nextui-org/react";
+import GetButton from "../../components/GetButton";
 
 const OurServices = ({ id, imageUrl, heading, text, subText }) => {
   return (
@@ -39,10 +40,12 @@ const OurServices = ({ id, imageUrl, heading, text, subText }) => {
           {subText}
         </p>
         <div className="mt-6">
-          <button className="public-sans text-sm sm:text-base text-white font-semibold bg-black rounded-full px-6 py-3 border-2 border-white hover:bg-white hover:text-black transition-colors duration-300">
+          {/* <button className="public-sans text-sm sm:text-base text-white font-semibold bg-black rounded-full px-6 py-3 border-2 border-white hover:bg-white hover:text-black transition-colors duration-300">
             Get a Free Consultation
-          </button>
-           {/* <Button className="public-sans text-sm sm:text-base text-white font-semibold bg-black rounded-full px-6 py-3 border-2 border-white hover:bg-white hover:text-black transition-colors duration-300"> 
+          </button> */}
+          <GetButton />
+
+          {/* <Button className="public-sans text-sm sm:text-base text-white font-semibold bg-black rounded-full px-6 py-3 border-2 border-white hover:bg-white hover:text-black transition-colors duration-300"> 
            Get a Free Consultation
           </Button> */}
         </div>

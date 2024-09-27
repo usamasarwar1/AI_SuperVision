@@ -1,5 +1,6 @@
 "use client";
 import dayjs from "dayjs";
+import cn from "./cn";
 import React, { useState, useEffect } from "react";
 import { generateDate, months } from "./generateDate";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
@@ -19,18 +20,15 @@ export default function BookingWidget() {
 
   useEffect(() => {
     if (showModal) {
-        document.body.classList.add("no-scroll");
+      document.body.classList.add("no-scroll");
     } else {
-      console.log("scroll-remove");
       document.body.classList.remove("no-scroll");
     }
-    
-   
+
     return () => {
       document.body.classList.remove("no-scroll");
     };
   }, [showModal]);
-  
 
   const { language } = useLanguage();
   const translations = {
@@ -39,24 +37,23 @@ export default function BookingWidget() {
   };
 
   const handleButton = (time) => {
-     setSelectedTime(time);
-     setShowButton(true)
-  }
+    setSelectedTime(time);
+    setShowButton(true);
+  };
   const handleCancel = () => {
-    setSelectDate(currentDate)
+    setSelectDate(currentDate);
     setSelectedTime("");
-    setShowButton(false)
-  }
+    setShowButton(false);
+  };
   const handleConsultation = () => {
     if (!selectDate || !selectedTime) {
       alert("Selecte the date");
       return;
     } else {
       setSelectedTime("");
-      setSelectDate(currentDate)
+      setSelectDate(currentDate);
       setShowButton(false);
       setShowModal(true);
-
     }
   };
 
@@ -100,18 +97,18 @@ export default function BookingWidget() {
         </div> */}
 
         {/* Right Section */}
-        <div className="lg:w-2/3 p-4 sm:p-6 flex flex-col justify-center items-center">
-        <h2 className="poppins-medium text-[#DEDEDE] text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 md:mb-5">
+        <div className="lg:w-4/5 p-4 sm:p-6 flex flex-col justify-center items-center ">
+          <h2 className="poppins-medium text-[#DEDEDE] text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 md:mb-5">
             {translations[language].minute}
           </h2>
           <h1 className="poppins-medium text-[#DEDEDE] text-xl lg:text-2xl mb-3 lg:mb-[21.21px]">
             {translations[language].minute_txt}
           </h1>
 
-          <div className="border border-[#262626] rounded-[10px] p-4 sm:p-6">
+          <div className="border border-[#262626] rounded-[10px] p-4 sm:p-6 md:w-[70%]">
             <div className="flex flex-col lg:flex-row gap-[35.16px]">
               {/* Calendar */}
-              <div className="w-full lg:w-3/5">
+              <div className="w-full lg:w-3/4">
                 <div className="flex justify-between items-center mb-4">
                   <button
                     className="bg-[#131619] p-1 md:p-3 lg:p-[6px] xl:p-3 rounded-[6px]  transition-colors"
@@ -144,6 +141,8 @@ export default function BookingWidget() {
                     </div>
                   ))}
                 </div>
+                <div className="border-t border-[#E3E5F51F] mb-[10px] mt-[10px]"></div>
+
                 <div className="grid grid-cols-7 gap-2">
                   {generateDate(today.month(), today.year()).map(
                     ({ date, currentMonth, today }, index) => (
@@ -166,55 +165,65 @@ export default function BookingWidget() {
                   )}
                 </div>
               </div>
-             
-              <div className="w-full lg:w-2/5">
+
+              <div className="w-full lg:w-[60%]">
                 <h3 className="text-[#DEDEDE] text-lg mb-4">
                   <span className="text-[#DEDEDE] poppins-regular">
                     {selectDate.format("MMMM D, YYYY")}
                   </span>
                 </h3>
 
-                <div className="flex flex-col gap-[16.75px]">
-                  {["11:00 am", "12:00 am", "1:00 am", "02:00 am"].map(
-                    (time, i) => (
-                      <button
-                        key={i}
-                        onClick={() => handleButton(time)}
-                        className={`border ${
-                          selectedTime === time
-                            ? "border-[#6185F2]"
-                            : "border-[#f4f4ff1f]"
-                        } py-3 px-6 rounded-full bg-[#0D0D0D] cursor-default transition-colors`}
-                      >
-                        <span className="lato-normal  leading-[118.75%] text-[#DEDEDE] text-base sm:text-lg">
-                          {time}
-                        </span>
-                      </button>
-                    )
-                  )}
+                <div className="flex flex-col gap-[16.75px] max-h-[350px] pr-2 overflow-hidden overflow-y-auto custom-scrollbar ">
+                  {[
+                    "11:00 am",
+                    "12:00 am",
+                    "1:00  am",
+                    "02:00 am",
+                    "03:00 am",
+                    "04:00 am",
+                    "05:00 am",
+                    "06:00 am",
+                    "07:00 am",
+                    "08:00 am",
+                    "09:00 am",
+                    "10:00 am",
+                  ].map((time, i) => (
+                    <button
+                      key={i}
+                      onClick={() => handleButton(time)}
+                      className={`border ${
+                        selectedTime === time
+                          ? "border-[#6185F2]"
+                          : "border-[#f4f4ff1f]"
+                      } py-3 px-6 rounded-full bg-[#0D0D0D] cursor-default transition-colors`}
+                    >
+                      <span className="lato-normal  leading-[118.75%] text-[#DEDEDE] text-base sm:text-lg">
+                        {time}
+                      </span>
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
-         {showButton && 
+        {showButton && (
           <div className="flex justify-end items-end gap-10 mt-4 mb-8">
-          <button
-            onClick={handleConsultation}
-             className="public-sans border border-[#FFF] text-white rounded-full p-[6px_12px] md:px-6 md:py-3 hover:bg-white hover:text-black transition-colors"
-          >
-            Confirm
-          </button>
-          <button
-          onClick={handleCancel}
-            type="button"
-            className="public-sans border border-[#FFF] text-white rounded-full p-[6px_12px] md:px-6 md:py-3 hover:bg-white hover:text-black transition-colors"
-           
-          >
-            Cancel
-          </button>
-        </div>
-         }
+            <button
+              onClick={handleConsultation}
+              className="public-sans border border-[#FFF] text-white rounded-full p-[6px_12px] md:px-6 md:py-3 hover:bg-white hover:text-black transition-colors"
+            >
+              Confirm
+            </button>
+            <button
+              onClick={handleCancel}
+              type="button"
+              className="public-sans border border-[#FFF] text-white rounded-full p-[6px_12px] md:px-6 md:py-3 hover:bg-white hover:text-black transition-colors"
+            >
+              Cancel
+            </button>
+          </div>
+        )}
       </div>
       {showModal && (
         <SubmitModal
