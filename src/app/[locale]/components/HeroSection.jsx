@@ -86,7 +86,8 @@ const HeroSection = () => {
               {t("home_heading2")}
             </h2>
             <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#fff] text-[18px]">
-              {translations[language].home_txt}
+         
+              {t("home_txt")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:mt-6">
               <button className="public-sans text-sm sm:text-base rounded-full font-semibold  bg-[#fff] px-[26px] py-[13px] text-center z-[1] cursor-default">
@@ -97,6 +98,16 @@ const HeroSection = () => {
                 <GetButton />
               </Link>
             </div>
+            
+            <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[50px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">
+              
+              {t("ai_advantage_heading")}
+            
+            </h2>
+            <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#fff] text-[18px] lg:mt-6">
+         
+              {t("ai_advantage_txt")}
+            </p>
           </div>
         </div>
       </div>
