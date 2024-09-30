@@ -5,6 +5,9 @@ import { useLanguage } from '../context/LanguageContext';
 import en from "../../../api/benefits/en.json"
 import ar from "../../../api/benefits/ar.json"
 import { useTranslations } from "next-intl";
+import BusinessCard from "../components/BusinessCard";
+import Link from "next/link";
+import GetButton from "../components/GetButton";
 
 const Page = () => {
   const { language } = useLanguage();
@@ -137,6 +140,15 @@ const Page = () => {
           </div>
         </div>
       </div>
+      <BusinessCard
+          headingText={"Ready to Boost Your Business Efficiency?"}
+          text={"Our AI-powered solutions are designed to give your business the competitive edge it needs to stay ahead in today’s fast-paced market."}
+          button={
+            <Link href={"/consultation"}>            
+              <GetButton />
+            </Link>
+          }
+        />
     </div>
   );
 };

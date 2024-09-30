@@ -1,40 +1,30 @@
-"use client";
 import React from "react";
 import Image from "next/image";
-import { Button, Text, H2 } from "@nextui-org/react";
-import Link from "next/link";
-import { FaArrowTrendUp } from "react-icons/fa6";
-import { useLanguage } from "../context/LanguageContext";
-import en from "../../../api/en.json";
-import ar from "../../../api/ar.json";
+
 import { useTranslations } from "next-intl";
 
 const ClientTrust = () => {
-  const { language } = useLanguage();
   const t = useTranslations("Home");
-  const translation = {
-    en,
-    ar,
-  };
+
   const data = [
     {
-      name: `${translation[language].expertise}`,
-      description: `${translation[language].expertise_txt}`,
+      name: `${t("expertise")}`,
+      description: `${t("expertise_txt")}`,
     },
     {
-      name: `${translation[language].reliability}`,
-      description: `${translation[language].reliability_txt}`,
+      name: `${t("reliability")}`,
+      description: `${t("reliability_txt")}`,
     },
     {
-      name: `${translation[language].innovation}`,
-      description: `${translation[language].innovation_txt}`,
+      name: `${t("innovation")}`,
+      description: `${t("innovation_txt")}`,
     },
     {
-      name: `${translation[language].customer}`,
-      description: `${translation[language].customer_txt}`,
+      name: `${t("customer")}`,
+      description: `${t("customer_txt")}`,
     },
   ];
-
+ 
   return (
     <>
       <div className="container mx-auto mt-[120px] p-4 md:p-0">
@@ -47,6 +37,7 @@ const ClientTrust = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 place-content-center">
+          {/* {t("businesses_choose.data").map((item, index) => ( */}
           {data.map((item, index) => (
             <div
               className="col-span-1 rounded-lg overflow-hidden relative w-full border-1 border-[#0A0B0E] h-[300px] flex flex-col group"
@@ -57,7 +48,7 @@ const ClientTrust = () => {
               </h2>
               {/* Gradient overlay */}
 
-              <div className="flex flex-col items-center justify-center py-10 text-white z-20 relative bg-[#0A0B0E]  h-[150px] mt-auto p-[20px]">
+              <div className="flex flex-col items-center justify-center py-10 text-white z-20 relative bg-[#0A0B0E]  h-[150px]  mt-auto p-[20px] ">
                 <div className="absolute top-[-28px] z-10">
                   <Image
                     src="/images/icons/down-arrow.svg"
@@ -76,7 +67,7 @@ const ClientTrust = () => {
                     className="group-hover:flex items-center justify-center hidden transition-opacity duration-1000"
                   />
                 </div>
-                <p className=" text-[#989898] text-[14px] poppins-regular text-center group-hover:font-bold group-hover:text-xl">
+                <p className=" text-[#989898] text-[14px] poppins-regular text-center group-hover:font-bold group-hover:text-xl overflow-y-auto">
                   {item.description}
                 </p>
               </div>
@@ -105,12 +96,17 @@ const ClientTrust = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-[74px] relative mt-8">
                 <div className="text-center lg:text-left">
                   <h2 className="poppins-medium text-white font-medium mb-4 md:mb-6 !leading-[1.2] text-2xl md:text-3xl lg:text-4xl">
-                    {translation[language].h_benifit_h}{" "}
+                    {/* {translation[language].h_benifit_h}{" "} */}
+                    {t("h_benifit_h")}
                     <br className="hidden md:block" />{" "}
-                    {translation[language].h_benfit_break_h}
+                    {/* {translation[language].h_benfit_break_h} */}
+                    {t("h_benfit_break_h")}
+                    
+                    
                   </h2>
                   <button className="public-sans text-sm md:text-base text-white font-semibold bg-black rounded-full px-[20px] py-[12px] border-2 border-white">
-                    {translation[language].free_consultation_btn}
+                    {/* {translation[language].free_consultation_btn} */}
+                    {t("free_consultation_btn")}
                   </button>
                 </div>
 
@@ -130,10 +126,17 @@ const ClientTrust = () => {
                         className="w-[80px] md:w-[100px] lg:w-[120px]"
                       />
                       <h3 className="text-[18px] md:text-[20px] lg:text-[24px] font-bold poppins-medium text-[#DEDEDE]">
-                        {translation[language].h_efficiency}
+                        {/* {translation[language].h_efficiency} */}
+                                         
+                                            {t("h_efficiency")}
+
+
                       </h3>
                       <p className="text-[#989898] poppins-regular text-[12px] md:text-[14px] text-center">
-                        {translation[language].h_efficiecny_txt}
+                        {/* {translation[language].h_efficiecny_txt} */}
+                        {t("h_efficiecny_txt")}
+                      
+
                       </p>
                     </div>
                     <div className="col-span-1 flex items-center content-center flex-col z-[2]">
@@ -143,10 +146,14 @@ const ClientTrust = () => {
                         className="w-[80px] md:w-[100px] lg:w-[120px]"
                       />
                       <h3 className="text-[18px] md:text-[20px] lg:text-[24px] font-bold poppins-medium text-[#DEDEDE]">
-                        {translation[language].h_scalability}
+                        {/* {translation[language].h_scalability} */}
+                        {t("h_scalability")}
+                       
                       </h3>
                       <p className="text-[#989898] poppins-regular text-[12px] md:text-[14px] text-center">
-                        {translation[language].h_scalability_txt}
+                        {/* {translation[language].h_scalability_txt}
+                        {translation[language].h_scalability_txt} */}
+                        {t("h_scalability_txt")}
                       </p>
                     </div>
                     <div className="col-span-1 flex items-center content-center flex-col z-[2]">
@@ -156,10 +163,12 @@ const ClientTrust = () => {
                         className="w-[80px] md:w-[100px] lg:w-[120px]"
                       />
                       <h3 className="text-[18px] md:text-[20px] lg:text-[24px] font-bold poppins-medium text-[#DEDEDE]">
-                        {translation[language].h_expert}
+                        {/* {translation[language].h_expert} */}
+                        {t("h_expert")}
                       </h3>
                       <p className="text-[#989898] poppins-regular text-[12px] md:text-[14px] text-center">
-                        {translation[language].expert_txt}
+                        {/* {translation[language].expert_txt} */}
+                        {t("expert_txt")}
                       </p>
                     </div>
                   </div>

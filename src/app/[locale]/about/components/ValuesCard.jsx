@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Button } from "@nextui-org/react";
+import { useTranslations } from "next-intl";
 import { useLanguage } from "../../context/LanguageContext";
 import en from "../../../../api/about/en.json"
 import ar from "../../../../api/about/ar.json"
@@ -8,6 +9,7 @@ import ar from "../../../../api/about/ar.json"
 
  
 const ValuesCard = () => {
+  const t = useTranslations("About");
   const [activeService, setActiveService] = useState(0);
   const handleClick = (index) => {
     setActiveService(index);
@@ -28,6 +30,7 @@ const ValuesCard = () => {
       >
         <div>
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold poppins-medium">
+
             {title}
           </h3>
           <p className="text-[#989898] poppins-regular text-xs sm:text-sm md:text-base mt-2 lg:max-w-[528.04px]">
@@ -94,23 +97,25 @@ const ValuesCard = () => {
           <div className="col-span-1 lg:col-span-6 text-white space-y-4 sm:space-y-6 md:space-y-8">
             {[
               {
-                title: `${translations[language].innovation_heading}`,
-                description: `${translations[language].Innovation_txt}`
+                title: `${t('innovation_heading')}`,
+                description: `${t('Innovation_txt')}`
                   // "We constantly push the boundaries of what's possible with AI, developing solutions that set new industry standards.",
               },
               {
-                title: `${translations[language].excellence}`,
-                description:`${translations[language].excellence_txt}`,
-                  // "Our commitment to excellence ensures that every project we undertake is completed to the highest standard, with a focus on delivering real results.",
+               
+                title: `${t('excellence')}`,
+                description: `${t('excellence_txt')}`
               },
               {
-                title: `${translations[language].integrity}`,
-                description: `${translations[language].integrity_txt}`,
+                
+                title: `${t('integrity')}`,
+                description: `${t('integrity_txt')}`
                   // "We believe in building trust through transparency, honesty, and ethical practices in everything we do.",
               },
               {
-                title: `${translations[language].client}`,
-                description:`${translations[language].client_txt}`,
+               
+                title: `${t('client')}`,
+                description: `${t('client_txt')}`
                   // "Our clients' needs are at the heart of our business. We tailor our solutions to meet specific goals, ensuring maximum impact and satisfaction.",
               },
             ].map((service, index) => (

@@ -30,15 +30,6 @@ const Footer = () => {
   return (
     <>
       <div className="">
-        <BusinessCard
-          headingText={t("business")}
-          text={t("business_txt")}
-          button={
-            <Link href={"/consultation"}>            
-              <GetButton />
-            </Link>
-          }
-        />
       </div>
 
       <footer className=" w-full ">

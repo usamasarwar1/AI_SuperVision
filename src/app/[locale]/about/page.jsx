@@ -5,6 +5,9 @@ import ValuesCard from "./components/ValuesCard";
 import ChoosUs from "./components/ChoosUs";
 
 import { useTranslations } from "next-intl";
+import BusinessCard from "../components/BusinessCard";
+import Link from "next/link";
+import GetButton from "../components/GetButton";
 
 const Page = () => {
   const t = useTranslations("About");
@@ -54,6 +57,15 @@ const Page = () => {
           choos_us_txt={`${t("choos_us_txt")}`}
         />
       </div>
+      <BusinessCard
+          headingText={'Ready to Take Your Business to the Next Level?'}
+          text={'Discover how AI Supervision’s tailored solutions can streamline your operations and drive lasting growth.'}
+          button={
+            <Link href={"/consultation"}>            
+              <GetButton />
+            </Link>
+          }
+        />
     </div>
   );
 };

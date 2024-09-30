@@ -5,6 +5,9 @@ import Calendar from './components/Calendar'
 import { useLanguage } from '../context/LanguageContext'
 import en from "../../../api/consultation/en.json"
 import ar from "../../../api/consultation/ar.json"
+import BusinessCard from '../components/BusinessCard'
+import Link from 'next/link'
+import GetButton from '../components/GetButton'
 
 
 const Page = () => {
@@ -24,6 +27,15 @@ const Page = () => {
         descripationBreakText={translations[language].hero_break_txt}
       />
        <Calendar />
+        <BusinessCard
+          headingText={'Unlock Your Business’s Full Potential with AI Supervision'}
+          text={"Our AI-driven solutions are designed to reduce costs, improve efficiency, and help your business sca"}
+          button={
+            <Link href={"/consultation"}>            
+              <GetButton />
+            </Link>
+          }
+        />
     </div>
   )
 }
