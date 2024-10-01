@@ -9,7 +9,8 @@ const page = () => {
   const cardData = [
     {
       id: 1,
-      imageUrl: "/images/digital-transformation.png",
+      // imageUrl: "/images/digital-transformation.png",
+      imageUrl: "/images/custom-software.png",
       heading: "AI-Powered Chat Super Agents",
       text: "Our AI-Powered Chat Super Agents don’t just respond to customer inquiries—they also automate workflows that extend beyond the chat interface. From managing customer support to pulling relevant data and automating follow-ups, these agents are designed to enhance both customer experience and operational efficiency."  },
     {
