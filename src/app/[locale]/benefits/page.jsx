@@ -18,6 +18,7 @@ const Page = () => {
   };
  
   return (
+    <>
     <div className="bg-[#050505] mb-[50px] lg:mb-[140.79px]">
       <HeroSections
         bg_image="bg-image-hero-benefits"
@@ -26,6 +27,14 @@ const Page = () => {
         descripation={translations[language].hero_txt}
         descripationBreakText={translations[language].hero_break_txt}
       />
+       <div className=" my-[40px] max-w-[70%] bg-[#131619] md:mb-[123.8px] rounded-[16px]  h-auto  p-4 md:p-[50px] container mx-auto">
+          <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[40px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">  
+            {t("payment_heading")}
+          </h2>
+          <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#989898] text-[18px] lg:mt-6 max-w-[90%] mx-auto text-center">
+            {t("payment_txt")}
+          </p>
+      </div>
       <div className="container mx-auto px-4 md:px-8 mt-[83.86px]">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-5">
           <div className="col-span-12 md:col-span-7">
@@ -140,16 +149,18 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <BusinessCard
-          headingText={"Ready to Boost Your Business Efficiency?"}
-          text={"Our AI-powered solutions are designed to give your business the competitive edge it needs to stay ahead in today’s fast-paced market."}
-          button={
-            <Link href={"/consultation"}>            
-              <GetButton />
-            </Link>
-          }
-        />
     </div>
+    <BusinessCard
+      headingText={"Ready to Boost Your Business Efficiency?"}
+      text={"Our AI-powered solutions are designed to give your business the competitive edge it needs to stay ahead in today’s fast-paced market."}
+      button={
+        <Link href={"/consultation"}>            
+          <GetButton />
+        </Link>
+      }
+    />
+    </>
+    
   );
 };
 

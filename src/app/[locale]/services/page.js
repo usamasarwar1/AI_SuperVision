@@ -42,7 +42,6 @@ const page = () => {
             text={item.text}
             subText={item.subText}
           />
-         
         </React.Fragment>
       ))}
        <BusinessCard

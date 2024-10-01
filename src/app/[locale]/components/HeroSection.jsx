@@ -99,17 +99,19 @@ const HeroSection = () => {
               </Link>
             </div>
             
-            <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[50px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">
-              
-              {t("ai_advantage_heading")}
             
-            </h2>
-            <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#fff] text-[18px] lg:mt-6">
-         
-              {t("ai_advantage_txt")}
-            </p>
+           
+            
           </div>
         </div>
+      </div>
+      <div className=" my-[40px] max-w-[70%] bg-[#131619] md:mb-[123.8px] rounded-[16px]  h-auto  p-4 md:p-[50px] container mx-auto">
+          <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[40px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">  
+            {t("ai_advantage_heading")}
+          </h2>
+          <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#989898] text-[18px] lg:mt-6 max-w-[850px] mx-auto text-center">
+            {t("ai_advantage_txt")}
+          </p>
       </div>
       <section className="bg-[#050505] p-6 md:p-0 py-8 sm:py-16 mt-2">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[50px] items-center">
@@ -154,6 +156,7 @@ const HeroSection = () => {
           {/* Right Services List */}
 
           <div className="text-white space-y-8">
+           
             <ServiceItem
               index={0}
               title={t("core_ai_h")}
