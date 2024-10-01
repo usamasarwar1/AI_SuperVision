@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 import LanguageProvider from "./context/LanguageContext";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
+import Head from 'next/head';
 
 const inter = Saira({ subsets: ["latin"] });
 
@@ -19,6 +20,9 @@ export default async function RootLayout({ children,  params: {locale} }) {
   const messages = await getMessages();
   return (
     <html lang={locale} >
+       <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body suppressHydrationWarning={true} className={`${inter.className} bg-[#050505]  min-h-[100vh] `}>
       <NextIntlClientProvider messages={messages}>
         <Providers>
