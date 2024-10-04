@@ -3,7 +3,7 @@ import React from "react";
 const HeroSection = () => {
   return (
     <div
-      className={`public-sans lg:mb-[59.12px] min-h-[600px] sm:min-h-[810px] relative bg-server-gradient bg-cover bg-no-repeat bg-center`}
+      className={`public-sans lg:mb-[59.12px] min-h-[500px] md:min-h-[710px] relative bg-server-gradient bg-cover bg-no-repeat bg-center`}
     >
       <div
         className="flex w-full h-full absolute inset-0  bg-gradient-to-b from-transparent to-black opacity-75"

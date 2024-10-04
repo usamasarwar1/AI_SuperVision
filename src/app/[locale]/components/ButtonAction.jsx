@@ -2,12 +2,12 @@
 import React from "react";
 
 const ButtonAction = ({ commonClasses }) => {
-  // Phone Number Action Button
-  const simulateCall = (phoneNumber) =>
-    window.open(`tel:${phoneNumber}`, "_self");
-  const callHandler = () => {
-    simulateCall("+1 (555) 123-4567");
-  };
+  // // Phone Number Action Button
+  // const simulateCall = (phoneNumber) =>
+  //   window.open(`tel:${phoneNumber}`, "_self");
+  // const callHandler = () => {
+  //   simulateCall("+1 (555) 123-4567");
+  // };
 
   // Email Action Button
   const simulateEmail = (emailAddress) =>
@@ -42,7 +42,7 @@ const ButtonAction = ({ commonClasses }) => {
         </span>
         info@yourbusinessname.com
       </li>
-      <li onClick={callHandler} className={commonClasses}>
+      {/* <li onClick={callHandler} className={commonClasses}>
         <span className="mr-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ const ButtonAction = ({ commonClasses }) => {
           </svg>
         </span>
         +1 (555) 123-4567
-      </li>
+      </li> */}
      
     </ul>
   );

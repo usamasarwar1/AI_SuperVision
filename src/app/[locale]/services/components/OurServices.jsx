@@ -6,7 +6,7 @@ import GetButton from "../../components/GetButton";
 const OurServices = ({ id, imageUrl, heading, text, subText }) => {
   return (
     <div
-      className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 xl:gap-[110px] py-8 lg:py-24"
+      className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 xl:gap-[110px] pb-8 lg:pb-24"
       key={id}
     >
       {/* Image Section */}

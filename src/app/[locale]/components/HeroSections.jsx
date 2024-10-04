@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroSections = ({bg_image, headingText, descripation, headingBreakText, descripationBreakText}) => {
   return (
-    <div className={`public-sans md:mb-[59.12px] min-h-[600px] md:min-h-[810px] relative bg-server-gradient bg-cover bg-no-repeat bg-center ${bg_image}`}
+    <div className={`public-sans md:mb-[59.12px] min-h-[500px] md:min-h-[710px] relative bg-server-gradient bg-cover bg-no-repeat bg-center ${bg_image}`}
          
     // style={{ 'image-with-gradient': 'linear-gradient(180deg, rgba(5, 5, 5, 0.30) 0%, #050505 100%), url("/images/hero-serversbg.png")',  }}
     >

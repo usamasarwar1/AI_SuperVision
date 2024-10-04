@@ -40,7 +40,7 @@ const ClientTrust = () => {
           {/* {t("businesses_choose.data").map((item, index) => ( */}
           {data.map((item, index) => (
             <div
-              className="col-span-1 rounded-lg overflow-hidden relative w-full border-1 border-[#0A0B0E] h-[300px] flex flex-col group"
+              className="col-span-1 rounded-lg overflow-hidden relative w-full border-1 border-[#0A0B0E] h-[350px] flex flex-col group"
               key={index}
             >
               <h2 className=" text-[#DEDEDE] text-center text-[24px] poppins-medium my-auto">
@@ -48,17 +48,17 @@ const ClientTrust = () => {
               </h2>
               {/* Gradient overlay */}
 
-              <div className="flex flex-col items-center justify-center py-10 text-white z-20 relative bg-[#0A0B0E]  h-[150px]  mt-auto p-[20px] ">
+              <div className="flex flex-col items-center justify-center py-10 text-white z-20 relative bg-[#0A0B0E]  h-[190px]  mt-auto p-[20px] ">
                 <div className="absolute top-[-28px] z-10">
                   <Image
                     src="/images/icons/down-arrow.svg"
                     alt="logo"
                     width={56}
                     height={56}
-                    className="group-hover:hidden transition-opacity duration-1000"
+                    className="transition-opacity duration-1000"
                   />
                 </div>
-                <div className="absolute top-[-28px] z-10">
+                {/* <div className="absolute top-[-28px] z-10">
                   <Image
                     src="/images/icons/correct.svg"
                     alt="logo"
@@ -66,10 +66,11 @@ const ClientTrust = () => {
                     height={56}
                     className="group-hover:flex items-center justify-center hidden transition-opacity duration-1000"
                   />
-                </div>
-                <p className=" text-[#989898] text-[14px] poppins-regular text-center group-hover:font-bold group-hover:text-xl overflow-y-auto">
-                  {item.description}
-                </p>
+                </div> */}
+               <p className="text-[#989898] text-[14px] poppins-regular text-center  group-hover:font-bold group-hover:text-[17px] ">
+  {item.description}
+</p>
+
               </div>
             </div>
           ))}
@@ -104,10 +105,10 @@ const ClientTrust = () => {
                     
                     
                   </h2>
-                  <button className="public-sans text-sm md:text-base text-white font-semibold bg-black rounded-full px-[20px] py-[12px] border-2 border-white">
-                    {/* {translation[language].free_consultation_btn} */}
+                  {/* <button className="public-sans text-sm md:text-base text-white font-semibold bg-black rounded-full px-[20px] py-[12px] border-2 border-white">
+                    {translation[language].free_consultation_btn}
                     {t("free_consultation_btn")}
-                  </button>
+                  </button> */}
                 </div>
 
                 <div className="col-span-1 md:col-span-2 lg:col-span-2 relative z-[2] mt-6 lg:mt-0">

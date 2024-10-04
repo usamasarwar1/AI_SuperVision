@@ -67,8 +67,8 @@ export default function Header() {
       <NavbarContent>
         <NavbarBrand>
           <Link href="/">
-            <Image src="images/logo.svg" width={200} height={200} alt="Logo"
-            className="w-[200px] h-[200px]"
+            <Image src="/logo.svg" width={200} height={200} alt="Logo"
+             className="w-[200px] h-[200px]"
             />
           </Link>
         </NavbarBrand>
@@ -78,7 +78,7 @@ export default function Header() {
       <NavbarContent className="hidden lg:flex lg:gap-8" justify="center">
         <NavbarItem>
           <Link
-            className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
+            className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out "
             href="/"
           >
             {t("home")}
@@ -87,7 +87,7 @@ export default function Header() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
+            className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out "
             href="/about"
           >
             {t("about")}
@@ -96,7 +96,7 @@ export default function Header() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
+            className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out "
             href="/services"
           >
             {t("services")}
@@ -105,7 +105,7 @@ export default function Header() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
+            className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out "
             href="/benefits"
           >
             {t("benefits")}
@@ -114,7 +114,7 @@ export default function Header() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
+            className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out "
             href="/consultation"
           >
             {" "}
@@ -199,7 +199,7 @@ export default function Header() {
         <div className="hidden lg:inline-block">
           <Button
             onClick={() => router.push("/contacts")}
-            className="public-sans leading-6 relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6 md:p-[13px_26px]  sm:h-10 transition-all duration-1000 ease-out hover:text-[#06D889] hover:bg-[#fff]"
+            className="public-sans leading-6 relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6 md:p-[13px_26px]  sm:h-10 transition-all duration-1000 ease-out  hover:bg-[#fff]"
           >
             {t("contact")}
           </Button>
@@ -214,7 +214,7 @@ export default function Header() {
         >
           <NavbarItem>
             <Link
-              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
+              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out "
               href="/"
             >
               {t("home")}
@@ -222,7 +222,7 @@ export default function Header() {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
+              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out "
               href="/about"
             >
               {t("about")}
@@ -230,7 +230,7 @@ export default function Header() {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
+              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out "
               href="/services"
             >
               {t("services")}
@@ -238,7 +238,7 @@ export default function Header() {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
+              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out "
               href="/benefits"
             >
               {t("benefits")}
@@ -246,7 +246,7 @@ export default function Header() {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#06D889]"
+              className="py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out "
               href="/consultation"
             >
               {t("consultation")}
@@ -255,7 +255,7 @@ export default function Header() {
           <NavbarItem>
             <Button
               onClick={() => router.push("/contacts")}
-              className="public-sans leading-6 relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6 md:p-[13px_26px]  sm:h-10 transition-all duration-1000 ease-out hover:text-[#06D889] hover:bg-[#fff]"
+              className="public-sans leading-6 relative rounded-full border-2 border-[#fff] bg-white text-[#000] text-[10px] sm:text-[1rem] font-semibold px-1 h-6 md:p-[13px_26px]  sm:h-10 transition-all duration-1000 ease-out  hover:bg-[#fff]"
             >
               {t("contact")}
             </Button>

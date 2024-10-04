@@ -11,30 +11,58 @@ import GetButton from "./GetButton";
 const Footer = () => {
   const t = useTranslations("Home");
 
-  // // Phone Number Action Button
-  // const simulateCall = (phoneNumber) =>
-  //   window.open(`tel:${phoneNumber}`, "_self");
-  // const callHandler = () => {
-  //   simulateCall("+1 (555) 123-4567");
-  // };
-  // // Email Action Button
-  // const simulateEmail = (emailAddress) =>
-  //   window.open(`mailto:${emailAddress}`, "_self");
-  // const emailHandler = () => {
-  //   simulateEmail("info@yourbusinessname.com");
-  // };
+ 
   const footerIcons =
     "h-8 w-8 rounded-md  bg-[rgba(15,16,18,0.8)] flex items-center justify-center text-white ";
   const commonClasses =
     " cursor-pointer flex font-medium tracking-[.02em] text-[1rem] text-[#fff] translate-500 mb-[18px] public-sans";
   return (
     <>
-      <div className="">
+      {/* <div className="">
+      <BusinessCard
+          headingText={'Unlock Your Business’s Full Potential with AI Supervision'}
+          text={"Our AI-driven solutions are designed to reduce costs, improve efficiency, and help your business sca"}
+          button={
+            <Link href={"/consultation"}>            
+              <GetButton />
+            </Link>
+          }
+        />
+      </div> */}
+      {/* <div className="p-6 lg:p-0">
+      <div className="bg-[#131619] md:mb-[123.8px] rounded-[16px] h-auto sm:max-h-[212px] p-4 md:p-[50px] container mx-auto flex flex-col md:flex-row items-center gap-6 lg:gap-0">
+        
+        <div className="w-[80%] text-center md:text-left">
+          <h1 className="text-white poppins-medium leading-[130%] text-[24px] lg:text-[40px]">
+           sadfasdfasdfasdfdsa
+          </h1>
+          <p className="public-sans text-[14px] lg:text-[16px] font-normal leading-[24px] text-white max-w-full lg:max-w-[82%] mt-2 md:mt-3">
+           sdfsafasdfsadfdsa
+          </p>
+        </div>
+    
+        <div className="flex flex-col items-center md:items-start gap-4">
+          <Link href="/">
+            <Image
+              src="images/logo.svg"
+              width={100}
+              height={100}
+              alt="Logo"
+              className="w-[200px]"
+            />
+          </Link>
+
+          <button className="public-sans text-xs sm:text-sm lg:text-base  text-[#fff] font-semibold rounded-full bg-[#000] py-2 sm:py-3 px-4 sm:px-6 md:px-[5px] lg:px-5 border-2 border-[#fff] hover:bg-gray-800 transition-all mb-3 lg:mb-0">
+            Get a Free Consultation
+          </button>
+        </div>
+        
       </div>
+    </div> */}
 
       <footer className=" w-full ">
         <div className="container mx-auto w-[90%] lg:w-[80%] grid grid-cols-12 gap-6 sm:gap-8 md:gap-10 lg:gap-16">
-          <div className="col-span-12 sm:col-span-6 lg:col-span-3">
+          <div className="col-span-12 sm:col-span-6 lg:col-span-2">
             <h2 className=" text-[12px] mb-8 text-[#FFF] public-sans">
               {t("quick")}
             </h2>
@@ -54,6 +82,16 @@ const Footer = () => {
                   {t("services")}
                 </Link>
               </li>
+                         
+              
+            </ul>
+          </div>
+          <div className="col-span-12 sm:col-span-6 lg:col-span-2">
+            <h2 className=" text-[12px] md:mb-12 text-[#FFF] public-sans">
+              {/* {t("quick")} */}
+            </h2>
+            <ul className="flex flex-col gap-4">
+             
               <li className={commonClasses}>
                 <Link href={"/benefits"} className="public-sans-regular">
                   {t("benefits")}
@@ -128,7 +166,7 @@ const Footer = () => {
                 +1 (555) 123-4567
               </li> */}
               <ButtonAction commonClasses = {commonClasses}/>
-              <li className={commonClasses}>
+              {/* <li className={commonClasses}>
                 <span className="mr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +189,7 @@ const Footer = () => {
                 </span>
 
                 {t("address")}
-              </li>
+              </li> */}
             </ul>
           </div>
 

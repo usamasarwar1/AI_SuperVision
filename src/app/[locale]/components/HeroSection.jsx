@@ -14,8 +14,8 @@ const ServiceItem = ({ index, title, description, icon, active, onClick }) => {
   return (
     <div
       onClick={() => onClick(index)}
-      className={`flex items-start space-x-4 p-4 cursor-pointer transition-all ${
-        active ? "border-l-4 border-white" : "border-l-4 border-[#181818]"
+      className={`flex items-start space-x-4 p-4  cursor-pointer transition-all ${
+        active ? "border-l-4 border-white" : "border-l-4 mt-4 mb-4 border-[#181818]"
       }`}
     >
       <Image      
@@ -90,7 +90,7 @@ const HeroSection = () => {
               {t("home_txt")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:mt-6">
-              <button className="public-sans text-sm sm:text-base rounded-full font-semibold  bg-[#fff] px-[26px] py-[13px] text-center z-[1] cursor-default">
+              <button onClick={() => router.push("/services")} className="public-sans text-sm sm:text-base rounded-full font-semibold  bg-[#fff] px-[26px] py-[13px] text-center z-[1] cursor-default">
                 {translations[language].Discover_btn}
               </button>
               
@@ -116,8 +116,8 @@ const HeroSection = () => {
       <section className="bg-[#050505] p-6 md:p-0 py-8 sm:py-16 mt-2">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[50px] items-center">
           {/* Left Image Card */}
-          <div className="relative h-[50vh] md:h-full bg-no-repeat bg-cover rounded-xl bg-[url('/images/ourServices.png')] bg-[#050505]">
-            <div className="bg-transparent relative p-0 sm:p-4 flex justify-center items-center">
+          <div className="relative h-[50vh] md:h-full md:ml-4 lg:ml-0 bg-no-repeat bg-cover rounded-xl bg-[url('/images/ourServices.png')] bg-[#050505]">
+            <div className="bg-transparent relative  sm:p-4 flex justify-center items-center">
               <Button
                 auto
                 shadow
@@ -165,7 +165,9 @@ const HeroSection = () => {
               active={activeService === 0}
               onClick={handleClick}
             />
+          <div className="space-y-8">
 
+          
             <ServiceItem
               index={1}
               title={t("core_aiPowered_h")}
@@ -174,7 +176,8 @@ const HeroSection = () => {
               active={activeService === 1}
               onClick={handleClick}
             />
-
+</div>
+<div className="space-y-8">
             <Link href="/services">
               <ServiceItem
                 index={2}
@@ -185,6 +188,8 @@ const HeroSection = () => {
                 onClick={handleClick}
               />
             </Link>
+            </div>
+            <div className="space-y-8">
 
             <Link href="/services">
               <ServiceItem
@@ -196,6 +201,7 @@ const HeroSection = () => {
                 onClick={handleClick}
               />
             </Link>
+            </div>
           </div>
         </div>
       </section>
