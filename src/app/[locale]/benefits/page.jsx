@@ -117,7 +117,7 @@ const Page = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-[10.24px] mt-3  md:mt-[89.94px]">
-            <div className="col-span-12 md:col-span-6">
+            <div className="col-span-12 md:col-span-6 lg:col-span-7">
               <video
                 src="/videos/scalableSolutions.mp4"
                 width={500}
@@ -130,9 +130,9 @@ const Page = () => {
               />
             </div>
 
-            <div className="col-span-12  md:col-span-6 ">
+            <div className="col-span-12  md:col-span-6  lg:col-span-5 ">
               <div className="bg-[#131619] h-full rounded-[16px] p-4 md:p-7 lg:p-[30.28px] flex flex-col justify-center text-left">
-                <h1 className="text-[#DEDEDE] poppins-medium text-[24px] md:text-[40px] leading-[130%] truncate">
+                <h1 className="text-[#DEDEDE] poppins-medium text-[24px] md:text-[40px] lg:text-[35px] xl:text-[40px] leading-[130%] truncate">
                   {translations[language].scalable_heading}
                 </h1>
                 <h2 className="text-[#B8B9BA] poppins-medium text-[14px] md:text-[16px] leading-[130%]">

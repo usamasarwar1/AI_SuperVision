@@ -8,6 +8,7 @@ import ar from "../../../api/consultation/ar.json"
 import BusinessCard from '../components/BusinessCard'
 import Link from 'next/link'
 import GetButton from '../components/GetButton'
+import { useTranslations } from "next-intl";
 
 
 const Page = () => {
@@ -16,6 +17,7 @@ const Page = () => {
     en,
     ar,
   };
+  const t = useTranslations("Benefits");
  
   return (
     <div className="bg-[#050505] mb-[50px] lg:mb-[140.79px]">

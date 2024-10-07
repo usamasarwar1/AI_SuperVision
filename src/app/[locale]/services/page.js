@@ -9,17 +9,17 @@ const page = () => {
   const cardData = [
     {
       id: 1,
-      imageUrl: "/images/image1.png",
+      imageUrl: "/images/digital-transformation.jpg",
       heading: "AI-Powered Chat Super Agents",
       text: "Our AI-Powered Chat Super Agents don’t just respond to customer inquiries—they also automate workflows that extend beyond the chat interface. From managing customer support to pulling relevant data and automating follow-ups, these agents are designed to enhance both customer experience and operational efficiency."  },
     {
       id: 2,
-      imageUrl: "/images/custom-software.png",
+      imageUrl: "/images/custom-software.jpg",
       heading: "Custom Software Development",
       text: "We design tailored automation systems to eliminate slow processes and replace or reduce workforce dependency. Free up your team to focus on strategic growth while AI handles repetitive tasks." },
     {
       id: 3,
-      imageUrl: "/images/cloud-soluation.png",
+      imageUrl: "/images/cloud-soluation.jpg",
       heading: "Internal Workflow Automation",
       text: "Our internal workflow automation solutions help businesses optimize their in-house operations. From automating reporting systems, task delegation, and staff communication, our AI tools allow your team to operate efficiently without getting bogged down by manual processes." },
     {

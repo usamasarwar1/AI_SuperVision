@@ -87,7 +87,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col-span-12 sm:col-span-6 lg:col-span-2">
-            <h2 className=" text-[12px] md:mb-12 text-[#FFF] public-sans">
+            <h2 className=" text-[12px] sm:mt-12 md:mb-12 text-[#FFF] public-sans">
               {/* {t("quick")} */}
             </h2>
             <ul className="flex flex-col gap-4">

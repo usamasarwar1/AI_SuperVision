@@ -65,7 +65,6 @@
         "hero_heading": "Empowering Businesses Through",
         "headingBreakText": "Innovation and Expertise",
         "hero_txt": "At AI Supervision, we believe in transforming visions into reality by leveraging technology, creativity, and strategic thinking.",
-        
         "experties_heading": "Our Expertise",
         "experties_txt":"At AI Supervision, we specialize in transforming businesses through advanced AI-driven automation. Our solutions are tailored to each client’s specific needs, helping them streamline operations, reduce workforce dependency, and scale efficiently.",
         "who_are_heading": "Who We Are",
@@ -101,6 +100,33 @@
       "scalable_heading": "Scalable Solutions",
       "scalable_sub_heading": "Grow with Confidence",
       "scalable_txt":"As your business grows, so do your needs. Our AI solutions are scalable, ensuring that your operations remain efficient without increasing costs."
-  }
+  },
+
+  "Services":{
+    "hero_heading": "Get in Touch with AI Supervision",
+    "hero_txt":"Transform your business with our comprehensive suite of AI solutions designed",
+    "hero_break_txt": "to meet your unique needs.",
+    "digital_heading": "Digital Transformation Consulting",
+    "digital_txt": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "digital_break_tex": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    "custom": "Custom Software Development",
+    "custom_txt": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "custom_break_tex": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    "cloud_heading":"Cloud Solutions",
+    "cloude_txt": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "cloude_break_tex": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+     "data": "Data Analytics & AI",
+     "data_txt": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "data_break_tex": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+},
+"Consultation": {
+  "hero_heading": "Schedule Your FREE Consultation.",
+  "hero_txt": "Fill out the following information and set up a time to talk. Once you are done setting up a time,",
+  "hero_break_txt": "please check your email for your confirmation.",
+  "minute": "30 Minute Initial Consultation",
+  "minute_txt": "Select a date and time",
+  "time": "Select a Date & Time",
+  "free_consultation_btn": "Get a Free Consultation"
+}
       
 }

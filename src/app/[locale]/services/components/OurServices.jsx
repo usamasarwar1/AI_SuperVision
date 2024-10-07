@@ -20,7 +20,7 @@ const OurServices = ({ id, imageUrl, heading, text, subText }) => {
           alt={`Image for card ${id}`}
           width={500}
           height={500}
-          className="w-full h-full object-fit rounded-lg"
+          className="w-[549.17px] h-[438.67px] rounded-lg"
         />
       </div>
 

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useLanguage } from "../../context/LanguageContext";
 import en from "../../../../api/contact/en.json";
 import ar from "../../../../api/contact/ar.json";
-import Script from "next/script";
+import { useTranslations } from "next-intl";
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -14,6 +14,7 @@ const Contact = () => {
     en,
     ar,
   };
+  const t = useTranslations("Benefits");
   const {
     register,
     handleSubmit,
