@@ -4,29 +4,35 @@ import OurServices from "./components/OurServices";
 import BusinessCard from "../components/BusinessCard";
 import Link from "next/link";
 import GetButton from "../components/GetButton";
+import { useTranslations } from "next-intl";
 
 const page = () => {
+  const t = useTranslations("Services");
   const cardData = [
     {
       id: 1,
       imageUrl: "/images/digital-transformation.jpg",
-      heading: "AI-Powered Chat Super Agents",
-      text: "Our AI-Powered Chat Super Agents don’t just respond to customer inquiries—they also automate workflows that extend beyond the chat interface. From managing customer support to pulling relevant data and automating follow-ups, these agents are designed to enhance both customer experience and operational efficiency."  },
+      heading: `${t("ai_powered_chat_h")}`,
+      text: `${t("ai_powered_chat_txt")}`  
+    },
     {
       id: 2,
       imageUrl: "/images/custom-software.jpg",
-      heading: "Custom Software Development",
-      text: "We design tailored automation systems to eliminate slow processes and replace or reduce workforce dependency. Free up your team to focus on strategic growth while AI handles repetitive tasks." },
+      heading: `${t("custom_automation_h")}`,
+      text: `${t("custom_automation_txt")}`
+     },
     {
       id: 3,
       imageUrl: "/images/cloud-soluation.jpg",
-      heading: "Internal Workflow Automation",
-      text: "Our internal workflow automation solutions help businesses optimize their in-house operations. From automating reporting systems, task delegation, and staff communication, our AI tools allow your team to operate efficiently without getting bogged down by manual processes." },
+      heading: `${t("internal_flow_h")}`,
+      text:`${t("internal_flow_txt")}` 
+     },
     {
       id: 4,
       imageUrl: "/images/data-analytics.png",
-      heading: "AI Consulting for Business Transformation",
-      text: "We help businesses assess where AI can provide the most significant impact. From reducing operational costs to optimizing your workforce, our AI consulting services provide strategic insights and a step-by-step roadmap to implement AI technologies." },
+      heading: `${t("ai_consulting_h")}`,      
+      text: `${t("ai_consulting_txt")}` 
+     },
   ];
 
   return (

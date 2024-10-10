@@ -309,7 +309,7 @@ const Contact = () => {
 
         {/* Right Sidebar */}
         <div className="w-full lg:w-1/3 h-[50%]">
-          {/* <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&libraries=places&callback=initMap" className="w-full h-full" /> */}
+        
           <div className="relative w-full pt-[60%] ">
             <Image
               src="/images/map.png"

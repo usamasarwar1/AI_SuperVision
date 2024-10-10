@@ -3,9 +3,6 @@ import React, { useState } from "react";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useLanguage } from "../context/LanguageContext";
-import en from "../../../api/en.json";
-import ar from "../../../api/ar.json";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import GetButton from "./GetButton";
@@ -15,16 +12,17 @@ const ServiceItem = ({ index, title, description, icon, active, onClick }) => {
     <div
       onClick={() => onClick(index)}
       className={`flex items-start space-x-4 p-4  cursor-pointer transition-all ${
-        active ? "border-l-4 border-white" : "border-l-4 mt-4 mb-4 border-[#181818]"
+        active
+          ? "border-l-4 border-white"
+          : "border-l-4 mt-4 mb-4 border-[#181818]"
       }`}
     >
-      <Image      
+      <Image
         alt="hero-icon"
         src={icon}
         width={24}
         height={24}
         className="text-3xl mt- w-6 h-6"
-        
       />
       <div>
         <h3 className="text-xl sm:text-2xl font-bold poppins-medium">
@@ -40,14 +38,9 @@ const ServiceItem = ({ index, title, description, icon, active, onClick }) => {
 
 const HeroSection = () => {
   const [activeService, setActiveService] = useState(0);
-  const { language } = useLanguage();
   const t = useTranslations("Home");
   const router = useRouter();
 
-  const translations = {
-    en,
-    ar,
-  };
   const handleClick = (index) => {
     setActiveService(index);
     router.push("/services");
@@ -80,38 +73,37 @@ const HeroSection = () => {
             />
 
             <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[50px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">
-              
-              {t("home_heading")}
+              Envisioning Corporations with One-Fourth the Workforce,
               <br className="hidden md:inline-block" />
-              {t("home_heading2")}
+              Reducing Expenses to One-Fourth the Cost.
             </h2>
             <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#fff] text-[18px]">
-         
-              {t("home_txt")}
+              AI Supervision empowers businesses to cut costs and optimize
+              efficiency with automation solutions tailored to their specific
+              needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:mt-6">
-              <button onClick={() => router.push("/services")} className="public-sans text-sm sm:text-base rounded-full font-semibold  bg-[#fff] px-[26px] py-[13px] text-center z-[1] cursor-default">
-                {translations[language].Discover_btn}
+              <button
+                onClick={() => router.push("/services")}
+                className="public-sans text-sm sm:text-base rounded-full font-semibold  bg-[#fff] px-[26px] py-[13px] text-center z-[1] cursor-default"
+              >
+                Discover Our Solutions
               </button>
-              
-              <Link href={"/consultation"}>               
+
+              <Link href={"/consultation"}>
                 <GetButton />
               </Link>
             </div>
-            
-            
-           
-            
           </div>
         </div>
       </div>
       <div className=" my-[40px] max-w-[70%] bg-[#131619] md:mb-[123.8px] rounded-[16px]  h-auto  p-4 md:p-[50px] container mx-auto">
-          <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[40px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">  
-            {t("ai_advantage_heading")}
-          </h2>
-          <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#989898] text-[18px] lg:mt-6 max-w-[850px] mx-auto text-center">
-            {t("ai_advantage_txt")}
-          </p>
+        <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[40px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">
+          {t("ai_advantage_heading")}
+        </h2>
+        <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#989898] text-[18px] lg:mt-6 max-w-[850px] mx-auto text-center">
+          {t("ai_advantage_txt")}
+        </p>
       </div>
       <section className="bg-[#050505] p-6 md:p-0 py-8 sm:py-16 mt-2">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[50px] items-center">
@@ -126,7 +118,7 @@ const HeroSection = () => {
                 className="bg-[#050505] border  border-[#fff] text-white font-bold w-full rounded-lg p-4 md:p-9 text-[16px] md:text-xl poppins-medium flex items-center justify-between"
                 iconRight={<span className="ml-2">→</span>}
               >
-                {translations[language].core_services}
+                Our Core Services
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="36"
@@ -156,7 +148,6 @@ const HeroSection = () => {
           {/* Right Services List */}
 
           <div className="text-white space-y-8">
-           
             <ServiceItem
               index={0}
               title={t("core_ai_h")}
@@ -165,42 +156,39 @@ const HeroSection = () => {
               active={activeService === 0}
               onClick={handleClick}
             />
-          <div className="space-y-8">
-
-          
-            <ServiceItem
-              index={1}
-              title={t("core_aiPowered_h")}
-              description={t("core_aiPowered_txt")}
-              icon="/images/icons/csd.svg"
-              active={activeService === 1}
-              onClick={handleClick}
-            />
-</div>
-<div className="space-y-8">
-            <Link href="/services">
+            <div className="space-y-8">
               <ServiceItem
-                index={2}
-                title={t("core_automation_h")}
-                description={t("core_automation_txt")}
-                icon="/images/icons/cs.svg"
-                active={activeService === 2}
+                index={1}
+                title={t("core_aiPowered_h")}
+                description={t("core_aiPowered_txt")}
+                icon="/images/icons/csd.svg"
+                active={activeService === 1}
                 onClick={handleClick}
               />
-            </Link>
             </div>
             <div className="space-y-8">
-
-            <Link href="/services">
-              <ServiceItem
-                index={3}
-                title={t("core_custom_h")}
-                description={t("core_custom_txt")}
-                icon="/images/icons/bot.svg"
-                active={activeService === 3}
-                onClick={handleClick}
-              />
-            </Link>
+              <Link href="/services">
+                <ServiceItem
+                  index={2}
+                  title={t("core_automation_h")}
+                  description={t("core_automation_txt")}
+                  icon="/images/icons/cs.svg"
+                  active={activeService === 2}
+                  onClick={handleClick}
+                />
+              </Link>
+            </div>
+            <div className="space-y-8">
+              <Link href="/services">
+                <ServiceItem
+                  index={3}
+                  title={t("core_custom_h")}
+                  description={t("core_custom_txt")}
+                  icon="/images/icons/bot.svg"
+                  active={activeService === 3}
+                  onClick={handleClick}
+                />
+              </Link>
             </div>
           </div>
         </div>

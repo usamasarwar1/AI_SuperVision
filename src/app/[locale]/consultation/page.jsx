@@ -1,45 +1,35 @@
-"use client"
-import React from 'react'
-import HeroSections from '../components/HeroSections'
-import Calendar from './components/Calendar'
-import { useLanguage } from '../context/LanguageContext'
-import en from "../../../api/consultation/en.json"
-import ar from "../../../api/consultation/ar.json"
-import BusinessCard from '../components/BusinessCard'
-import Link from 'next/link'
-import GetButton from '../components/GetButton'
+import React from "react";
+import HeroSections from "../components/HeroSections";
+import Calendar from "./components/Calendar";
+import BusinessCard from "../components/BusinessCard";
+import Link from "next/link";
+import GetButton from "../components/GetButton";
 import { useTranslations } from "next-intl";
 
-
 const Page = () => {
-  const { language } = useLanguage();
-  const translations = {
-    en,
-    ar,
-  };
-  const t = useTranslations("Benefits");
- 
+  const t = useTranslations("Consultation");
+
   return (
     <div className="bg-[#050505] mb-[50px] lg:mb-[140.79px]">
-     <HeroSections
+      <HeroSections
         bg_image="bg-image-hero-consultation"
-        headingText=  {translations[language].hero_heading}
+        headingText="Schedule Your FREE Consultation."
         headingBreakText=""
-        descripation={translations[language].hero_txt}
-        descripationBreakText={translations[language].hero_break_txt}
+        descripation="Fill out the following information and set up a time to talk. Once you are done setting up a time,"
+        descripationBreakText="please check your email for your confirmation."
       />
-       <Calendar />
-        <BusinessCard
-          headingText={'Unlock Your Business’s Full Potential with AI Supervision'}
-          text={"Our AI-driven solutions are designed to reduce costs, improve efficiency, and help your business sca"}
-          button={
-            <Link href={"/consultation"}>            
-              <GetButton />
-            </Link>
-          }
-        />
+      <Calendar />
+      <BusinessCard
+        headingText={`${t("unlock_your_business_h")}`}
+        text={`${t("unlock_your_business_txt")}`}
+        button={
+          <Link href={"/consultation"}>
+            <GetButton />
+          </Link>
+        }
+      />
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

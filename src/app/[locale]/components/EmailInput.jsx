@@ -50,7 +50,7 @@ const EmailInput = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="w-full flex flex-col gap-[26px]">
+      <div className="w-full flex flex-col gap-[26px] mb-4">
         <input
           type="email"
           placeholder="Email here..."

@@ -2,18 +2,11 @@
 import React from "react";
 
 const ButtonAction = ({ commonClasses }) => {
-  // // Phone Number Action Button
-  // const simulateCall = (phoneNumber) =>
-  //   window.open(`tel:${phoneNumber}`, "_self");
-  // const callHandler = () => {
-  //   simulateCall("+1 (555) 123-4567");
-  // };
-
-  // Email Action Button
+  
   const simulateEmail = (emailAddress) =>
     window.open(`mailto:${emailAddress}`, "_self");
   const emailHandler = () => {
-    simulateEmail("info@yourbusinessname.com");
+    simulateEmail("Support@aisupervision.org");
   };
   return (
     <ul className="flex flex-col gap-4">
@@ -40,33 +33,9 @@ const ButtonAction = ({ commonClasses }) => {
             />
           </svg>
         </span>
-        info@yourbusinessname.com
+        Support@aisupervision.org
       </li>
-      {/* <li onClick={callHandler} className={commonClasses}>
-        <span className="mr-3">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="23"
-            viewBox="0 0 22 23"
-            fill="none"
-          >
-            <path
-              d="M2.77762 11.624C1.8296 9.97095 1.37185 8.62112 1.09584 7.25285C0.687622 5.22922 1.62181 3.25245 3.16938 1.99111C3.82345 1.45802 4.57323 1.64016 4.96 2.33404L5.83318 3.90055C6.52529 5.14221 6.87134 5.76303 6.8027 6.42123C6.73407 7.07943 6.26737 7.6155 5.33397 8.68765L2.77762 11.624ZM2.77762 11.624C4.69651 14.9699 7.70784 17.9829 11.0576 19.904M11.0576 19.904C12.7107 20.852 14.0605 21.3098 15.4288 21.5858C17.4524 21.994 19.4292 21.0598 20.6905 19.5123C21.2236 18.8582 21.0415 18.1084 20.3476 17.7216L18.7811 16.8485C17.5394 16.1564 16.9186 15.8103 16.2604 15.8789C15.6022 15.9476 15.0661 16.4143 13.994 17.3477L11.0576 19.904Z"
-              stroke="white"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M13 6.51349C14.4232 7.11788 15.5638 8.25841 16.1682 9.68164M13.654 1.68164C17.1912 2.7024 19.9791 5.49016 21 9.02727"
-              stroke="white"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-          </svg>
-        </span>
-        +1 (555) 123-4567
-      </li> */}
+     
      
     </ul>
   );
