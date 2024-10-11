@@ -73,14 +73,14 @@ const HeroSection = () => {
             />
 
             <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[50px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">
-              Envisioning Corporations with One-Fourth the Workforce,
+            {t("home_heading")}
               <br className="hidden md:inline-block" />
-              Reducing Expenses to One-Fourth the Cost.
+              {t("home_heading2")}
+
             </h2>
             <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#fff] text-[18px]">
-              AI Supervision empowers businesses to cut costs and optimize
-              efficiency with automation solutions tailored to their specific
-              needs.
+            {t("home_txt")}
+
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:mt-6">
               <button
