@@ -6,7 +6,7 @@ import Link from "next/link";
 import GetButton from "../components/GetButton";
 import { useTranslations } from "next-intl";
 
-const page = () => {
+const Page = () => {
   const t = useTranslations("Services");
   const cardData = [
     {
@@ -63,4 +63,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
