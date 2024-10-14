@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import GetButton from "./GetButton";
 
-const ServiceItem = ({ index, title, description, icon, active, onClick }) => {
+const ServiceItem = ({ index, title, description,  active, onClick }) => {
   return (
     <div
       onClick={() => onClick(index)}
@@ -17,13 +17,7 @@ const ServiceItem = ({ index, title, description, icon, active, onClick }) => {
           : "border-l-4 mt-4 mb-4 border-[#181818]"
       }`}
     >
-      <Image
-        alt="hero-icon"
-        src={icon}
-        width={24}
-        height={24}
-        className="text-3xl mt- w-6 h-6"
-      />
+      
       <div>
         <h3 className="text-xl sm:text-2xl font-bold poppins-medium">
           {title}
@@ -152,7 +146,6 @@ const HeroSection = () => {
               index={0}
               title={t("core_ai_h")}
               description={t("core_ai_txt")}
-              icon="/images/icons/dtc.svg"
               active={activeService === 0}
               onClick={handleClick}
             />
@@ -161,7 +154,6 @@ const HeroSection = () => {
                 index={1}
                 title={t("core_aiPowered_h")}
                 description={t("core_aiPowered_txt")}
-                icon="/images/icons/csd.svg"
                 active={activeService === 1}
                 onClick={handleClick}
               />
@@ -172,7 +164,6 @@ const HeroSection = () => {
                   index={2}
                   title={t("core_automation_h")}
                   description={t("core_automation_txt")}
-                  icon="/images/icons/cs.svg"
                   active={activeService === 2}
                   onClick={handleClick}
                 />
@@ -184,7 +175,6 @@ const HeroSection = () => {
                   index={3}
                   title={t("core_custom_h")}
                   description={t("core_custom_txt")}
-                  icon="/images/icons/bot.svg"
                   active={activeService === 3}
                   onClick={handleClick}
                 />

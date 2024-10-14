@@ -29,7 +29,7 @@ const Page = () => {
      },
     {
       id: 4,
-      imageUrl: "/images/data-analytics.png",
+      imageUrl: "/images/data-analytics.jpg",
       heading: `${t("ai_consulting_h")}`,      
       text: `${t("ai_consulting_txt")}` 
      },

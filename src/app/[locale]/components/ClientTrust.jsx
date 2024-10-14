@@ -24,15 +24,14 @@ const ClientTrust = () => {
       description: `${t("customer_txt")}`,
     },
   ];
- 
+
   return (
     <>
       <div className="container mx-auto mt-[120px] p-4 md:p-0">
         <div className="grid grid-cols-4 gap-[20px]">
           <div className="col-span-12 mb-[50px]">
             <h2 className="text-xl md:text-[40px] text-center text-white poppins-medium ">
-              {/* {translation[language].client_trust} */}
-              {t("businesses_choose")}
+               {t("businesses_choose")}
             </h2>
           </div>
         </div>
@@ -40,15 +39,14 @@ const ClientTrust = () => {
           {/* {t("businesses_choose.data").map((item, index) => ( */}
           {data.map((item, index) => (
             <div
-              className="col-span-1 rounded-lg overflow-hidden relative w-full border-1 border-[#0A0B0E] h-[350px] flex flex-col group"
+              className="col-span-1 rounded-lg overflow-hidden relative w-full border-1 border-[#0A0B0E] h-[400px] flex flex-col group"
               key={index}
             >
               <h2 className=" text-[#DEDEDE] text-center text-[24px] poppins-medium my-auto">
                 {item.name}
               </h2>
-              {/* Gradient overlay */}
 
-              <div className="flex flex-col items-center justify-center py-10 text-white z-20 relative bg-[#0A0B0E]  h-[190px]  mt-auto p-[20px] ">
+              {/* <div className="flex flex-col items-center justify-center py-10 text-white z-20 relative bg-[#0A0B0E]  h-[190px]  mt-auto p-[20px] ">
                 <div className="absolute top-[-28px] z-10">
                   <Image
                     src="/images/icons/down-arrow.svg"
@@ -58,7 +56,7 @@ const ClientTrust = () => {
                     className="transition-opacity duration-1000"
                   />
                 </div>
-                {/* <div className="absolute top-[-28px] z-10">
+                <div className="absolute top-[-28px] z-10">
                   <Image
                     src="/images/icons/correct.svg"
                     alt="logo"
@@ -66,11 +64,31 @@ const ClientTrust = () => {
                     height={56}
                     className="group-hover:flex items-center justify-center hidden transition-opacity duration-1000"
                   />
-                </div> */}
+                </div>
                <p className="text-[#989898] text-[14px] poppins-regular text-center  group-hover:font-bold group-hover:text-[17px] ">
   {item.description}
 </p>
 
+              </div> */}
+              <div className="flex flex-col items-center justify-center py-10 text-white z-20 relative bg-[#0A0B0E] h-[240px]  mt-auto p-[20px] ">
+                <div className="absolute -top-[20px] left-1/2 -translate-x-1/2">
+                  <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center"></div>
+                </div>
+
+                {/* Previous content */}
+                <div className="absolute top-[-28px] z-10 ">
+                  <Image
+                    src="/images/icons/down-arrow.svg"
+                    alt="logo"
+                    width={70}
+                    height={70}
+                  
+                  />
+                </div>
+
+                <p className="text-[#989898] text-[14px] poppins-regular text-center group-hover:font-bold group-hover:text-xl ">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
@@ -102,8 +120,6 @@ const ClientTrust = () => {
                     <br className="hidden md:block" />{" "}
                     {/* {translation[language].h_benfit_break_h} */}
                     {t("h_benfit_break_h")}
-                    
-                    
                   </h2>
                   {/* <button className="public-sans text-sm md:text-base text-white font-semibold bg-black rounded-full px-[20px] py-[12px] border-2 border-white">
                     {translation[language].free_consultation_btn}
@@ -128,16 +144,12 @@ const ClientTrust = () => {
                       />
                       <h3 className="text-[18px] md:text-[20px] lg:text-[24px] font-bold poppins-medium text-[#DEDEDE]">
                         {/* {translation[language].h_efficiency} */}
-                                         
-                                            {t("h_efficiency")}
 
-
+                        {t("h_efficiency")}
                       </h3>
                       <p className="text-[#989898] poppins-regular text-[12px] md:text-[14px] text-center">
                         {/* {translation[language].h_efficiecny_txt} */}
                         {t("h_efficiecny_txt")}
-                      
-
                       </p>
                     </div>
                     <div className="col-span-1 flex items-center content-center flex-col z-[2]">
@@ -149,7 +161,6 @@ const ClientTrust = () => {
                       <h3 className="text-[18px] md:text-[20px] lg:text-[24px] font-bold poppins-medium text-[#DEDEDE]">
                         {/* {translation[language].h_scalability} */}
                         {t("h_scalability")}
-                       
                       </h3>
                       <p className="text-[#989898] poppins-regular text-[12px] md:text-[14px] text-center">
                         {/* {translation[language].h_scalability_txt}
