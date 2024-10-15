@@ -1,6 +1,4 @@
 import { Saira } from "next/font/google";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
 import { Providers } from "./providers";
 import Layout from "./components/Layout";
@@ -8,6 +6,7 @@ import LanguageProvider from "./context/LanguageContext";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import Head from 'next/head';
+import Script from "next/script";
 
 const inter = Saira({ subsets: ["latin"] });
 
@@ -20,6 +19,29 @@ export default async function RootLayout({ children,  params: {locale} }) {
   const messages = await getMessages();
   return (
     <html lang={locale} >
+      <head>
+        <Script
+          id="voiceflow-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(d, t) {
+                var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                v.onload = function() {
+                  window.voiceflow.chat.load({
+                    verify: { projectID: '66df01a26e8198f513e44dd0' },
+                    url: 'https://general-runtime.voiceflow.com/',
+                    versionID: 'production'
+                  });
+                }
+                v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+                v.type = "text/javascript"; 
+                s.parentNode.insertBefore(v, s);
+              })(document, 'script');
+            `,
+          }}
+        />
+      </head>
        <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
