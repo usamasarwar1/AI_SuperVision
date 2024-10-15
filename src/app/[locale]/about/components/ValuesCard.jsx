@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import { Button } from "@nextui-org/react";
-import { useTranslations } from "next-intl";
+import {useLocale, useTranslations } from "next-intl";
 
 const ValuesCard = () => {
   const t = useTranslations("About");
+  const locale = useLocale();
+const dir = locale === "ar" ? "rtl" : "ltr";
   const [activeService, setActiveService] = useState(0);
   const handleClick = (index) => {
     setActiveService(index);
@@ -19,10 +21,10 @@ const ValuesCard = () => {
         }`}
       >
         <div>
-          <h3 className="text-lg sm:text-xl md:text-2xl font-bold poppins-medium">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold poppins-medium" dir = {dir}>
             {title}
           </h3>
-          <p className="text-[#989898] poppins-regular text-xs sm:text-sm md:text-base mt-2 lg:max-w-[528.04px]">
+          <p className="text-[#989898] poppins-regular text-xs sm:text-sm md:text-base mt-2 lg:max-w-[528.04px]" dir = {dir}>
             {description}
           </p>
         </div>
@@ -51,7 +53,7 @@ const ValuesCard = () => {
                 auto
                 shadow
                 size="lg"
-                className="bg-transparent text-white font-bold w-full rounded-[12px] py-3 sm:py-4 md:py-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl poppins-medium flex justify-between items-center"
+                className="bg-transparent text-white font-bold w-full rounded-[12px] py-3 sm:py-4 md:py-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl poppins-medium flex justify-between items-center" dir = {dir}
               >
                 {/* Our Values */}
 

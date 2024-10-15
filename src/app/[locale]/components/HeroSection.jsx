@@ -3,11 +3,14 @@ import React, { useState } from "react";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import {useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import GetButton from "./GetButton";
 
+
 const ServiceItem = ({ index, title, description,  active, onClick }) => {
+  const locale = useLocale();
+  const dir = locale === "ar" ? "rtl" : "ltr";
   return (
     <div
       onClick={() => onClick(index)}
@@ -19,10 +22,10 @@ const ServiceItem = ({ index, title, description,  active, onClick }) => {
     >
       
       <div>
-        <h3 className="text-xl sm:text-2xl font-bold poppins-medium">
+        <h3 className="text-xl sm:text-2xl font-bold poppins-medium" dir = {dir}>
           {title}
         </h3>
-        <p className="text-[#989898] poppins-regular text-sm sm:text-base">
+        <p className="text-[#989898] poppins-regular text-sm sm:text-base"  dir = {dir}>
           {description}
         </p>
       </div>
@@ -32,8 +35,17 @@ const ServiceItem = ({ index, title, description,  active, onClick }) => {
 
 const HeroSection = () => {
   const [activeService, setActiveService] = useState(0);
+
+  
   const t = useTranslations("Home");
-  const router = useRouter();
+  const locale = useLocale();
+  const dir = locale === "ar" ? "rtl" : "ltr";
+ 
+ 
+
+
+ 
+    const router = useRouter();
 
   const handleClick = (index) => {
     setActiveService(index);
@@ -66,13 +78,13 @@ const HeroSection = () => {
               className="h-20 w-20 md:h-30 md:w-30 lg:h-64 lg:w-64 bg-transparent"
             />
 
-            <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[50px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">
+            <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[50px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center" dir = {dir}>
             {t("home_heading")}
               <br className="hidden md:inline-block" />
               {t("home_heading2")}
 
             </h2>
-            <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#fff] text-[18px]">
+            <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#fff] text-[18px]" dir = {dir}>
             {t("home_txt")}
 
             </p>
@@ -92,10 +104,10 @@ const HeroSection = () => {
         </div>
       </div>
       <div className=" my-[40px] max-w-[70%] bg-[#131619] md:mb-[123.8px] rounded-[16px]  h-auto  p-4 md:p-[50px] container mx-auto">
-        <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[40px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">
+        <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[40px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center" dir = {dir}>
           {t("ai_advantage_heading")}
         </h2>
-        <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#989898] text-[18px] lg:mt-6 max-w-[850px] mx-auto text-center">
+        <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#989898] text-[18px] lg:mt-6 max-w-[850px] mx-auto text-center" dir = {dir}>
           {t("ai_advantage_txt")}
         </p>
       </div>

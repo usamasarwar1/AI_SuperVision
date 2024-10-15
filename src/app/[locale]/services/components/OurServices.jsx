@@ -1,9 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "@nextui-org/react";
 import GetButton from "../../components/GetButton";
+import { useLocale } from "next-intl";
 
 const OurServices = ({ id, imageUrl, heading, text, subText }) => {
+  const locale = useLocale();
+const dir = locale === "ar" ? "rtl" : "ltr";
   return (
     <div
       className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 xl:gap-[110px] pb-8 lg:pb-24"
@@ -30,13 +32,13 @@ const OurServices = ({ id, imageUrl, heading, text, subText }) => {
           id % 2 === 0 ? "lg:order-2" : "lg:order-1"
         } col-span-1 lg:col-span-7 xl:col-span-7`}
       >
-        <h1 className="poppins-medium text-[#DEDEDE] text-2xl  sm:text-4xl xl:text-5xl leading-5 md:leading-[150%]">
+        <h1 className="poppins-medium text-[#DEDEDE] text-2xl  sm:text-4xl xl:text-5xl leading-5 md:leading-[150%]" dir = {dir}>
           {heading}
         </h1>
-        <p className="poppins-regular text-[#B8B9BA] text-base lg:text-lg leading-5 md:leading-[150%] mt-4">
+        <p className="poppins-regular text-[#B8B9BA] text-base lg:text-lg leading-5 md:leading-[150%] mt-4" dir={dir}>
           {text}
         </p>
-        <p className="poppins-regular text-[#B8B9BA] text-base lg:text-lg leading-5 md:leading-[150%] mt-2">
+        <p className="poppins-regular text-[#B8B9BA] text-base lg:text-lg leading-5 md:leading-[150%] mt-2" dir={dir}>
           {subText}
         </p>
         <div className="mt-6">

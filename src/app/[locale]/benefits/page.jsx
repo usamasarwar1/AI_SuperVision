@@ -1,12 +1,14 @@
 import React from "react";
 import HeroSections from "../components/HeroSections";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import BusinessCard from "../components/BusinessCard";
 import Link from "next/link";
 import GetButton from "../components/GetButton";
 
 const Page = () => {
   const t = useTranslations("Benefits");
+  const locale = useLocale();
+const dir = locale === "ar" ? "rtl" : "ltr";
 
   return (
     <>
@@ -19,10 +21,10 @@ const Page = () => {
           descripationBreakText="business solutions."
         />
         <div className=" my-[40px] max-w-[70%] bg-[#131619] md:mb-[123.8px] rounded-[16px]  h-auto  p-4 md:p-[50px] container mx-auto">
-          <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[40px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center">
+          <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[40px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center" dir = {dir}>
             {t("payment_heading")}
           </h2>
-          <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#989898] text-[18px] lg:mt-6 max-w-[90%] mx-auto text-center">
+          <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#989898] text-[18px] lg:mt-6 max-w-[90%] mx-auto text-center" dir = {dir}>
             {t("payment_txt")}
           </p>
         </div>
@@ -41,13 +43,13 @@ const Page = () => {
               />
               <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px] h-auto md:h-[213px] lg:h-[198.67px]  2xl:h-[200.8px]">
                 <div className="flex flex-col justify-center text-left">
-                  <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[30px] xl:text-[40px]  leading-[130%]">
+                  <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[30px] xl:text-[40px]  leading-[130%]" dir={dir}>
                     {t("maximizing_heading")}
                   </h1>
-                  <h2 className="text-[#DEDEDE] poppins-medium text-[14px] lg:text-[16px] leading-[130%]">
+                  <h2 className="text-[#DEDEDE] poppins-medium text-[14px] lg:text-[16px] leading-[130%]" dir={dir}>
                     {t("competitive_sub_txt")}
                   </h2>
-                  <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-1">
+                  <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-1" dir={dir}>
                     {t("maximizing_txt")}
                   </p>
                 </div>
@@ -67,11 +69,11 @@ const Page = () => {
               />
               <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px] h-auto lg:max-h-[198.67px] 2xl:max-h-[200.8px] mb-0 md:mb-3 lg:mb-0 ">
                 <div className="flex flex-col justify-center text-left">
-                  <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[30px] xl:text-[40px] leading-[130%]">
+                  <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[30px] xl:text-[40px] leading-[130%]" dir={dir}>
                     {t("efficiency_heading")}
                   </h1>
                   <h2 className="text-[#DEDEDE] poppins-medium text-[14px] lg:text-[16px] leading-[130%]"></h2>
-                  <p className="poppins-light text-[12px] md:text-[12px] lg:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-1">
+                  <p className="poppins-light text-[12px] md:text-[12px] lg:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-1" dir={dir}>
                     {t("maximizing_txt")}
                   </p>
                 </div>
@@ -92,13 +94,13 @@ const Page = () => {
             />
             <div className="bg-[#131619] rounded-[16px] p-4 md:p-[20.35px_78px_30.57px_30px] ">
               <div className="flex flex-col justify-center text-left">
-                <h1 className="text-[#DEDEDE] poppins-medium text-[24px] md:text-[40px] leading-[130%]">
+                <h1 className="text-[#DEDEDE] poppins-medium text-[24px] md:text-[40px] leading-[130%]" dir={dir}>
                   {t("data_driven_heading")}
                 </h1>
-                <h2 className="text-[#B8B9BA] poppins-medium text-[14px] md:text-[16px] leading-[130%] ">
+                <h2 className="text-[#B8B9BA] poppins-medium text-[14px] md:text-[16px] leading-[130%] " dir={dir}>
                   {t("data_driven_sub_heading")}
                 </h2>
-                <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[24px] text-[#B8B9BA] opacity-70 mt-1 max-w-[72%]">
+                <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[24px] text-[#B8B9BA] opacity-70 mt-1 max-w-[72%]" dir={dir}>
                   {t("data_driven_txt")}
                 </p>
               </div>
@@ -121,13 +123,13 @@ const Page = () => {
 
             <div className="col-span-12  md:col-span-6  lg:col-span-5 ">
               <div className="bg-[#131619] h-full rounded-[16px] p-4 md:p-7 lg:p-[30.28px] flex flex-col justify-center text-left">
-                <h1 className="text-[#DEDEDE] poppins-medium text-[24px] md:text-[40px] lg:text-[35px] xl:text-[40px] leading-[130%] truncate">
+                <h1 className="text-[#DEDEDE] poppins-medium text-[24px] md:text-[40px] lg:text-[35px] xl:text-[40px] leading-[130%] truncate" dir = {dir}>
                   {t("scalable_heading")}
                 </h1>
-                <h2 className="text-[#B8B9BA] poppins-medium text-[14px] md:text-[16px] leading-[130%]">
+                <h2 className="text-[#B8B9BA] poppins-medium text-[14px] md:text-[16px] leading-[130%]" dir = {dir}>
                   {t("scalable_sub_heading")}
                 </h2>
-                <p className="poppins-light  text-[12px] md:text-[14px] font-normal leading-[24px] text-[#B8B9BA] opacity-70 mt-1">
+                <p className="poppins-light  text-[12px] md:text-[14px] font-normal leading-[24px] text-[#B8B9BA] opacity-70 mt-1" dir = {dir}>
                   {t("scalable_txt")}
                 </p>
               </div>

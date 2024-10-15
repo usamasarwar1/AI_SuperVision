@@ -1,6 +1,10 @@
 import React from "react";
+import { useLocale } from "next-intl";
+
 
 const AboutUs = ({ id, videoUrl, heading, text }) => {
+  const locale = useLocale();
+const dir = locale === "ar" ? "rtl" : "ltr";
   return (
     <div className="container mx-auto p-6  md:p-0 mt-4">
       <div
@@ -40,10 +44,10 @@ const AboutUs = ({ id, videoUrl, heading, text }) => {
             className={`flex flex-col justify-center ${id % 2 === 0 ? "order-2" : "order-1"
               } col-span-12 md:col-span-7 max-w-full md:max-w-[632px] pl-4 md:pl-16`}
           >
-            <h1 className="poppins-medium text-[#DEDEDE] text-2xl md:text-4xl font-semibold leading-tight">
+            <h1 className="poppins-medium text-[#DEDEDE] text-2xl md:text-4xl font-semibold leading-tight" dir={dir}>
               {heading}
             </h1>
-            <p className="poppins-regular text-[#989898] text-sm md:text-base leading-relaxed mt-2">
+            <p className="poppins-regular text-[#989898] text-sm md:text-base leading-relaxed mt-2" dir={dir}>
               {text}
             </p>
           </div>
