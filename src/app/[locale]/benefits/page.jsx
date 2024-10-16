@@ -138,10 +138,8 @@ const dir = locale === "ar" ? "rtl" : "ltr";
         </div>
       </div>
       <BusinessCard
-        headingText={"Ready to Boost Your Business Efficiency?"}
-        text={
-          "Our AI-powered solutions are designed to give your business the competitive edge it needs to stay ahead in today’s fast-paced market."
-        }
+        headingText={t("ready_title")}
+        text={t("ready_descripation")}
         button={
           <Link href={"/consultation"}>
             <GetButton />

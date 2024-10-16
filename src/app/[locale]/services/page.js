@@ -51,8 +51,8 @@ const Page = () => {
         </React.Fragment>
       ))}
        <BusinessCard
-          headingText={"Ready to Automate Your Operations?"}
-          text={"Make a one-time investment that replaces the ongoing costs of recurring monthly salaries. Our AI solutions deliver high returns by streamlining operations and boosting efficiency."}
+          headingText={t("ready_title")}
+          text={t("ready_descripation")}
           button={
             <Link href={"/consultation"}>            
               <GetButton />

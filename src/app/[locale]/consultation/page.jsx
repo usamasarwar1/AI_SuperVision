@@ -4,12 +4,10 @@ import Calendar from "./components/Calendar";
 import BusinessCard from "../components/BusinessCard";
 import Link from "next/link";
 import GetButton from "../components/GetButton";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const Page = () => {
   const t = useTranslations("Consultation");
-  const locale = useLocale();
-const dir = locale === "ar" ? "rtl" : "ltr";
 
   return (
     <div className="bg-[#050505] mb-[50px] lg:mb-[140.79px]">
@@ -24,8 +22,7 @@ const dir = locale === "ar" ? "rtl" : "ltr";
       <BusinessCard
         headingText={`${t("unlock_your_business_h")}`}
         text={`${t("unlock_your_business_txt")}`}
-        dir = {dir}
-        button={
+         button={
           <Link href={"/consultation"}>
             <GetButton />
           </Link>

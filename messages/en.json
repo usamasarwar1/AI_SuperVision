@@ -41,9 +41,7 @@
         "h_scalability_txt": "Our solutions grow with your business, ensuring continued efficiency as your needs evolve.",
         "h_expert": "Expert Support",
         "expert_txt": "We offer ongoing consultation and support to ensure your AI systems perform optimally, long-term.",
-        "free_consultation_btn": "Get a Free Consultation",
-        "business": "Ready to Transform Your Business?",
-        "business_txt": "Let AI Supervision help you reduce costs and streamline your operations with AI-powered solutions. Our no-cost consultation won’t remain free for long, so take advantage of it while it’s available.",
+       
         "quick": "Quick Links",
         "blogs": "Blogs",
         "contact_info": "Contact Information",
@@ -61,7 +59,12 @@
         "privacy": "Privacy",
         "terms": "Terms",
         "subscribe": "Subscribe",
-        "now": "Now"
+        "now": "Now",
+
+        "_comment2": "Ready",
+        "ready_title": "Ready to Automate Your Operations?",
+        "ready_descripation": "Make a one-time investment that replaces the ongoing costs of recurring monthly salaries. Our AI solutions deliver high returns by streamlining operations and boosting efficiency.",
+        "ready_button": "Get a No-Cost Consultation Now"
       },
 
       "About": {
@@ -82,7 +85,11 @@
         "client": "Pride in Saudi Vision 2030",
         "client_txt":"I am deeply honored to be part of Saudi Arabia’s transformative 2030 Vision. This is more than just a business mission; it’s a personal one. As a Saudi business, I take immense pride in contributing to the future of our country by helping local and international businesses thrive with AI-driven solutions.",
         "choose_us": "Why Choose Us?",
-        "choos_us_txt":"Businesses choose AI Supervision because we offer solutions that drive real, measurable change. By automating repetitive tasks and reducing workforce dependency, we deliver long-term value that grows with your business."
+        "choos_us_txt":"Businesses choose AI Supervision because we offer solutions that drive real, measurable change. By automating repetitive tasks and reducing workforce dependency, we deliver long-term value that grows with your business.",
+
+        "_comment2": "Ready",
+        "ready_title": "Ready to Take Your Business to the Next Level?",
+        "ready_descripation": "Discover how AI Supervision’s tailored solutions can streamline your operations and drive lasting growth."
     },
 
 
@@ -97,8 +104,11 @@
       "internal_flow_h": "Internal Workflow Automation",
       "internal_flow_txt": "Our internal workflow automation solutions help businesses optimize their in-house operations. From automating reporting systems, task delegation, and staff communication, our AI tools allow your team to operate efficiently without getting bogged down by manual processes.",
       "ai_consulting_h": "AI Consulting for Business Transformation",
-     "ai_consulting_txt": "We help businesses assess where AI can provide the most significant impact. From reducing operational costs to optimizing your workforce, our AI consulting services provide strategic insights and a step-by-step roadmap to implement AI technologies."
+     "ai_consulting_txt": "We help businesses assess where AI can provide the most significant impact. From reducing operational costs to optimizing your workforce, our AI consulting services provide strategic insights and a step-by-step roadmap to implement AI technologies.",
     
+     "_comment2": "Ready",
+     "ready_title": "Ready to Automate Your Operations?",
+     "ready_descripation": "Make a one-time investment that replaces the ongoing costs of recurring monthly salaries. Our AI solutions deliver high returns by streamlining operations and boosting efficiency."
   },
 
     "Benefits": {
@@ -118,7 +128,11 @@
       "data_driven_txt":"By leveraging the full power of AI, your business can unlock long-term savings and increased productivity. AI Supervision ensures that your investment in automation will drive results that scale with your business.",
       "scalable_heading": "Scalable Solutions",
       "scalable_sub_heading": "Grow with Confidence",
-      "scalable_txt":"As your business grows, so do your needs. Our AI solutions are scalable, ensuring that your operations remain efficient without increasing costs."
+      "scalable_txt":"As your business grows, so do your needs. Our AI solutions are scalable, ensuring that your operations remain efficient without increasing costs.",
+
+      "_comment2": "Ready",
+      "ready_title": "Ready to Boost Your Business Efficiency?",
+      "ready_descripation": "Our AI-powered solutions are designed to give your business the competitive edge it needs to stay ahead in today’s fast-paced market."
   },
 
 
@@ -129,10 +143,12 @@
   "minute": "30 Minute Initial Consultation",
   "minute_txt": "Select a date and time",
   "time": "Select a Date & Time",
+
+  "_comment2": "Ready",
+
   "free_consultation_btn": "Get a Free Consultation",
   "unlock_your_business_h" : "Unlock Your Business’s Full Potential with AI Supervision",
   "unlock_your_business_txt": "Our AI-driven solutions are designed to reduce costs, improve efficiency, and help your business scale faster."
-
   
 }
       

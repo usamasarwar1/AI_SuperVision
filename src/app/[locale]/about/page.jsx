@@ -56,8 +56,8 @@ const Page = () => {
         />
       </div>
       <BusinessCard
-          headingText={'Ready to Take Your Business to the Next Level?'}
-          text={'Discover how AI Supervision’s tailored solutions can streamline your operations and drive lasting growth.'}
+          headingText={t("ready_title")}
+          text={t("ready_descripation")}
           button={
             <Link href={"/consultation"}>            
               <GetButton />
