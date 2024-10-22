@@ -2,8 +2,9 @@ import React from "react";
 import Image from "next/image";
 import GetButton from "../../components/GetButton";
 import { useLocale } from "next-intl";
+import Link from "next/link";
 
-const OurServices = ({ id, imageUrl, heading, text, subText }) => {
+const OurServices = ({ id, imageUrl, heading, text, subText,name }) => {
   const locale = useLocale();
 const dir = locale === "ar" ? "rtl" : "ltr";
   return (
@@ -45,7 +46,9 @@ const dir = locale === "ar" ? "rtl" : "ltr";
           {/* <button className="public-sans text-sm sm:text-base text-white font-semibold bg-black rounded-full px-6 py-3 border-2 border-white hover:bg-white hover:text-black transition-colors duration-300">
             Get a Free Consultation
           </button> */}
-          <GetButton />
+          <Link href={"/consultation"}>
+          <GetButton name={name} />
+          </Link>
 
           {/* <Button className="public-sans text-sm sm:text-base text-white font-semibold bg-black rounded-full px-6 py-3 border-2 border-white hover:bg-white hover:text-black transition-colors duration-300"> 
            Get a Free Consultation

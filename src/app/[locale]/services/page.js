@@ -13,25 +13,32 @@ const Page = () => {
       id: 1,
       imageUrl: "/images/digital-transformation.jpg",
       heading: `${t("ai_powered_chat_h")}`,
-      text: `${t("ai_powered_chat_txt")}`  
+      text: `${t("ai_powered_chat_txt")}`,
+      btnText:`${t("ready_button")}`
+  
     },
     {
       id: 2,
       imageUrl: "/images/custom-software.jpg",
       heading: `${t("custom_automation_h")}`,
-      text: `${t("custom_automation_txt")}`
+      text: `${t("custom_automation_txt")}`,
+      btnText:`${t("ready_button")}`
+
      },
     {
       id: 3,
       imageUrl: "/images/cloud-soluation.jpg",
       heading: `${t("internal_flow_h")}`,
-      text:`${t("internal_flow_txt")}` 
+      text:`${t("internal_flow_txt")}` ,
+      btnText:`${t("ready_button")}`
+
      },
     {
       id: 4,
       imageUrl: "/images/data-analytics.jpg",
       heading: `${t("ai_consulting_h")}`,      
-      text: `${t("ai_consulting_txt")}` 
+      text: `${t("ai_consulting_txt")}`,
+      btnText:`${t("ready_button")}`
      },
   ];
 
@@ -47,6 +54,7 @@ const Page = () => {
             heading={item.heading}
             text={item.text}
             subText={item.subText}
+            name={item.btnText}
           />
         </React.Fragment>
       ))}

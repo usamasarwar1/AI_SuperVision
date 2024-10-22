@@ -34,7 +34,9 @@ const ServiceItem = ({ index, title, description,  active, onClick }) => {
 };
 
 const HeroSection = () => {
+
   const [activeService, setActiveService] = useState(0);
+
 
   
   const t = useTranslations("Home");
@@ -91,13 +93,14 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:mt-6">
               <button
                 onClick={() => router.push("/services")}
-                className="public-sans text-sm sm:text-base rounded-full font-semibold  bg-[#fff] px-[26px] py-[13px] text-center z-[1] cursor-default"
+                className="public-sans text-sm sm:text-base rounded-full font-semibold  bg-[#fff] px-[26px] py-[13px] text-center z-[1] cursor-pointer"
               >
-                Discover Our Solutions
+                {t("Discover_btn")}
+                {/* Discover Our Solutions */}
               </button>
 
               <Link href={"/consultation"}>
-                <GetButton />
+                <GetButton  name={t('ready_button')}/>
               </Link>
             </div>
           </div>
@@ -122,9 +125,10 @@ const HeroSection = () => {
                 size="lg"
                 // 242425
                 className="bg-[#050505] border  border-[#fff] text-white font-bold w-full rounded-lg p-4 md:p-9 text-[16px] md:text-xl poppins-medium flex items-center justify-between"
+              
                 iconRight={<span className="ml-2">→</span>}
               >
-                Our Core Services
+                {t("core_services")}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="36"

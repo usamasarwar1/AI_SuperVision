@@ -10,6 +10,7 @@
         "home_heading2": "Reducing Expenses to One-Fourth the Cost.",
         "home_txt": "AI Supervision empowers businesses to cut costs and optimize efficiency with automation solutions tailored to their specific needs.",
         "Discover_btn": "Discover Our Solutions",
+
         "core_services": "Our Core Services",
         "ai_advantage_heading": "The AI Advantage",
         "ai_advantage_txt": "AI is aggressively surfacing the market, leaving businesses behind. AI Supervision equips you with this technology, ensuring your business stays ahead of the competition.",
@@ -107,6 +108,8 @@
      "ai_consulting_txt": "We help businesses assess where AI can provide the most significant impact. From reducing operational costs to optimizing your workforce, our AI consulting services provide strategic insights and a step-by-step roadmap to implement AI technologies.",
     
      "_comment2": "Ready",
+     "ready_button": "Get a No-Cost Consultation Now",
+
      "ready_title": "Ready to Automate Your Operations?",
      "ready_descripation": "Make a one-time investment that replaces the ongoing costs of recurring monthly salaries. Our AI solutions deliver high returns by streamlining operations and boosting efficiency."
   },

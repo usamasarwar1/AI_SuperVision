@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocale, useTranslations } from "next-intl";
+import Link from "next/link";
 
 const BusinessCard = ({ headingText, text,  dir }) => {
   const t = useTranslations("Home");
@@ -230,11 +231,13 @@ const BusinessCard = ({ headingText, text,  dir }) => {
             </svg>
 
           </div>
-
-
-          <button className="public-sans text-xs sm:text-sm lg:text-base  text-[#fff] font-semibold rounded-full bg-[#000] py-2 sm:py-3 px-4 sm:px-6 md:px-[5px] lg:px-5 border-2 border-[#fff] hover:bg-gray-800 transition-all mb-3 lg:mb-0">
+          <Link href={"/consultation"}>
+          <button className="public-sans text-xs sm:text-sm lg:text-base  text-[#fff] font-semibold rounded-full bg-[#000] py-2 sm:py-3 px-4 sm:px-6 md:px-[5px] lg:px-5 border-2 border-[#fff] hover:bg-gray-800 transition-all mb-3 lg:mb-0 cursor-pointer">
            {t("ready_button")}
           </button>
+
+          </Link>
+          
         </div>
 
       </div>
