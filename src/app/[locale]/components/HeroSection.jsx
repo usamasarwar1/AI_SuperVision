@@ -94,7 +94,8 @@ const HeroSection = () => {
               <button
                 onClick={() => router.push("/services")}
                 className="public-sans text-sm sm:text-base rounded-full font-semibold  bg-[#fff] px-[26px] py-[13px] text-center z-[1] cursor-pointer"
-              >
+                
+             >
                 {t("Discover_btn")}
                 {/* Discover Our Solutions */}
               </button>
@@ -123,12 +124,12 @@ const HeroSection = () => {
                 auto
                 shadow
                 size="lg"
-                // 242425
+                
                 className="bg-[#050505] border  border-[#fff] text-white font-bold w-full rounded-lg p-4 md:p-9 text-[16px] md:text-xl poppins-medium flex items-center justify-between"
-              
+               
                 iconRight={<span className="ml-2">→</span>}
               >
-                {t("core_services")}
+              <span  dir = {dir}>  {t("core_services")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="36"

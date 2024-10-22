@@ -67,7 +67,7 @@ const dir = locale === "ar" ? "rtl" : "ltr";
                 playsInline
                 className="w-full h-[250px] md:max-h-[226px] lg:max-h-[250px] rounded-[14px] object-cover"
               />
-              <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px] h-auto lg:max-h-[198.67px] 2xl:max-h-[200.8px] mb-0 md:mb-3 lg:mb-0 ">
+              <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px] md:h-[213px] lg:max-h-[198.67px] 2xl:max-h-[200.8px] md:mb-3 lg:mb-0 ">
                 <div className="flex flex-col justify-center text-left">
                   <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[30px] xl:text-[40px] leading-[130%]" dir={dir}>
                     {t("efficiency_heading")}
@@ -81,7 +81,7 @@ const dir = locale === "ar" ? "rtl" : "ltr";
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:mt-[66.33px] gap-[10px] mt-3 md:mt-0">
+          <div className="grid grid-cols-1 lg:mt-[66.33px] gap-[10px] mt-0 md:mt-3">
             <video
               src="/videos/dataDriven.mp4"
               width={700}
@@ -90,7 +90,7 @@ const dir = locale === "ar" ? "rtl" : "ltr";
               loop
               muted
               playsInline
-              className="w-full max-h-[501px] rounded-[14px] object-cover"
+              className="w-full max-h-[501px] rounded-[14px] object-cover pt-4 lg:pt-0"
             />
             <div className="bg-[#131619] rounded-[16px] p-4 md:p-[20.35px_78px_30.57px_30px] ">
               <div className="flex flex-col justify-center text-left">

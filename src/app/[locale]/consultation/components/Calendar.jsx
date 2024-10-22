@@ -4,12 +4,9 @@ import cn from "./cn";
 import React, { useState, useEffect } from "react";
 import { generateDate, months } from "./generateDate";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-import { useLanguage } from "../../context/LanguageContext";
-import en from "../../../../api/consultation/en.json";
-import ar from "../../../../api/consultation/ar.json";
 import SubmitModal from "./SubmitModal";
 
-export default function BookingWidget() {
+export default function BookingWidget({minute}) {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
   const currentDate = dayjs();
   const [today, setToday] = useState(currentDate);
@@ -30,12 +27,7 @@ export default function BookingWidget() {
     };
   }, [showModal]);
 
-  const { language } = useLanguage();
-  const translations = {
-    en,
-    ar,
-  };
-
+  
   const handleButton = (time) => {
     setSelectedTime(time);
     setShowButton(true);
@@ -99,10 +91,10 @@ export default function BookingWidget() {
         {/* Right Section */}
         <div className="lg:w-4/5 p-4 sm:p-6 flex flex-col justify-center items-center ">
           <h2 className="poppins-medium text-[#DEDEDE] text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 md:mb-5">
-            {translations[language].minute}
+           {minute}
           </h2>
           <h1 className="poppins-medium text-[#DEDEDE] text-xl lg:text-2xl mb-3 lg:mb-[21.21px]">
-            {translations[language].minute_txt}
+           Select a data and Time
           </h1>
 
           <div className="border border-[#262626] rounded-[10px] p-4 sm:p-6 md:w-[70%]">

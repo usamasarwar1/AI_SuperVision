@@ -10,7 +10,7 @@ const ButtonAction = ({ commonClasses }) => {
   };
   return (
     <ul className="flex flex-col gap-4">
-      <li className={commonClasses} onClick={emailHandler}>
+      <li className={`${commonClasses} hover:text-blue-700 transition-all duration-1000 ease-out`} onClick={emailHandler}>
         <span className="mr-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const ButtonAction = ({ commonClasses }) => {
             />
           </svg>
         </span>
-        Support@aisupervision.org
+      Support@aisupervision.org
       </li>
      
      

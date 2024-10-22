@@ -1,12 +1,16 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useTranslations } from "next-intl";
 import EmailInput from "./EmailInput";
 import ButtonAction from "./ButtonAction";
+import { usePathname } from "@/navigation";
 
 const Footer = () => {
   const t = useTranslations("Home");
+  const pathname = usePathname();
+  console.log("path", pathname);
 
   const footerIcons =
     "h-8 w-8 rounded-md  bg-[rgba(15,16,18,0.8)] flex items-center justify-center text-white ";
@@ -22,39 +26,69 @@ const Footer = () => {
             </h2>
             <ul className="flex flex-col gap-4">
               <li className={commonClasses}>
-                <Link href={"/"} className="public-sans-regular">
+                <Link
+                  href={"/"}
+                  className={`public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out ${
+                    pathname === "/" ? "text-blue-700" : "text-white"
+                  }`}
+                >
                   {t("home")}
                 </Link>
               </li>
               <li className={commonClasses}>
-                <Link href={"/about"} className="public-sans-regular">
+                <Link
+                  href={"/about"}
+                  className={`public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out ${
+                    pathname === "/about" ? "text-blue-700" : "text-white"
+                  }`}
+                >
                   {t("about")}
                 </Link>
               </li>
               <li className={commonClasses}>
-                <Link href={"/services"} className="public-sans-regular">
+                <Link
+                  href={"/services"}
+                  className={`public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out ${
+                    pathname === "/services" ? "text-blue-700" : "text-white"
+                  }`}
+                >
                   {t("services")}
                 </Link>
               </li>
             </ul>
           </div>
           <div className="col-span-12 sm:col-span-6 lg:col-span-2">
-            <h2 className=" text-[12px] sm:mt-12 md:mb-12 text-[#FFF] public-sans">
-              {/* {t("quick")} */}
-            </h2>
+            <h2 className=" text-[12px] mb-8 text-[#FFF] public-sans"></h2>
             <ul className="flex flex-col gap-4">
               <li className={commonClasses}>
-                <Link href={"/benefits"} className="public-sans-regular">
+                <Link
+                  href={"/benefits"}
+                  className={`public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out ${
+                    pathname === "/benefits" ? "text-blue-700" : "text-white"
+                  }`}
+                >
                   {t("benefits")}
                 </Link>
               </li>
               <li className={commonClasses}>
-                <Link href={"/consultation"} className="public-sans-regular">
+                <Link
+                  href={"/consultation"}
+                  className={`public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out ${
+                    pathname === "/consultation"
+                      ? "text-blue-700"
+                      : "text-white"
+                  }`}
+                >
                   {t("blogs")}
                 </Link>
               </li>
               <li className={commonClasses}>
-                <Link href={"/contacts"} className="public-sans-regular">
+                <Link
+                  href={"/contacts"}
+                  className={`public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out ${
+                    pathname === "/contacts" ? "text-blue-700" : "text-white"
+                  }`}
+                >
                   {t("contact")}
                 </Link>
               </li>
@@ -82,7 +116,9 @@ const Footer = () => {
                       className="w-[30px] h-[30px]"
                     />
                   </span>
-                  <span className="public-sans-regular">{t("instagram")}</span>
+                  <span className="public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out">
+                    {t("instagram")}
+                  </span>
                 </div>
               </Link>
             </ul>

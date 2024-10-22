@@ -4,21 +4,24 @@ import Calendar from "./components/Calendar";
 import BusinessCard from "../components/BusinessCard";
 import Link from "next/link";
 import GetButton from "../components/GetButton";
-import { useTranslations } from "next-intl";
+import { useLocale,  useTranslations } from "next-intl";
 
 const Page = () => {
+  const locale = useLocale();
   const t = useTranslations("Consultation");
+  const dir = locale === "ar" ? "rtl" : "ltr";
 
   return (
     <div className="bg-[#050505] mb-[50px] lg:mb-[140.79px]">
       <HeroSections
         bg_image="bg-image-hero-consultation"
-        headingText="Schedule Your FREE Consultation."
+        headingText={`${t('hero_heading')}`}
         headingBreakText=""
-        descripation="Fill out the following information and set up a time to talk. Once you are done setting up a time,"
-        descripationBreakText="please check your email for your confirmation."
+        descripation={`${t('hero_txt')}`}
+        descripationBreakText={`${t('hero_break_txt')}`}
+        dir = {dir}
       />
-      <Calendar />
+      <Calendar minute =  {`${t('minute')}`}/>
       <BusinessCard
         headingText={`${t("unlock_your_business_h")}`}
         text={`${t("unlock_your_business_txt")}`}

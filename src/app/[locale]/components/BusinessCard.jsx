@@ -232,7 +232,7 @@ const BusinessCard = ({ headingText, text,  dir }) => {
 
           </div>
           <Link href={"/consultation"}>
-          <button className="public-sans text-xs sm:text-sm lg:text-base  text-[#fff] font-semibold rounded-full bg-[#000] py-2 sm:py-3 px-4 sm:px-6 md:px-[5px] lg:px-5 border-2 border-[#fff] hover:bg-gray-800 transition-all mb-3 lg:mb-0 cursor-pointer">
+          <button className="public-sans text-xs sm:text-sm lg:text-base  text-[#fff] font-semibold rounded-full bg-[#000] py-2 sm:py-3 px-4 sm:px-4 md:px-[5px] lg:px-[18px]  border-2 border-[#fff] hover:bg-gray-800 transition-all mb-3 lg:mb-0 cursor-pointer">
            {t("ready_button")}
           </button>
 
