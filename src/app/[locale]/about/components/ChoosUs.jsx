@@ -12,8 +12,8 @@ const dir = locale === "ar" ? "rtl" : "ltr";
           <h1 className="poppins-medium text-[#DEDEDE] text-2xl md:text-4xl font-semibold leading-tight" dir={dir}>
             {choose_us}
           </h1>
-          <p className="poppins-regular text-[#989898] text-sm md:text-base leading-relaxed mt-2" dir={dir}>
-            {choos_us_txt}
+          <p className={`poppins-regular text-[#989898] text-sm md:text-base leading-relaxed mt-2 `} dir={dir}>
+           <span className={`${dir === "rtl" ? "leading-7" : ""}`}> {choos_us_txt}</span>
           </p>
         </div>
 

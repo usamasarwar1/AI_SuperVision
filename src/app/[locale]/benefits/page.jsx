@@ -15,17 +15,19 @@ const dir = locale === "ar" ? "rtl" : "ltr";
       <div className="bg-[#050505] mb-[50px] lg:mb-[140.79px]">
         <HeroSections
           bg_image="bg-image-hero-benefits"
-          headingText="Why AI Supervision"
+          headingText={t("hero_heading")}
           headingBreakText=""
-          descripation="Discover the advantages of partnering with AI Supervision for your AI-powered"
-          descripationBreakText="business solutions."
+          descripation={t("hero_txt")}
+          descripationBreakText={t("hero_break_txt")}
         />
         <div className=" my-[40px] max-w-[70%] bg-[#131619] md:mb-[123.8px] rounded-[16px]  h-auto  p-4 md:p-[50px] container mx-auto">
           <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[40px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center" dir = {dir}>
-            {t("payment_heading")}
+            
+            <span className={`${dir === "rtl" ? "leading-7" : ""}`}>{t("payment_heading")}</span>
           </h2>
           <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#989898] text-[18px] lg:mt-6 max-w-[90%] mx-auto text-center" dir = {dir}>
-            {t("payment_txt")}
+            {/*  */}
+            <span className={`${dir === "rtl" ? "leading-7" : ""}`}>{t("payment_txt")}</span>
           </p>
         </div>
         <div className="container mx-auto px-4 md:px-8 mt-[83.86px]">
@@ -44,13 +46,15 @@ const dir = locale === "ar" ? "rtl" : "ltr";
               <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px] h-auto md:h-[213px] lg:h-[198.67px]  2xl:h-[200.8px]">
                 <div className="flex flex-col justify-center text-left">
                   <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[30px] xl:text-[40px]  leading-[130%]" dir={dir}>
-                    {t("maximizing_heading")}
+                    {/*  */}
+                    <span className={`${dir === "rtl" ? "leading-7" : ""}`}>{t("maximizing_heading")}</span>
                   </h1>
                   <h2 className="text-[#DEDEDE] poppins-medium text-[14px] lg:text-[16px] leading-[130%]" dir={dir}>
-                    {t("competitive_sub_txt")}
+                    {/* {t("competitive_sub_txt")} */}
                   </h2>
                   <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-1" dir={dir}>
-                    {t("maximizing_txt")}
+                    
+                    <span className={`${dir === "rtl" ? "leading-7 text-lg mt-2 inline-flex" : ""}`}>{t("maximizing_txt")}</span>
                   </p>
                 </div>
               </div>
@@ -70,11 +74,13 @@ const dir = locale === "ar" ? "rtl" : "ltr";
               <div className="bg-[#131619] mt-3 rounded-[16px] p-4 md:p-[30px] md:h-[213px] lg:max-h-[198.67px] 2xl:max-h-[200.8px] md:mb-3 lg:mb-0 ">
                 <div className="flex flex-col justify-center text-left">
                   <h1 className="text-[#DEDEDE] poppins-medium text-[24px] lg:text-[30px] xl:text-[40px] leading-[130%]" dir={dir}>
-                    {t("efficiency_heading")}
+                   
+                    <span className={`${dir === "rtl" ? "leading-7" : ""}`}> {t("efficiency_heading")}</span>
                   </h1>
                   <h2 className="text-[#DEDEDE] poppins-medium text-[14px] lg:text-[16px] leading-[130%]"></h2>
                   <p className="poppins-light text-[12px] md:text-[12px] lg:text-[14px] font-normal leading-[20px] text-[#DEDEDE] opacity-70 mt-1" dir={dir}>
-                    {t("maximizing_txt")}
+                   
+                    <span className={`${dir === "rtl" ? "leading-7 text-lg mt-2 inline-flex" : ""}`}> {t("maximizing_txt")}</span>
                   </p>
                 </div>
               </div>
@@ -95,13 +101,15 @@ const dir = locale === "ar" ? "rtl" : "ltr";
             <div className="bg-[#131619] rounded-[16px] p-4 md:p-[20.35px_78px_30.57px_30px] ">
               <div className="flex flex-col justify-center text-left">
                 <h1 className="text-[#DEDEDE] poppins-medium text-[24px] md:text-[40px] leading-[130%]" dir={dir}>
-                  {t("data_driven_heading")}
+                  
+                  <span className={`${dir === "rtl" ? "leading-7" : ""}`}>{t("data_driven_heading")}</span>
                 </h1>
                 <h2 className="text-[#B8B9BA] poppins-medium text-[14px] md:text-[16px] leading-[130%] " dir={dir}>
-                  {t("data_driven_sub_heading")}
+                  {/* {t("data_driven_sub_heading")} */}
                 </h2>
                 <p className="poppins-light text-[12px] md:text-[14px] font-normal leading-[24px] text-[#B8B9BA] opacity-70 mt-1 max-w-[72%]" dir={dir}>
-                  {t("data_driven_txt")}
+                  
+                  <span className={`${dir === "rtl" ? "leading-7 text-lg mt-2 inline-flex" : ""}`}>{t("data_driven_txt")}</span>
                 </p>
               </div>
             </div>
@@ -124,13 +132,15 @@ const dir = locale === "ar" ? "rtl" : "ltr";
             <div className="col-span-12  md:col-span-6  lg:col-span-5 ">
               <div className="bg-[#131619] h-full rounded-[16px] p-4 md:p-7 lg:p-[30.28px] flex flex-col justify-center text-left">
                 <h1 className="text-[#DEDEDE] poppins-medium text-[24px] md:text-[40px] lg:text-[35px] xl:text-[40px] leading-[130%] truncate" dir = {dir}>
-                  {t("scalable_heading")}
+                  
+                  <span className={`${dir === "rtl" ? "leading-7" : ""}`}>{t("scalable_heading")}</span>
                 </h1>
                 <h2 className="text-[#B8B9BA] poppins-medium text-[14px] md:text-[16px] leading-[130%]" dir = {dir}>
-                  {t("scalable_sub_heading")}
+                  {/* {t("scalable_sub_heading")} */}
                 </h2>
                 <p className="poppins-light  text-[12px] md:text-[14px] font-normal leading-[24px] text-[#B8B9BA] opacity-70 mt-1" dir = {dir}>
-                  {t("scalable_txt")}
+                  
+                  <span className={`${dir === "rtl" ? "leading-7 text-lg mt-2 inline-flex" : ""}`}>{t("scalable_txt")}</span>
                 </p>
               </div>
             </div>

@@ -1,6 +1,9 @@
 import React from "react";
+import { useLocale } from "next-intl";
 
-const HeroSections = ({bg_image, headingText, descripation, headingBreakText, descripationBreakText, dir}) => {
+const HeroSections = ({bg_image, headingText, descripation, headingBreakText, descripationBreakText}) => {
+  const locale = useLocale();
+  const dir = locale === "ar" ? "rtl" : "ltr"
   return (
     <div className={`public-sans md:mb-[59.12px] min-h-[500px] md:min-h-[710px] relative bg-server-gradient bg-cover bg-no-repeat bg-center ${bg_image}`}
          
@@ -15,17 +18,20 @@ const HeroSections = ({bg_image, headingText, descripation, headingBreakText, de
         <div className="container mx-auto pt-[100px] sm:pt-[170px]  sm:pb-[150px] flex items-center justify-center flex-col text-center px-4 sm:px-0">
           {/* Main Heading */}
           <h2 className="public-sans text-[#DEDEDE] text-[28px] sm:text-[38px] lg:text-[48px] xl:text-[64px] font-bold sm:mb-2 md:mb-6  leading-tight sm:leading-[1.3]" dir={dir}>
-           {headingText}
+           {/*  */}
+          <span className={` ${dir === "rtl" ? "leading-7" : ""}`}>{headingText}</span>
             <br />
             <span className="block">{headingBreakText}</span>
           </h2>
 
           {/* Description Text */}
           <p className="public-sans font-normal text-[14px] sm:text-[16px] leading-5 sm:leading-9  text-[#DEDEDE] mb-6 sm:mb-[55px] max-w-[700px]" dir={dir}>
-           {descripation}
+          <span className={` ${dir === "rtl" ? "leading-7" : ""}`}>{descripation}</span>
+           
            <br />
               <span className="flex justify-center">
-               {descripationBreakText}
+              <span className={` ${dir === "rtl" ? "leading-7" : ""}`}> {descripationBreakText}</span>
+              
               </span>
           </p>
         </div>

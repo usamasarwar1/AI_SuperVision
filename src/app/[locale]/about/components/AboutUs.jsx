@@ -19,7 +19,7 @@ const dir = locale === "ar" ? "rtl" : "ltr";
         >
           <div
             className={`${id % 2 === 0 ? "order-1" : "order-2"
-              } col-span-12 md:col-span-5 gap-12 lg:flex ${id % 2 !== 0 ? "lg: justify-end" : ""
+              } col-span-12 md:col-span-5 gap-12 lg:flex ${id % 2 !== 0 ? "lg:justify-end " : ""
               }`}
           >
             <div className="lg:w-[496.37px] lg:h-[294.15px] h-full w-full rounded-lg overflow-hidden">
@@ -35,7 +35,7 @@ const dir = locale === "ar" ? "rtl" : "ltr";
               />
               <div className="text-white p-4">
                 <h2 className="text-lg font-bold">{heading}</h2>
-                <p className="text-sm">{text}</p>
+                <span className={`${dir === "rtl" ? "leading-7" : ""}`}>{text}</span>
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@ const dir = locale === "ar" ? "rtl" : "ltr";
               {heading}
             </h1>
             <p className="poppins-regular text-[#989898] text-sm md:text-base leading-relaxed mt-2" dir={dir}>
-              {text}
+              <span className={`${dir === "rtl" ? "leading-7" : ""}`}>{text}</span>
             </p>
           </div>
         </div>

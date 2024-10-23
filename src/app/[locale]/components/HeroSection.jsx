@@ -8,9 +8,11 @@ import { useRouter } from "next/navigation";
 import GetButton from "./GetButton";
 
 
+
 const ServiceItem = ({ index, title, description,  active, onClick }) => {
   const locale = useLocale();
   const dir = locale === "ar" ? "rtl" : "ltr";
+
   return (
     <div
       onClick={() => onClick(index)}
@@ -25,7 +27,7 @@ const ServiceItem = ({ index, title, description,  active, onClick }) => {
         <h3 className="text-xl sm:text-2xl font-bold poppins-medium" dir = {dir}>
           {title}
         </h3>
-        <p className="text-[#989898] poppins-regular text-sm sm:text-base"  dir = {dir}>
+        <p className={`text-[#989898] poppins-regular text-sm sm:text-base ${dir === "rtl" ? "leading-7" : ""}`}  dir = {dir}>
           {description}
         </p>
       </div>
@@ -97,7 +99,7 @@ const HeroSection = () => {
                 
              >
                 {t("Discover_btn")}
-                {/* Discover Our Solutions */}
+               
               </button>
 
               <Link href={"/consultation"}>
@@ -108,11 +110,11 @@ const HeroSection = () => {
         </div>
       </div>
       <div className=" my-[40px] max-w-[70%] bg-[#131619] md:mb-[123.8px] rounded-[16px]  h-auto  p-4 md:p-[50px] container mx-auto">
-        <h2 className="public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[40px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center" dir = {dir}>
+        <h2 className={`public-sans text-[#DEDEDE] text-2xl sm:text-[40px] md:text-[40px] lg:mt-2  font-bold leading-10 md:leading-[83.2px] text-center `} dir = {dir}>
           {t("ai_advantage_heading")}
         </h2>
-        <p className="public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#989898] text-[18px] lg:mt-6 max-w-[850px] mx-auto text-center" dir = {dir}>
-          {t("ai_advantage_txt")}
+        <p className={`public-sans font-normal text-sm sm:text-[18px] leading-relaxed text-[#989898] text-[18px] lg:mt-6 max-w-[850px] mx-auto text-center`} dir = {dir}>
+        <span className={`${dir === "rtl" ? "leading-7" : ""}`}> {t("ai_advantage_txt")}</span>
         </p>
       </div>
       <section className="bg-[#050505] p-6 md:p-0 py-8 sm:py-16 mt-2">
@@ -126,8 +128,7 @@ const HeroSection = () => {
                 size="lg"
                 
                 className="bg-[#050505] border  border-[#fff] text-white font-bold w-full rounded-lg p-4 md:p-9 text-[16px] md:text-xl poppins-medium flex items-center justify-between"
-               
-                iconRight={<span className="ml-2">→</span>}
+                onClick={() => router.push('/services')}              
               >
               <span  dir = {dir}>  {t("core_services")}</span>
                 <svg

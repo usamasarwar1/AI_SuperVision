@@ -6,7 +6,7 @@ import { generateDate, months } from "./generateDate";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import SubmitModal from "./SubmitModal";
 
-export default function BookingWidget({minute}) {
+export default function BookingWidget({ minute }) {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
   const currentDate = dayjs();
   const [today, setToday] = useState(currentDate);
@@ -27,7 +27,6 @@ export default function BookingWidget({minute}) {
     };
   }, [showModal]);
 
-  
   const handleButton = (time) => {
     setSelectedTime(time);
     setShowButton(true);
@@ -90,11 +89,11 @@ export default function BookingWidget({minute}) {
 
         {/* Right Section */}
         <div className="lg:w-4/5 p-4 sm:p-6 flex flex-col justify-center items-center ">
-          <h2 className="poppins-medium text-[#DEDEDE] text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 md:mb-5">
-           {minute}
+          <h2 className="poppins-medium text-[#DEDEDE] text-xl sm:text-3xl lg:text-4xl font-bold mb-1 md:mb-5">
+            {minute}
           </h2>
           <h1 className="poppins-medium text-[#DEDEDE] text-xl lg:text-2xl mb-3 lg:mb-[21.21px]">
-           Select a data and Time
+            Select a data and Time
           </h1>
 
           <div className="border border-[#262626] rounded-[10px] p-4 sm:p-6 md:w-[70%]">

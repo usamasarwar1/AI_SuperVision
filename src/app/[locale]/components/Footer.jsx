@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useTranslations } from "next-intl";
+import {useLocale, useTranslations } from "next-intl";
 import EmailInput from "./EmailInput";
 import ButtonAction from "./ButtonAction";
 import { usePathname } from "@/navigation";
@@ -10,7 +10,9 @@ import { usePathname } from "@/navigation";
 const Footer = () => {
   const t = useTranslations("Home");
   const pathname = usePathname();
-  console.log("path", pathname);
+const locale = useLocale();
+
+const dir = locale === "ar" ? "rtl" : "ltr";
 
   const footerIcons =
     "h-8 w-8 rounded-md  bg-[rgba(15,16,18,0.8)] flex items-center justify-center text-white ";
@@ -28,8 +30,8 @@ const Footer = () => {
               <li className={commonClasses}>
                 <Link
                   href={"/"}
-                  className={`public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out ${
-                    pathname === "/" ? "text-blue-700" : "text-white"
+                  className={`public-sans-regular hover:text-[#6185F2] transition-all duration-1000 ease-out ${
+                    pathname === "/" ? "text-[#6185F2]" : "text-white"
                   }`}
                 >
                   {t("home")}
@@ -38,8 +40,8 @@ const Footer = () => {
               <li className={commonClasses}>
                 <Link
                   href={"/about"}
-                  className={`public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out ${
-                    pathname === "/about" ? "text-blue-700" : "text-white"
+                  className={`public-sans-regular hover:text-[#6185F2] transition-all duration-1000 ease-out ${
+                    pathname === "/about" ? "text-[#6185F2]" : "text-white"
                   }`}
                 >
                   {t("about")}
@@ -48,8 +50,8 @@ const Footer = () => {
               <li className={commonClasses}>
                 <Link
                   href={"/services"}
-                  className={`public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out ${
-                    pathname === "/services" ? "text-blue-700" : "text-white"
+                  className={`public-sans-regular hover:text-[#6185F2] transition-all duration-1000 ease-out ${
+                    pathname === "/services" ? "text-[#6185F2]" : "text-white"
                   }`}
                 >
                   {t("services")}
@@ -58,13 +60,13 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col-span-12 sm:col-span-6 lg:col-span-2">
-            <h2 className=" text-[12px] mb-8 text-[#FFF] public-sans"></h2>
+            <h2 className=" text-[12px] md:mb-12 text-[#FFF] public-sans"></h2>
             <ul className="flex flex-col gap-4">
               <li className={commonClasses}>
                 <Link
                   href={"/benefits"}
-                  className={`public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out ${
-                    pathname === "/benefits" ? "text-blue-700" : "text-white"
+                  className={`public-sans-regular hover:text-[#6185F2] transition-all duration-1000 ease-out ${
+                    pathname === "/benefits" ? "text-[#6185F2]" : "text-white"
                   }`}
                 >
                   {t("benefits")}
@@ -73,9 +75,9 @@ const Footer = () => {
               <li className={commonClasses}>
                 <Link
                   href={"/consultation"}
-                  className={`public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out ${
+                  className={`public-sans-regular hover:text-[#6185F2] transition-all duration-1000 ease-out ${
                     pathname === "/consultation"
-                      ? "text-blue-700"
+                      ? "text-[#6185F2]"
                       : "text-white"
                   }`}
                 >
@@ -85,8 +87,8 @@ const Footer = () => {
               <li className={commonClasses}>
                 <Link
                   href={"/contacts"}
-                  className={`public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out ${
-                    pathname === "/contacts" ? "text-blue-700" : "text-white"
+                  className={`public-sans-regular hover:text-[#6185F2] transition-all duration-1000 ease-out ${
+                    pathname === "/contacts" ? "text-[#6185F2]" : "text-white"
                   }`}
                 >
                   {t("contact")}
@@ -116,7 +118,7 @@ const Footer = () => {
                       className="w-[30px] h-[30px]"
                     />
                   </span>
-                  <span className="public-sans-regular hover:text-blue-700 transition-all duration-1000 ease-out">
+                  <span className="public-sans-regular hover:text-[#6185F2] transition-all duration-1000 ease-out">
                     {t("instagram")}
                   </span>
                 </div>

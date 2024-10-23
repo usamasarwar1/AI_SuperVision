@@ -4,10 +4,13 @@ import OurServices from "./components/OurServices";
 import BusinessCard from "../components/BusinessCard";
 import Link from "next/link";
 import GetButton from "../components/GetButton";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const Page = () => {
   const t = useTranslations("Services");
+  const locale = useLocale();
+  const dir = locale === "ar" ? "rtl" : "ltr"
+
   const cardData = [
     {
       id: 1,
@@ -44,7 +47,7 @@ const Page = () => {
 
   return (
     <div className="bg-[#050505] mb-[50px] lg:mb-[140.79px]">
-      <HeroSection />
+      <HeroSection  />
 
       {cardData.map((item, index) => (
         <React.Fragment key={index}>

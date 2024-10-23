@@ -32,9 +32,9 @@ const Page = () => {
     <div className="bg-[#050505] mb-[50px] lg:mb-[140.79px]">
       <HeroSections
         bg_image="bg-image-hero-about"
-        headingText="Empowering Businesses Through"
-        headingBreakText="Innovation and Expertise"
-        descripation="At AI Supervision, we believe in transforming visions into reality by leveraging technology, creativity, and strategic thinking."
+        headingText={t("hero_heading")}
+        headingBreakText={t("headingBreakText")}
+        descripation={t("hero_txt")}
        />
 
       <div className="mt-[50px] pb-[150px]">

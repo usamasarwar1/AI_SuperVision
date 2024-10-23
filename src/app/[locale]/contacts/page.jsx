@@ -1,5 +1,4 @@
 import React from "react";
-import HeroSections from "../components/HeroSections";
 import Contact from "./components/Contact";
 import HeroSection from "./components/HeroSection";
 

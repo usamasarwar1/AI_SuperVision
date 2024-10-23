@@ -1,13 +1,12 @@
 import React from "react";
 import Image from "next/image";
 
-import {useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const ClientTrust = () => {
   const t = useTranslations("Home");
   const locale = useLocale();
   const dir = locale === "ar" ? "rtl" : "ltr";
- 
 
   const data = [
     {
@@ -44,7 +43,10 @@ const ClientTrust = () => {
               className="col-span-1 rounded-lg overflow-hidden relative w-full border-1 border-[#0A0B0E] h-[410px] flex flex-col group"
               key={index}
             >
-              <h2 className=" text-[#DEDEDE] text-center text-[24px] poppins-medium my-auto" dir = {dir}>
+              <h2
+                className=" text-[#DEDEDE] text-center text-[24px] poppins-medium my-auto"
+                dir={dir}
+              >
                 {item.name}
               </h2>
 
@@ -64,8 +66,19 @@ const ClientTrust = () => {
                   />
                 </div>
 
-                <p className="text-[#989898] text-[14px] poppins-regular text-center group-hover:font-bold group-hover:text-xl " dir = {dir}>
-                  {item.description}
+                <p
+                  className="text-[#989898] text-[14px]  poppins-regular text-center group-hover:font-bold lg:group-hover:text-[26px] xl:group-hover:text-xl "
+                  dir={dir}
+                >
+                  <span
+                    className={`${
+                      dir === "rtl"
+                        ? "leading-6 md:leading-normal hover:leading-3 lg:hover:leading-normal"
+                        : ""
+                    }`}
+                  >
+                    {item.description}
+                  </span>
                 </p>
               </div>
             </div>
@@ -117,13 +130,13 @@ const ClientTrust = () => {
                         className="w-[80px] md:w-[100px] lg:w-[120px]"
                       />
                       <h3 className="text-[18px] md:text-[20px] lg:text-[24px] font-bold poppins-medium text-[#DEDEDE]">
-                        {/* {translation[language].h_efficiency} */}
-
                         {t("h_efficiency")}
                       </h3>
                       <p className="text-[#989898] poppins-regular text-[12px] md:text-[14px] text-center">
-                        {/* {translation[language].h_efficiecny_txt} */}
-                        {t("h_efficiecny_txt")}
+                        <span className={`${dir === "rtl" ? "leading-7" : ""}`}>
+                          {" "}
+                          {t("h_efficiecny_txt")}{" "}
+                        </span>
                       </p>
                     </div>
                     <div className="col-span-1 flex items-center content-center flex-col z-[2]">
@@ -133,13 +146,13 @@ const ClientTrust = () => {
                         className="w-[80px] md:w-[100px] lg:w-[120px]"
                       />
                       <h3 className="text-[18px] md:text-[20px] lg:text-[24px] font-bold poppins-medium text-[#DEDEDE]">
-                        {/* {translation[language].h_scalability} */}
                         {t("h_scalability")}
                       </h3>
                       <p className="text-[#989898] poppins-regular text-[12px] md:text-[14px] text-center">
-                        {/* {translation[language].h_scalability_txt}
-                        {translation[language].h_scalability_txt} */}
-                        {t("h_scalability_txt")}
+                        <span className={`${dir === "rtl" ? "leading-7" : ""}`}>
+                          {" "}
+                          {t("h_scalability_txt")}{" "}
+                        </span>
                       </p>
                     </div>
                     <div className="col-span-1 flex items-center content-center flex-col z-[2]">
@@ -149,12 +162,17 @@ const ClientTrust = () => {
                         className="w-[80px] md:w-[100px] lg:w-[120px]"
                       />
                       <h3 className="text-[18px] md:text-[20px] lg:text-[24px] font-bold poppins-medium text-[#DEDEDE]">
-                        {/* {translation[language].h_expert} */}
-                        {t("h_expert")}
+                        <span className={`${dir === "rtl" ? "leading-7" : ""}`}>
+                          {" "}
+                          {t("h_expert")}{" "}
+                        </span>
                       </h3>
                       <p className="text-[#989898] poppins-regular text-[12px] md:text-[14px] text-center">
                         {/* {translation[language].expert_txt} */}
-                        {t("expert_txt")}
+                        <span className={`${dir === "rtl" ? "leading-7" : ""}`}>
+                          {" "}
+                          {t("expert_txt")}
+                        </span>
                       </p>
                     </div>
                   </div>

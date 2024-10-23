@@ -6,15 +6,18 @@ import Image from "next/image";
 import { useLanguage } from "../../context/LanguageContext";
 import en from "../../../../api/contact/en.json";
 import ar from "../../../../api/contact/ar.json";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const Contact = () => {
+  const t = useTranslations("Contact");
+  const locale = useLocale();
+  const dir = locale === "ar" ? "rtl" : "ltr"
   const { language } = useLanguage();
   const translations = {
     en,
     ar,
   };
-  const t = useTranslations("Benefits");
+  
   const {
     register,
     handleSubmit,
@@ -35,49 +38,55 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[30px]">
             {/* Full Name */}
 
-            <div>
+            <div dir={dir}>
               <label
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="name"
+                
               >
-                {translations[language].full_name_label}
+               <span  dir={dir}> {t("full_name_label")}</span>
+                {/* {translations[language].full_name_label} */}
               </label>
               <Input
                 id="name"
                 type="text"
-                placeholder={translations[language].full_name_placeholder}
+                placeholder={t("full_name_placeholder")}
                 {...register("name", {
-                  required: translations[language].full_name_error,
+                  required: t("full_name_error"),
                 })}
                 classNames={{
                   inputWrapper:
                     "mt-[2px] md:mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] h-[60px] border-[#ffffff1a] text-[#989898]",
-                }}
+                   
+                  } }
               />
               {errors.name && (
                 <p className="text-red-500 text-xs mt-1">
                   {errors.name.message}
+                 
                 </p>
               )}
             </div>
 
             {/* Email Address */}
-            <div>
+            <div dir={dir}>
               <label
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="email"
               >
-                {translations[language].email_label}
+                {/* {translations[language].email_label} */}
+                {t("email_label")}
               </label>
               <Input
                 id="email"
                 type="email"
-                placeholder={translations[language].email_placeholder}
+                placeholder= {t("email_placeholder")}
                 {...register("email", {
-                  required: translations[language].email_error,
+                  required: t("email_error"),
                   pattern: {
                     value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-                    message: translations[language].invalid_email_error,
+                    message:  t("invalid_email_error")
+                    // translations[language].invalid_email_error,
                   },
                 })}
                 classNames={{
@@ -93,22 +102,26 @@ const Contact = () => {
             </div>
 
             {/* Phone Number */}
-            <div>
+            <div dir={dir}>
               <label
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="phone"
               >
-                {translations[language].phone_label}
+                 {t("phone_label")}
+               
               </label>
               <Input
+              dir={dir}
                 id="phone"
                 type="tel"
-                placeholder={translations[language].phone_placeholder}
+                placeholder= {t("phone_placeholder")}
                 {...register("phone", {
-                  required: translations[language].phone_error,
+                  required:  t("phone_error"),
+                 
                   pattern: {
                     value: /^[0-9]{10}$/,
-                    message: translations[language].invalid_phone_error,
+                    message: t("invalid_phone_error"),
+                    
                   },
                 })}
                 classNames={{
@@ -124,19 +137,21 @@ const Contact = () => {
             </div>
 
             {/* Country */}
-            <div>
+            <div dir={dir}>
               <label
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="country"
               >
-                {translations[language].country_label}
+                 {t("country_label")}
+               
               </label>
               <Input
                 id="country"
                 type="text"
-                placeholder={translations[language].country_placeholder}
+                placeholder= {t("country_placeholder")}
                 {...register("country", {
-                  required: translations[language].country_error,
+                  required: t("country_error"),
+                   
                 })}
                 classNames={{
                   inputWrapper:
@@ -151,32 +166,37 @@ const Contact = () => {
             </div>
 
             {/* Project Scope */}
-            <div>
+            <div dir={dir}>
               <label
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] md:mb-3"
                 htmlFor="project"
               >
-                {translations[language].project_scope_label}
+                 {t("project_scope_label")}
+                {/* {translations[language].project_scope_label} */}
               </label>
               <div className="relative">
                 <select
                   id="project"
                   className="mt-[2px] md:mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] text-[#989898] border-[#ffffff1a] w-full appearance-none pr-10"
                   {...register("project", {
-                    required: translations[language].project_scope_error,
+                    required:  t("project_scope_error"),
+                   
                   })}
                 >
                   <option value="">
-                    {translations[language].project_scope_placeholder}
+                  {t("project_scope_placeholder")}
                   </option>
                   <option value="Small">
-                    {translations[language].project_scope_small}
+                    
+                    {t("project_scope_small")}
                   </option>
                   <option value="Medium">
-                    {translations[language].project_scope_medium}
+                   
+                    {t("project_scope_medium")}
                   </option>
                   <option value="Large">
-                    {translations[language].project_scope_large}
+                   
+                    {t("project_scope_large")}
                   </option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-4 top-1 flex items-center">
@@ -204,19 +224,21 @@ const Contact = () => {
             </div>
 
             {/* Company Name */}
-            <div>
+            <div dir={dir}>
               <label
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="company"
-              >
-                {translations[language].company_name_label}
+              > {t("company_name_label")}
+               
               </label>
               <Input
                 id="company"
                 type="text"
-                placeholder={translations[language].company_name_placeholder}
+                placeholder= {t("company_name_placeholder")}
+               
                 {...register("company", {
-                  required: translations[language].company_error,
+                  required: t("company_error"),
+                  
                 })}
                 classNames={{
                   inputWrapper:
@@ -232,23 +254,27 @@ const Contact = () => {
           </div>
 
           {/* Project Goals */}
-          <div className="text-area">
+          <div className="text-area" dir={dir}>
             <label
               className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5]"
               htmlFor="comments"
             >
-              {translations[language].project_description_label}
+               {t("project_description_label")}
+              
             </label>
             <Textarea
               id="comments"
               placeholder={
-                translations[language].project_description_placeholder
+                t("project_description_placeholder")
+               
               }
               {...register("comments", {
-                required: translations[language].description_error,
+                required: t("description_error"),
+               
                 minLength: {
                   value: 20,
-                  message: translations[language].description_error,
+                  message: t("description_error"),
+                  
                 },
               })}
               classNames={{
@@ -264,19 +290,20 @@ const Contact = () => {
           </div>
 
           {/* Terms and Conditions */}
-          <div>
+          <div dir={dir}>
             <label className="flex items-center text-white gap-[7px]">
               <input
                 type="checkbox"
                 className="mr-2"
                 {...register("terms", {
-                  required: "You must agree to the terms",
+                  required: t("terms_conditions_error"),
                 })}
               />
               <span className="poppins-regular text-[#DEDEDE] text-[12px] md:text-[16px] md:leading-7">
                 {" "}
-                {/* I agree to the terms and conditions */}
-                {translations[language].terms_and_conditions_label}
+                
+                {t("terms_and_conditions_label")}
+              
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -299,12 +326,16 @@ const Contact = () => {
           </div>
 
           {/* Submit Button */}
+          <div  dir={dir}>
           <button
             type="submit"
             className="public-sans border border-[#FFF] text-white rounded-full p-[6px_12px] md:px-6 md:py-3 hover:bg-white hover:text-black transition-colors"
-          >
-            {translations[language].submit_button}
+           
+         >
+             {t("submit_button")}
+            
           </button>
+          </div>
         </form>
 
         {/* Right Sidebar */}

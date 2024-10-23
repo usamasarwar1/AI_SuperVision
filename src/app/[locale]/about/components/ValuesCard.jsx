@@ -24,7 +24,7 @@ const dir = locale === "ar" ? "rtl" : "ltr";
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold poppins-medium" dir = {dir}>
             {title}
           </h3>
-          <p className="text-[#989898] poppins-regular text-xs sm:text-sm md:text-base mt-2 lg:max-w-[528.04px]" dir = {dir}>
+          <p className={`text-[#989898] poppins-regular text-xs sm:text-sm md:text-base mt-2 lg:max-w-[528.04px] ${dir === "rtl" ? "leading-7" : ""}`} dir = {dir}>
             {description}
           </p>
         </div>

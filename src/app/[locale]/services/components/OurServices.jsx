@@ -34,10 +34,12 @@ const dir = locale === "ar" ? "rtl" : "ltr";
         } col-span-1 lg:col-span-7 xl:col-span-7`}
       >
         <h1 className="poppins-medium text-[#DEDEDE] text-2xl  sm:text-4xl xl:text-5xl leading-5 md:leading-[150%]" dir = {dir}>
-          {heading}
+         
+          <span className={`${dir === "rtl" ? "leading-7" : ""}`}> {heading}</span>
         </h1>
         <p className="poppins-regular text-[#B8B9BA] text-base lg:text-lg leading-5 md:leading-[150%] mt-4" dir={dir}>
-          {text}
+          {/* {text} */}
+          <span className={`${dir === "rtl" ? "leading-7" : ""}`}>{text}</span>
         </p>
         <p className="poppins-regular text-[#B8B9BA] text-base lg:text-lg leading-5 md:leading-[150%] mt-2" dir={dir}>
           {subText}
