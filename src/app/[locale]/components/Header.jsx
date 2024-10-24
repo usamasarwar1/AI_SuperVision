@@ -27,7 +27,6 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const pathname = usePathname();
-  // alert(pathname)
 
   const { locale } = useParams();
 
@@ -36,19 +35,20 @@ export default function Header() {
   const t = useTranslations("Home");
 
   const menuRef = useRef(null);
- 
 
-  
+  const refreshPage = () => {
+    // router.refresh();
+    window.location.reload();
+    console.log("reload page");
+  };
 
   // const handleClickOutside = (e) => {
-    
-     
+
   //     if (!menuRef.current.contains(e.target)) {
   //       console.log("Clicked outside");
-       
+
   //     }
-    
-   
+
   // };
   useEffect(() => {
     // document.addEventListener("click", handleClickOutside, true);
@@ -60,8 +60,6 @@ export default function Header() {
     // };
     // document.addEventListener("click", handleClickOutside, true)
   }, []);
-  
- 
 
   // Handle language selection
 
@@ -74,17 +72,20 @@ export default function Header() {
       onMenuOpenChange={setIsMenuOpen}
       maxWidth={"full"}
       className="w-full max-w-full p-0 box-border bg-header-gradient backdrop-blur-[20px] z-[99] text-white public-sans"
-        position="static"
+      position="static"
       // className="fixed top-0 left-0 h-20 px-0 pt-0 pb-0 box-border bg-header-gradient backdrop-blur-[20px] z-[99] text-white public-sans rounded-t-lg"
     >
       {/* Navbar Left */}
       <NavbarContent>
         <NavbarBrand>
           <Link href="/">
-            <Image src="/images/logo.svg" width={200} height={200} alt="Logo"
-             className="w-[150px] h-[150px] md:w-[200px] md:h-[200px]"
+            <Image
+              src="/images/logo.svg"
+              width={200}
+              height={200}
+              alt="Logo"
+              className="w-[150px] h-[150px] md:w-[200px] md:h-[200px]"
             />
-          
           </Link>
         </NavbarBrand>
       </NavbarContent>
@@ -93,19 +94,18 @@ export default function Header() {
       <NavbarContent className="hidden lg:flex lg:gap-8" justify="center">
         <NavbarItem>
           <Link
-            className={`py-4 px-2 text-white text-sm font-medium  hover:text-[#6185F2] ${
+            className={`py-4 px-2  text-sm font-medium hover:text-[#6185F2] ${
               pathname === "/" ? "text-[#6185F2]" : "text-white"
             }`}
             href="/"
           >
             {t("home")}
-            {/* {translations[language].home} */}
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link
-            className={`py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-[#6185F2] ${
-              pathname === "/about" ? "text-[#6185F2] " : ""
+            className={`py-4 px-2 text-sm font-medium transition-all duration-1000 ease-out hover:text-[#6185F2] ${
+              pathname === "/about" ? "text-[#6185F2] " : "text-white "
             }`}
             href="/about"
           >
@@ -114,7 +114,7 @@ export default function Header() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className={`py-4 px-2 text-white text-sm font-medium  hover:text-[#6185F2] ${
+            className={`py-4 px-2  text-sm font-medium  hover:text-[#6185F2] ${
               pathname === "/services" ? "text-[#6185F2] " : "text-white"
             }`}
             href="/services"
@@ -124,7 +124,7 @@ export default function Header() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className={`py-4 px-2 text-white text-sm font-medium  hover:text-[#6185F2] ${
+            className={`py-4 px-2  text-sm font-medium  hover:text-[#6185F2] ${
               pathname === "/benefits" ? "text-[#6185F2] " : "text-white"
             }`}
             href="/benefits"
@@ -134,7 +134,7 @@ export default function Header() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className={`py-4 px-2 text-white text-sm font-medium  hover:text-[#6185F2] ${
+            className={`py-4 px-2  text-sm font-medium  hover:text-[#6185F2] ${
               pathname === "/consultation" ? "text-[#6185F2] " : "text-white"
             }`}
             href="/consultation"
@@ -165,7 +165,7 @@ export default function Header() {
               <span className="public-sans text-[12px] md:text-[16px] md:leading-6 text-[#FFFFFF]">
                 {locale === "en" ? "English" : "العربية"}
               </span>
-              <MdArrowDropDown className="text-[#FFFFFF] lg:w-8 lg:h-8" />
+              <MdArrowDropDown className="text-[#FFFFFF] w-6 h-6  lg:w-8 lg:h-8" />
             </Button>
           </DropdownTrigger>
           <DropdownMenu
@@ -175,7 +175,10 @@ export default function Header() {
             classNames="w-8 bg-red-500"
           >
             <DropdownItem
-              onClick={() => handleLanguageChange("en")}
+              onClick={() => {
+                handleLanguageChange("en");
+                refreshPage();
+              }}
               key="en"
               className=" border-none"
             >
@@ -194,7 +197,10 @@ export default function Header() {
               </div>
             </DropdownItem>
             <DropdownItem
-              onClick={() => handleLanguageChange("ar")}
+              onClick={() => {
+                handleLanguageChange("ar");
+                refreshPage();
+              }}
               key="ar"
               className="flex items-center gap-0 sm:gap-2"
             >
@@ -229,13 +235,10 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <NavbarMenu
-       
-          className="left-0 z-[9999] h-auto translate-x-0 overflow-auto bg-[#0a1019]  flex gap-4"
-        >
+        <NavbarMenu className="left-0 z-[9999] h-auto translate-x-0 overflow-auto bg-[#0a1019]  flex gap-4">
           <NavbarItem>
             <Link
-              className={`py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-blue-700 ${
+              className={`py-4 px-2  text-sm font-medium transition-all duration-1000 ease-out hover:text-blue-700 ${
                 pathname === "/" ? "text-blue-700 " : "text-white"
               }`}
               href="/"
@@ -245,7 +248,7 @@ export default function Header() {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className={`py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-blue-700 ${
+              className={`py-4 px-2  text-sm font-medium transition-all duration-1000 ease-out hover:text-blue-700 ${
                 pathname === "/about" ? "text-blue-700 " : "text-white"
               }`}
               href="/about"
@@ -255,7 +258,7 @@ export default function Header() {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className={`py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-blue-700 ${
+              className={`py-4 px-2  text-sm font-medium transition-all duration-1000 ease-out hover:text-blue-700 ${
                 pathname === "/services" ? "text-blue-700 " : "text-white"
               }`}
               href="/services"
@@ -265,7 +268,7 @@ export default function Header() {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className={`py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-blue-700 ${
+              className={`py-4 px-2  text-sm font-medium transition-all duration-1000 ease-out hover:text-blue-700 ${
                 pathname === "/benefits" ? "text-blue-700 " : "text-white"
               }`}
               href="/benefits"
@@ -275,8 +278,10 @@ export default function Header() {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className={`py-4 px-2 text-white text-sm font-medium transition-all duration-1000 ease-out hover:text-blue-700 ${
-                pathname === "/consultation" ? "text-blue-700 bg-red-500 " : "text-white"
+              className={`py-4 px-2  text-sm font-medium transition-all duration-1000 ease-out hover:text-blue-700 ${
+                pathname === "/consultation"
+                  ? "text-blue-700 bg-red-500 "
+                  : "text-white"
               }`}
               href="/consultation"
             >
@@ -290,9 +295,7 @@ export default function Header() {
             >
               {t("contact")}
             </Button>
-            
           </NavbarItem>
-          
         </NavbarMenu>
       )}
 

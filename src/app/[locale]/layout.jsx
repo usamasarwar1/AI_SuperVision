@@ -2,10 +2,9 @@ import { Saira } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import Layout from "./components/Layout";
-import LanguageProvider from "./context/LanguageContext";
-import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
-import Head from 'next/head';
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import Head from "next/head";
 import Script from "next/script";
 
 const inter = Saira({ subsets: ["latin"] });
@@ -17,14 +16,14 @@ const inter = Saira({ subsets: ["latin"] });
 
 export const metadata = {
   title: "AI Supervision - Empowering Business Efficiency with AI Automation",
-  description: "AI Supervision leverages AI automation and AI-powered agents to transform business efficiency, driving innovation and reducing operational costs.",
+  description:
+    "AI Supervision leverages AI automation and AI-powered agents to transform business efficiency, driving innovation and reducing operational costs.",
 };
 
-
-export default async function RootLayout({ children,  params: {locale} }) {
+export default async function RootLayout({ children, params: { locale } }) {
   const messages = await getMessages();
   return (
-    <html lang={locale} >
+    <html lang={locale}>
       <head>
         <Script
           id="voiceflow-script"
@@ -48,26 +47,34 @@ export default async function RootLayout({ children,  params: {locale} }) {
           }}
         />
       </head>
-       <Head>
-       <meta
+      <Head>
+        <meta
           name="description"
           content="AI Supervision leverages AI automation and AI-powered agents to enhance business efficiency. Discover how AI can streamline operations and reduce costs."
         />
-        <meta name="keywords" content="AI automation, AI-powered agents, business efficiency, AI technology, operational efficiency" />
-        <meta property="og:title" content="AI Supervision - Revolutionizing Business Efficiency with AI" />
-        <meta property="og:description" content="Explore how AI-powered agents and automation tools improve business efficiency and reduce costs." />
+        <meta
+          name="keywords"
+          content="AI automation, AI-powered agents, business efficiency, AI technology, operational efficiency"
+        />
+        <meta
+          property="og:title"
+          content="AI Supervision - Revolutionizing Business Efficiency with AI"
+        />
+        <meta
+          property="og:description"
+          content="Explore how AI-powered agents and automation tools improve business efficiency and reduce costs."
+        />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body suppressHydrationWarning={true} className={`${inter.className} bg-[#050505]  min-h-[100vh] `}>
-      <NextIntlClientProvider messages={messages}>
-        <Providers>
-        <LanguageProvider>
-          <Layout>
-            {children}
-          </Layout>
-        </LanguageProvider>
-        </Providers>
+      <body
+        suppressHydrationWarning={true}
+        className={`${inter.className} bg-[#050505]  min-h-[100vh] `}
+      >
+        <NextIntlClientProvider messages={messages}>
+          <Providers>
+            <Layout>{children}</Layout>
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>

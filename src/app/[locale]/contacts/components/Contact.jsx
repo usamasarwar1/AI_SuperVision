@@ -3,21 +3,13 @@ import React from "react";
 import { Input, Textarea } from "@nextui-org/react";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
-import { useLanguage } from "../../context/LanguageContext";
-import en from "../../../../api/contact/en.json";
-import ar from "../../../../api/contact/ar.json";
 import { useLocale, useTranslations } from "next-intl";
 
 const Contact = () => {
   const t = useTranslations("Contact");
   const locale = useLocale();
-  const dir = locale === "ar" ? "rtl" : "ltr"
-  const { language } = useLanguage();
-  const translations = {
-    en,
-    ar,
-  };
-  
+  const dir = locale === "ar" ? "rtl" : "ltr";
+
   const {
     register,
     handleSubmit,
@@ -42,9 +34,8 @@ const Contact = () => {
               <label
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="name"
-                
               >
-               <span  dir={dir}> {t("full_name_label")}</span>
+                <span dir={dir}> {t("full_name_label")}</span>
                 {/* {translations[language].full_name_label} */}
               </label>
               <Input
@@ -57,13 +48,11 @@ const Contact = () => {
                 classNames={{
                   inputWrapper:
                     "mt-[2px] md:mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] h-[60px] border-[#ffffff1a] text-[#989898]",
-                   
-                  } }
+                }}
               />
               {errors.name && (
                 <p className="text-red-500 text-xs mt-1">
                   {errors.name.message}
-                 
                 </p>
               )}
             </div>
@@ -80,12 +69,12 @@ const Contact = () => {
               <Input
                 id="email"
                 type="email"
-                placeholder= {t("email_placeholder")}
+                placeholder={t("email_placeholder")}
                 {...register("email", {
                   required: t("email_error"),
                   pattern: {
                     value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-                    message:  t("invalid_email_error")
+                    message: t("invalid_email_error"),
                     // translations[language].invalid_email_error,
                   },
                 })}
@@ -107,21 +96,19 @@ const Contact = () => {
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="phone"
               >
-                 {t("phone_label")}
-               
+                {t("phone_label")}
               </label>
               <Input
-              dir={dir}
+                dir={dir}
                 id="phone"
                 type="tel"
-                placeholder= {t("phone_placeholder")}
+                placeholder={t("phone_placeholder")}
                 {...register("phone", {
-                  required:  t("phone_error"),
-                 
+                  required: t("phone_error"),
+
                   pattern: {
                     value: /^[0-9]{10}$/,
                     message: t("invalid_phone_error"),
-                    
                   },
                 })}
                 classNames={{
@@ -142,16 +129,14 @@ const Contact = () => {
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="country"
               >
-                 {t("country_label")}
-               
+                {t("country_label")}
               </label>
               <Input
                 id="country"
                 type="text"
-                placeholder= {t("country_placeholder")}
+                placeholder={t("country_placeholder")}
                 {...register("country", {
                   required: t("country_error"),
-                   
                 })}
                 classNames={{
                   inputWrapper:
@@ -171,7 +156,7 @@ const Contact = () => {
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] md:mb-3"
                 htmlFor="project"
               >
-                 {t("project_scope_label")}
+                {t("project_scope_label")}
                 {/* {translations[language].project_scope_label} */}
               </label>
               <div className="relative">
@@ -179,25 +164,13 @@ const Contact = () => {
                   id="project"
                   className="mt-[2px] md:mt-2 bg-[#1b1f23cc] rounded-[75px] px-[20px] py-[18px] text-[#989898] border-[#ffffff1a] w-full appearance-none pr-10"
                   {...register("project", {
-                    required:  t("project_scope_error"),
-                   
+                    required: t("project_scope_error"),
                   })}
                 >
-                  <option value="">
-                  {t("project_scope_placeholder")}
-                  </option>
-                  <option value="Small">
-                    
-                    {t("project_scope_small")}
-                  </option>
-                  <option value="Medium">
-                   
-                    {t("project_scope_medium")}
-                  </option>
-                  <option value="Large">
-                   
-                    {t("project_scope_large")}
-                  </option>
+                  <option value="">{t("project_scope_placeholder")}</option>
+                  <option value="Small">{t("project_scope_small")}</option>
+                  <option value="Medium">{t("project_scope_medium")}</option>
+                  <option value="Large">{t("project_scope_large")}</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-4 top-1 flex items-center">
                   <svg
@@ -228,17 +201,16 @@ const Contact = () => {
               <label
                 className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5] mb-[6px] md:mb-3"
                 htmlFor="company"
-              > {t("company_name_label")}
-               
+              >
+                {" "}
+                {t("company_name_label")}
               </label>
               <Input
                 id="company"
                 type="text"
-                placeholder= {t("company_name_placeholder")}
-               
+                placeholder={t("company_name_placeholder")}
                 {...register("company", {
                   required: t("company_error"),
-                  
                 })}
                 classNames={{
                   inputWrapper:
@@ -259,22 +231,17 @@ const Contact = () => {
               className="text-[#B8B9BA] font-normal text-[12px] md:text-[16px] leading-[1.5]"
               htmlFor="comments"
             >
-               {t("project_description_label")}
-              
+              {t("project_description_label")}
             </label>
             <Textarea
               id="comments"
-              placeholder={
-                t("project_description_placeholder")
-               
-              }
+              placeholder={t("project_description_placeholder")}
               {...register("comments", {
                 required: t("description_error"),
-               
+
                 minLength: {
                   value: 20,
                   message: t("description_error"),
-                  
                 },
               })}
               classNames={{
@@ -301,9 +268,7 @@ const Contact = () => {
               />
               <span className="poppins-regular text-[#DEDEDE] text-[12px] md:text-[16px] md:leading-7">
                 {" "}
-                
                 {t("terms_and_conditions_label")}
-              
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -326,21 +291,18 @@ const Contact = () => {
           </div>
 
           {/* Submit Button */}
-          <div  dir={dir}>
-          <button
-            type="submit"
-            className="public-sans border border-[#FFF] text-white rounded-full p-[6px_12px] md:px-6 md:py-3 hover:bg-white hover:text-black transition-colors"
-           
-         >
-             {t("submit_button")}
-            
-          </button>
+          <div dir={dir}>
+            <button
+              type="submit"
+              className="public-sans border border-[#FFF] text-white rounded-full p-[6px_12px] md:px-6 md:py-3 hover:bg-white hover:text-black transition-colors"
+            >
+              {t("submit_button")}
+            </button>
           </div>
         </form>
 
         {/* Right Sidebar */}
         <div className="w-full lg:w-1/3 h-[50%]">
-        
           <div className="relative w-full pt-[60%] ">
             <Image
               src="/images/map.png"
