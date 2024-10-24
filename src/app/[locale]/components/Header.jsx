@@ -5,7 +5,7 @@ import Image from "next/image";
 // import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/navigation";
-
+import Cookies from 'js-cookie';
 import { useParams } from "next/navigation";
 
 import {
@@ -23,9 +23,11 @@ import {
   DropdownItem,
 } from "@nextui-org/react";
 
+
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [language, setLanguage] = useState(null);
   const pathname = usePathname();
 
   const { locale } = useParams();
@@ -36,11 +38,11 @@ export default function Header() {
 
   const menuRef = useRef(null);
 
-  const refreshPage = () => {
-    // router.refresh();
-    window.location.reload();
-    console.log("reload page");
-  };
+  // const handleRefresh = () => {
+  //    router.refresh();
+  //   window.location.reload();
+  //   console.log("reload page");
+  // };
 
   // const handleClickOutside = (e) => {
 
@@ -61,12 +63,112 @@ export default function Header() {
     // document.addEventListener("click", handleClickOutside, true)
   }, []);
 
+  // useEffect(() => {
+  //   // Get language from localStorage or set it to default 'en'
+  //   const savedLanguage = localStorage.getItem('language') || 'en';
+  //   setLanguage(savedLanguage);
+
+  //   // Load the Voiceflow chat script dynamically based on the selected language
+  //   const loadVoiceflowChat = () => {
+  //     const script = document.createElement('script');
+  //     script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+  //     script.type = "text/javascript";
+  //     script.onload = () => {
+  //       window.voiceflow.chat.load({
+  //         verify: { projectID: '66df01a26e8198f513e44dd0' },
+  //         url: 'https://general-runtime.voiceflow.com/',
+  //         versionID: 'production',
+  //         language: savedLanguage // Pass the current language here
+  //       });
+  //     };
+  //     document.body.appendChild(script);
+  //   };
+
+  //   loadVoiceflowChat();
+
+  //   // Reload chat when language changes
+  //   if (language) {
+  //     localStorage.setItem('language', language);
+  //     loadVoiceflowChat(); // Load new chat configuration on language change
+  //   }
+
+  //   // Cleanup previous script to avoid duplicate loading
+  //   return () => {
+  //     const oldScript = document.querySelector("script[src='https://cdn.voiceflow.com/widget/bundle.mjs']");
+  //     if (oldScript) oldScript.remove();
+  //   };
+
+  // }, [language]);
+
   // Handle language selection
 
-  const handleLanguageChange = (locale) => {
-    router.replace(pathname, { locale });
-  };
+  // const handleLanguageChange = (locale) => {
+  //   router.replace(pathname, { locale });
+  //   setLanguage(locale);
+  //   localStorage.setItem('language', locale);
 
+  // };
+  
+
+
+
+  // useEffect(() => {
+  //   // Get language from cookies or default to 'en'
+  //   const savedLanguage = Cookies.get('language') || 'en';
+  //   setLanguage(savedLanguage);
+
+  //   // Load the Voiceflow chat script dynamically based on the selected language
+  //   const loadVoiceflowChat = () => {
+  //     const script = document.createElement('script');
+  //     script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+  //     script.type = "text/javascript";
+  //     script.onload = () => {
+  //       window.voiceflow.chat.load({
+  //         verify: { projectID: '66df01a26e8198f513e44dd0' },
+  //         url: 'https://general-runtime.voiceflow.com/',
+  //         versionID: 'production',
+  //         language: savedLanguage // Pass the current language here
+  //       });
+  //     };
+  //     document.body.appendChild(script);
+  //   };
+
+  //   loadVoiceflowChat();
+
+  //   // Reload chat when language changes
+  //   if (language) {
+  //     Cookies.set('language', language, { expires: 7 }); // Set cookie with 7 days expiration
+  //     loadVoiceflowChat(); // Load new chat configuration on language change
+  //   }
+
+  //   // Cleanup previous script to avoid duplicate loading
+  //   return () => {
+  //     const oldScript = document.querySelector("script[src='https://cdn.voiceflow.com/widget/bundle.mjs']");
+  //     if (oldScript) oldScript.remove();
+  //   };
+  // }, [language]);
+
+  // Handle language selection
+
+  // useEffect(() => {
+  //   const savedLanguage = Cookies.get('voiceflow-locale') || locale;
+  //   setLanguage(savedLanguage);
+  // }, [locale]);
+
+  const handleLanguageChange = (newLocale) => {
+    router.replace(pathname, { locale: newLocale });
+    // setLanguage(newLocale);
+  };
+  // const handleLanguageChange = (locale) => {
+  //   router.replace(pathname, { locale });
+  //   // setLanguage(locale);
+  //   // Cookies.set('language', locale, { expires: 30 }); 
+  // };
+ 
+  
+
+
+ 
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
@@ -177,7 +279,7 @@ export default function Header() {
             <DropdownItem
               onClick={() => {
                 handleLanguageChange("en");
-                refreshPage();
+               
               }}
               key="en"
               className=" border-none"
@@ -199,8 +301,7 @@ export default function Header() {
             <DropdownItem
               onClick={() => {
                 handleLanguageChange("ar");
-                refreshPage();
-              }}
+                             }}
               key="ar"
               className="flex items-center gap-0 sm:gap-2"
             >

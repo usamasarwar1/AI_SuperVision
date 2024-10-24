@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 
-const BusinessCard = ({ headingText, text, dir }) => {
+const BusinessCard = ({ headingText, text }) => {
   const t = useTranslations("Home");
-  // const locale = useLocale();
-  // const dir = locale === "ar" ? "rtl" : "ltr";
-  // console.log(dir)
+  const locale = useLocale();
+  const dir = locale === "ar" ? "rtl" : "ltr";
+  console.log(dir)
 
   return (
     <div className="p-6 lg:p-0">
